@@ -8,8 +8,8 @@
 module.exports = {
   title: 'FlexIt Analytics Documentation',
   tagline: 'Full documentation for FlexIt',
-  url: 'https://flexitanalytics.com',
-  baseUrl: '/learn/',
+  url: 'https://flexit.github.io',
+  baseUrl: '/flexit-docs/',
   favicon: 'https://flexitanalytics.com/wp-content/uploads/2018/05/Flex-X-small.png',
   organizationName: 'ataft', // Usually your GitHub org/user name.
   projectName: 'flexit-docs', // Usually your repo name.
