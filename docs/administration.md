@@ -1,0 +1,121 @@
+---
+id: administration
+title: Administration
+sidebar_label: Administration
+---
+
+## Overview
+
+Administration is done in the FlexIt web application as shown here:
+
+![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/05/flexit_admin_config.jpg)
+
+## User Management
+
+There are a few ways for new users to be added:
+
+1.  **Bulk User Upload** – from a .csv file
+2.  **Add Individual User** – enter username, fullname, and role. The user will be emailed a link to set their own password (if using FlexIt authentication).
+3.  **Self-registration** – Users can click the “Register” link on the Login page. This will send an email to Admin users and will also show “1 new user request” when the Admins log into the FlexIt portal. Once the user has been approved, they will be emailed a link to set their own password (if using FlexIt authentication).
+
+## Groups & Roles Management
+
+Roles define what features of the application a set of users have access to. Groups define what content (folders, reports, dashboards, etc.) a set of users has access to. Both groups and roles can be used to secure content and data, but only roles can define application functionality (e.g. create new dashboard).
+
+## Data Sources
+
+Data sources are the connection details for the underlying databases and other sources used to pull data for reporting.
+
+## Data Models
+
+Data models are the presentation layer (a.k.a business view, metadata layer) the report and dashboard authors see when they create new content. Data models connect to underlying data sources and define metadata such as relationships between entities, user-friendly names (e.g. First Name instead of F_NAME), calculations, formatting, drill paths, and more. See the “Metadata Modeling (Business Views)” knowledge base article for detailed instructions on how to create metadata models.
+
+> Read the full guide: [Metadata Modeling (Business Views)](datamodeling)
+
+## Configuration
+
+The FlexIt configuration settings can be managed under the “Administration > Configuration” menu, as shown here:  
+![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/05/flexit_admin_config.jpg)
+
+
+Details for each of the configuration settings can be found below.
+
+### Content Database
+
+The content database is where everything (reports, dashboards, users, groups, folders, etc.) is stored. By default, FlexIt comes with an enterprise-grade PostgresSQL 10 deployment that is production-ready. See the “Install and Configure FlexIt Server” knowledge base document for details on managing this database. If you do not use the default database, or would like to change to another database, you can change the settings under “Configuration > Content Database,” as shown below:
+
+![](https://i2.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_content.jpg)
+
+
+### Authentication
+
+By default, authentication is handled by storing secured credentials in the FlexIt Content Store database. You may also use other authentication methods like LDAP (Lightweight Directory Authentication Protocol), Active Directory, or SAML based Single Sign On from providers like Okta, OneLogin, etc. Each method is shown below:
+
+**FlexIt Authentication**
+
+![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_auth_flex.jpg)
+
+
+**LDAP/Active Directory**
+
+![](https://i2.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_auth_ldap.jpg)
+
+
+**SAML Single Sign On Provider**
+
+See also:
+
+*   [Set up SAML based Single Sign-On in Okta](https://flexitanalytics.com/learn/setting-up-saml-based-single-sign-on-in-okta/)
+
+
+For the “SAML Configuration” section, the identity provider (Okta, OneLogin, etc.) will provide you with the following when you set up a new application in their tool:
+
+*   Entry Point URL, also called “Identity Provider Single Sign-On URL” or “ACS (Consumer) URL”
+*   Identity Provider Issuer, also called “Issuer URL”
+*   X.509 Certificate
+
+The “User Attribute Statements” and “Group Attribute Statements” should match the names used in step 7 above. Note the following options:
+
+*   “Sync Provider Groups?” defaults to “none”. Set it to “seed” if you want FlexIt to automatically assign the user group ONLY on the first login. Set it to “sync” if you always want FlexIt to use the Okta groups. If you use “seed” or “sync”, FlexIt will automatically assign the Okta group “FlexIt Admin” to the “Admin” role, “FlexIt Author” to the “Author” role, and “FlexIt Consumer” to the “Consumer” role. Note that the Okta group names must be assigned to the FlexIt Analytics application and exactly match FlexIt [Admin, Author, Consumer].
+*   “Default Group” defaults to “none”. If a user is assigned to the FlexIt Analytics application in Okta, but is not part of any Okta groups, you can automatically assign them either as a “Consumer” or “Author” in FlexIt.
+
+![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_config_saml.png)
+
+
+### SMTP Email
+
+
+> Warning: To properly secure your email transmissions, configure your own SMTP server!
+
+By default, FlexIt comes with a development SMTP server configuration so that you don’t have to configure anything to test FlexIt. For production purposes and to properly secure your email transmissions, you may want to use your own SMTP server. Configuration details are shown below:
+
+![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_smtp.jpg)
+
+
+### Server Settings
+
+You can change the host name, port, and number of processes to use for load balancing, as shown below:
+
+![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_server.jpg)
+
+
+> Click the View Servers button at the top to manage the individual server processes.
+
+
+### Backup and Restore
+
+Back up and restore the entire content database, or individual reports, folders, dashboards, models, etc. Backups are stored in physical .zip files on your server under the installation directory “[installdir]/deployments”.
+
+![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_backup.jpg)
+
+
+### Samples
+
+If you want to deploy the samples data to any database, change the setting here and Save:
+
+![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_samples.jpg)
+
+
+### HTTPS
+
+To enable https on the server, you must place both the Private Key and Certificate file on the server under the “[installdir]/config/certs” folder. The Private Key must be in a PEM file named “privatekey.pem”. The Certificate can be in a file named “certificate.pem” or “certificate.cert”. You may also need to change the port to 443, see the Server Settings administration section. Restart the server for changes to take affect.
