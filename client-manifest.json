@@ -4,77 +4,77 @@
   ],
   "origins": {
     "styles": [
+      1,
       2,
-      3,
-      19,
+      17,
       21,
       22,
       23,
       24,
       0
     ],
-    "@docusaurus-plugin-content-docs/learn-docs-saml-732.json": [
-      1
-    ],
     "@theme/DocItem": [
       0,
-      2
+      1
     ],
     "1be78505": [
       0,
       23,
-      3
-    ],
-    "@docusaurus-plugin-content-docs/learn-docs-gettingstarted-df5.json": [
-      4
+      2
     ],
     "@site/docs\\tableauconnector.md": [
-      5
-    ],
-    "@docusaurus-plugin-content-docs/learn-docs-tableauconnector-115.json": [
-      6
+      3
     ],
     "@site/docs\\gettingstarted.md": [
+      4
+    ],
+    "@docusaurus-plugin-content-docs/flexit-docs-docs-new-650.json": [
+      5
+    ],
+    "@docusaurus-plugin-content-docs/flexit-docs-docs-tableauconnector-5a4.json": [
+      6
+    ],
+    "@docusaurus-plugin-content-docs/flexit-docs-docs-datamodeling-6df.json": [
       7
     ],
-    "@docusaurus-plugin-content-docs/learn-docs-new-0ca.json": [
+    "@docusaurus-plugin-content-docs/flexit-docs-docs-etl-059.json": [
       8
     ],
-    "@docusaurus-plugin-content-docs/learn-docs-datamodeling-a96.json": [
+    "@site/docs\\saml.md": [
       9
     ],
-    "@site/docs\\saml.md": [
+    "@docusaurus-plugin-content-docs/flexit-docs-docs-route-e82.json": [
       10
     ],
-    "@docusaurus-plugin-content-docs/learn-docs-etl-0a1.json": [
+    "@site/docs\\new.md": [
       11
     ],
-    "@docusaurus-plugin-content-docs/learn-docs-route-dca.json": [
+    "@site/docs\\datamodeling.md": [
       12
     ],
-    "@docusaurus-plugin-content-docs/learn-docs-administration-148.json": [
+    "@docusaurus-plugin-content-docs/flexit-docs-docs-gettingstarted-c08.json": [
       13
     ],
-    "@docusaurus-plugin-content-docs/learn-docs-install-95b.json": [
+    "@site/docs\\etl.md": [
       14
     ],
-    "@site/docs\\new.md": [
+    "@site/docs\\administration.md": [
       15
     ],
-    "@site/docs\\datamodeling.md": [
+    "@docusaurus-plugin-content-docs/flexit-docs-docs-saml-64b.json": [
       16
-    ],
-    "@site/docs\\etl.md": [
-      17
-    ],
-    "@site/docs\\administration.md": [
-      18
     ],
     "@site/src\\pages\\index.js": [
       0,
-      19
+      17
+    ],
+    "@docusaurus-plugin-content-docs/flexit-docs-docs-install-348.json": [
+      18
     ],
     "@site/docs\\install.md": [
+      19
+    ],
+    "@docusaurus-plugin-content-docs/flexit-docs-docs-administration-9c4.json": [
       20
     ],
     "main": [
@@ -89,7 +89,7 @@
     ],
     "@theme/DocPage": [
       0,
-      3,
+      2,
       23
     ],
     "@theme/NotFound": [
@@ -102,231 +102,231 @@
       "css": [
         {
           "file": "styles.1dadea69.css",
-          "hash": "933d914cdcdce0e1d1ca",
-          "publicPath": "/learn/styles.1dadea69.css"
+          "hash": "eb25448c66c84dc46325",
+          "publicPath": "/flexit-docs/styles.1dadea69.css"
         }
       ],
       "js": [
         {
-          "file": "styles.64b683a2.js",
-          "hash": "933d914cdcdce0e1d1ca",
-          "publicPath": "/learn/styles.64b683a2.js"
+          "file": "styles.1a074cb1.js",
+          "hash": "eb25448c66c84dc46325",
+          "publicPath": "/flexit-docs/styles.1a074cb1.js"
         }
       ]
     },
     "1": {
       "js": [
         {
-          "file": "0893959a.54877152.js",
-          "hash": "03c49cc6cac01d6ac5cf",
-          "publicPath": "/learn/0893959a.54877152.js"
+          "file": "17896441.773c7fec.js",
+          "hash": "1af4382ffe4f0e7f9e39",
+          "publicPath": "/flexit-docs/17896441.773c7fec.js"
         }
       ]
     },
     "2": {
       "js": [
         {
-          "file": "17896441.812986f5.js",
-          "hash": "821a97d89c6e852d1ec4",
-          "publicPath": "/learn/17896441.812986f5.js"
+          "file": "1be78505.bf411fe8.js",
+          "hash": "b78a6f63efe72d9126ad",
+          "publicPath": "/flexit-docs/1be78505.bf411fe8.js"
         }
       ]
     },
     "3": {
       "js": [
         {
-          "file": "1be78505.91af4301.js",
-          "hash": "e990630da37554196c4b",
-          "publicPath": "/learn/1be78505.91af4301.js"
+          "file": "37efb314.4b1cdcd3.js",
+          "hash": "d70e44a1ecf6040b04c0",
+          "publicPath": "/flexit-docs/37efb314.4b1cdcd3.js"
         }
       ]
     },
     "4": {
       "js": [
         {
-          "file": "2b2433d3.e0a7aab3.js",
-          "hash": "35e9a41d97d1766e5a3e",
-          "publicPath": "/learn/2b2433d3.e0a7aab3.js"
+          "file": "46626608.f89a66be.js",
+          "hash": "9cf2c5e579ca5886e640",
+          "publicPath": "/flexit-docs/46626608.f89a66be.js"
         }
       ]
     },
     "5": {
       "js": [
         {
-          "file": "37efb314.a1480ac1.js",
-          "hash": "1d90026a29a862dedc3f",
-          "publicPath": "/learn/37efb314.a1480ac1.js"
+          "file": "71731c80.239f5920.js",
+          "hash": "f81845eca7f079412b18",
+          "publicPath": "/flexit-docs/71731c80.239f5920.js"
         }
       ]
     },
     "6": {
       "js": [
         {
-          "file": "4347bd45.d551c257.js",
-          "hash": "e1a7544f003c3300bf56",
-          "publicPath": "/learn/4347bd45.d551c257.js"
+          "file": "7e4a6e83.1336ec6e.js",
+          "hash": "1beda203412d905c99e2",
+          "publicPath": "/flexit-docs/7e4a6e83.1336ec6e.js"
         }
       ]
     },
     "7": {
       "js": [
         {
-          "file": "46626608.d4a52639.js",
-          "hash": "512715063e45c619239f",
-          "publicPath": "/learn/46626608.d4a52639.js"
+          "file": "7e66915b.3774f791.js",
+          "hash": "bc9621464ab4e66e9fc1",
+          "publicPath": "/flexit-docs/7e66915b.3774f791.js"
         }
       ]
     },
     "8": {
       "js": [
         {
-          "file": "4b6448e9.046fe202.js",
-          "hash": "8fdbfd276fc59a2770ba",
-          "publicPath": "/learn/4b6448e9.046fe202.js"
+          "file": "80f9cb2c.a57729a7.js",
+          "hash": "afc8bcc6d2947a45aa12",
+          "publicPath": "/flexit-docs/80f9cb2c.a57729a7.js"
         }
       ]
     },
     "9": {
       "js": [
         {
-          "file": "71259b2b.5bfbf343.js",
-          "hash": "a3e2fb92f3b945c08756",
-          "publicPath": "/learn/71259b2b.5bfbf343.js"
+          "file": "81704dbe.ce95b362.js",
+          "hash": "349fd541aac867d916ca",
+          "publicPath": "/flexit-docs/81704dbe.ce95b362.js"
         }
       ]
     },
     "10": {
       "js": [
         {
-          "file": "81704dbe.8724c111.js",
-          "hash": "8be83af21f02dfc86587",
-          "publicPath": "/learn/81704dbe.8724c111.js"
+          "file": "90f4795e.29e8fe8a.js",
+          "hash": "bc92ad5ba1c4f5ba1475",
+          "publicPath": "/flexit-docs/90f4795e.29e8fe8a.js"
         }
       ]
     },
     "11": {
       "js": [
         {
-          "file": "859fc5a9.f81fef0a.js",
-          "hash": "b98161a6b9f0e0d90d8b",
-          "publicPath": "/learn/859fc5a9.f81fef0a.js"
+          "file": "d04ae2ec.64a6777a.js",
+          "hash": "dfad959e3f5d4665ad07",
+          "publicPath": "/flexit-docs/d04ae2ec.64a6777a.js"
         }
       ]
     },
     "12": {
       "js": [
         {
-          "file": "896aebc4.7cb8f0c8.js",
-          "hash": "2467cce6ca61e88a80f8",
-          "publicPath": "/learn/896aebc4.7cb8f0c8.js"
+          "file": "d09b4859.1c1802ee.js",
+          "hash": "5c4f69c86980f967b528",
+          "publicPath": "/flexit-docs/d09b4859.1c1802ee.js"
         }
       ]
     },
     "13": {
       "js": [
         {
-          "file": "a5e2c5df.0094eb1a.js",
-          "hash": "660de2f27ee212e44dfd",
-          "publicPath": "/learn/a5e2c5df.0094eb1a.js"
+          "file": "d9c98811.c2e96856.js",
+          "hash": "b67eb5f1db820eb020eb",
+          "publicPath": "/flexit-docs/d9c98811.c2e96856.js"
         }
       ]
     },
     "14": {
       "js": [
         {
-          "file": "bb2b5aaf.4d0fd1e8.js",
-          "hash": "9f971dc2930266e1a485",
-          "publicPath": "/learn/bb2b5aaf.4d0fd1e8.js"
+          "file": "dc5f160a.accbbd7d.js",
+          "hash": "f78e2ae52997969a2a11",
+          "publicPath": "/flexit-docs/dc5f160a.accbbd7d.js"
         }
       ]
     },
     "15": {
       "js": [
         {
-          "file": "d04ae2ec.039960d8.js",
-          "hash": "7b151c5f514a53149871",
-          "publicPath": "/learn/d04ae2ec.039960d8.js"
+          "file": "e7b6bb1e.d29dcacb.js",
+          "hash": "a5667e3d482247aa50e1",
+          "publicPath": "/flexit-docs/e7b6bb1e.d29dcacb.js"
         }
       ]
     },
     "16": {
       "js": [
         {
-          "file": "d09b4859.0f5cffa8.js",
-          "hash": "dba6d87ad9b16e95d9c1",
-          "publicPath": "/learn/d09b4859.0f5cffa8.js"
+          "file": "ea342c17.cbab6b99.js",
+          "hash": "8e96936407fc03d2487d",
+          "publicPath": "/flexit-docs/ea342c17.cbab6b99.js"
         }
       ]
     },
     "17": {
       "js": [
         {
-          "file": "dc5f160a.b401f442.js",
-          "hash": "d9138e07fa4e50a84fc5",
-          "publicPath": "/learn/dc5f160a.b401f442.js"
+          "file": "ece76bd1.3b418886.js",
+          "hash": "152fbf969b7a679e05a7",
+          "publicPath": "/flexit-docs/ece76bd1.3b418886.js"
         }
       ]
     },
     "18": {
       "js": [
         {
-          "file": "e7b6bb1e.0bb3dcac.js",
-          "hash": "aad3d20a28f13e9fcdd6",
-          "publicPath": "/learn/e7b6bb1e.0bb3dcac.js"
+          "file": "ed60f1be.ddc2ea30.js",
+          "hash": "7fc2dc443bd8dc495574",
+          "publicPath": "/flexit-docs/ed60f1be.ddc2ea30.js"
         }
       ]
     },
     "19": {
       "js": [
         {
-          "file": "ece76bd1.9066b3b4.js",
-          "hash": "a44ba801efe6ffc67b73",
-          "publicPath": "/learn/ece76bd1.9066b3b4.js"
+          "file": "f395e7cf.5102e46b.js",
+          "hash": "f00c52a4ca5855b8704b",
+          "publicPath": "/flexit-docs/f395e7cf.5102e46b.js"
         }
       ]
     },
     "20": {
       "js": [
         {
-          "file": "f395e7cf.e1980f4f.js",
-          "hash": "f805bdf4c679907b3564",
-          "publicPath": "/learn/f395e7cf.e1980f4f.js"
+          "file": "fac1c136.d364a7be.js",
+          "hash": "d13e09df8e92b4477194",
+          "publicPath": "/flexit-docs/fac1c136.d364a7be.js"
         }
       ]
     },
     "21": {
       "js": [
         {
-          "file": "main.0fb72de1.js",
-          "hash": "8a79584852c4392bd38d",
-          "publicPath": "/learn/main.0fb72de1.js"
+          "file": "main.9efa4e97.js",
+          "hash": "e23dd7be743eba08cb7a",
+          "publicPath": "/flexit-docs/main.9efa4e97.js"
         }
       ]
     },
     "22": {
       "js": [
         {
-          "file": "runtime~main.528d7ba8.js",
-          "hash": "bd9929787ff310942f0b",
-          "publicPath": "/learn/runtime~main.528d7ba8.js"
+          "file": "runtime~main.a9849c38.js",
+          "hash": "eb4e2de9d11df851d5af",
+          "publicPath": "/flexit-docs/runtime~main.a9849c38.js"
         }
       ]
     },
     "23": {
       "js": [
         {
-          "file": "23.b0324868.js",
-          "hash": "e4a0bede1fa2d1d0383a",
-          "publicPath": "/learn/23.b0324868.js"
+          "file": "23.6e71d8ad.js",
+          "hash": "ef1ea764eebb45471e0e",
+          "publicPath": "/flexit-docs/23.6e71d8ad.js"
         }
       ]
     },
     "24": {
       "js": [
         {
-          "file": "24.cab39138.js",
-          "hash": "e9b69cc1292a345b0a43",
-          "publicPath": "/learn/24.cab39138.js"
+          "file": "24.88202973.js",
+          "hash": "b9db87c105c0d7dafcf6",
+          "publicPath": "/flexit-docs/24.88202973.js"
         }
       ]
     }
