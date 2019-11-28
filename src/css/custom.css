@@ -16,6 +16,10 @@
   border: 1px solid gray;
 }
 
+.contents ul > li {
+  font-size: 12px;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #0094d9;

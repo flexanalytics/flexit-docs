@@ -29,7 +29,7 @@ Data Models are created via the Administration menu in the FlexIt portal. To cre
 
 You’ll notice that there are 3 distinct sections of the Data Model editor shown and described in detail below:
 
-![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/10/Data-Model-Editor-300x147.png)
+![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/10/Data-Model-Editor.png)
 
 1.  Source Data Server – drag entities or attributes from here into the Data Model area on the right
 2.  Data Model – this is your metadata model. You’ll drag items from the Source Data Server into here, give items nice labels and descriptions, create joins/relationships, calculations, SQL entities, and more.
