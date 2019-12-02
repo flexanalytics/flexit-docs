@@ -16,8 +16,17 @@
   border: 1px solid gray;
 }
 
+.markdown a > img {
+  cursor: zoom-in;
+}
+
 .contents ul > li {
   font-size: 12px;
+}
+
+blockquote {
+  border-left-color: var(--ifm-color-primary);
+  background-color: #f7f7f7;
 }
 
 /* You can override the default Infima variables here. */

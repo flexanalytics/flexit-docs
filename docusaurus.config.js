@@ -9,7 +9,7 @@ module.exports = {
   title: 'FlexIt Analytics Documentation',
   tagline: 'Full documentation for FlexIt',
   url: 'https://flexit.github.io',
-  baseUrl: '/flexit-docs/',
+  baseUrl: '/',
   favicon: 'https://flexitanalytics.com/wp-content/uploads/2018/05/Flex-X-small.png',
   organizationName: 'ataft', // Usually your GitHub org/user name.
   projectName: 'flexit-docs', // Usually your repo name.
@@ -22,8 +22,8 @@ module.exports = {
       },
       links: [
         {to: 'docs/gettingstarted', label: 'Getting Started', position: 'right'},
-        {to: 'docs/install', label: 'Installation', position: 'right'},
-        {to: 'docs/administration', label: 'Administration', position: 'right'},
+        //{to: 'docs/install', label: 'Installation', position: 'right'},
+        //{to: 'docs/administration', label: 'Administration', position: 'right'},
         {
           href: 'https://flexitanalytics.com',
           label: 'FlexIt Website',
