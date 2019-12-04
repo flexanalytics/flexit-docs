@@ -8,7 +8,7 @@
 module.exports = {
   docs: {
     "Getting Started": [
-      "gettingstarted",
+      "getting-started",
       "new",
     ],
     "Reports and Dashboards": [

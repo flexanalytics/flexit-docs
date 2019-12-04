@@ -29,6 +29,11 @@ blockquote {
   background-color: #f7f7f7;
 }
 
+.container .featureImage_src-pages- {
+  height: 150px;
+  width: auto;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #0094d9;

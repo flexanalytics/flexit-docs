@@ -18,9 +18,18 @@ There are a few ways for new users to be added:
 2.  **Add Individual User** – enter username, fullname, and role. The user will be emailed a link to set their own password (if using FlexIt authentication).
 3.  **Self-registration** – Users can click the “Register” link on the Login page. This will send an email to Admin users and will also show “1 new user request” when the Admins log into the FlexIt portal. Once the user has been approved, they will be emailed a link to set their own password (if using FlexIt authentication).
 
-## Groups & Roles Management
+## Groups & Roles
 
-Roles define what features of the application a set of users have access to. Groups define what content (folders, reports, dashboards, etc.) a set of users has access to. Both groups and roles can be used to secure content and data, but only roles can define application functionality (e.g. create new dashboard).
+*Roles* define what features of FlexIt users have access to. *Groups* define what data and content (folders, reports, dashboards, etc.) a set of users has access to. Both groups and roles can be used to secure content and data, but only roles can define application functionality (e.g. create new dashboard).
+
+FlexIt has default groups and roles that cannot be modified or removed:
+*   **Admin** - Full control over entire application
+*   **Author** - Ability to create, browse, and run reports
+*   **Consumer** - Ability to browse and run reports
+*   **Authenticated** - All authenticated users. Anyone that can log into FlexIt is in this group. Users cannot be individually assigned to this group.
+*   **Public** - Everyone, no authentication required. See note below.
+
+> **Public Group** - to use the *Public* group, you must enable the *Allow Public Access?* setting under [Administration > Configuration > Authentication](administration#authentication)
 
 ## Data Sources
 
@@ -31,6 +40,32 @@ Data sources are the connection details for the underlying databases and other s
 Data models are the presentation layer (a.k.a business view, metadata layer) the report and dashboard authors see when they create new content. Data models connect to underlying data sources and define metadata such as relationships between entities, user-friendly names (e.g. First Name instead of F_NAME), calculations, formatting, drill paths, and more. See the “Metadata Modeling (Business Views)” knowledge base article for detailed instructions on how to create metadata models.
 
 > Read the full guide: [Metadata Modeling (Business Views)](datamodeling)
+
+## Securing Content
+
+*Data Models* and content (folders, reports, dashboards) can be secured at the user or group/role levels. To apply security, locate the item, click the ellipsis to the right, and select *Security*.
+
+> There is no need to assign the *Admin* role to data models or other content since it has access to everything.
+
+**Data Model Security**
+
+When a data model is first created, only the *Admin* role has permissions. Add users, groups and roles to the desired data model. Data model security overrides *Content Security*. For example, if you give permission for a group to access a specific report, that group must also have access to the data model otherwise they will be denied access.
+
+![](/img/security_datamodel.png)
+
+
+**Content Security**
+
+Add users, groups and roles to the desired folders, reports and dashboards. You can assign security at the *Shared Content* level (highest) down to individual content items (lowest).
+
+If no security is applied to lower-level items, then security is inherited from higher-level items. In the example below, security for the *Samples (Olympic Data)* folder is inherited from *Shared Content*.
+
+![](/img/security_folder1.png)
+
+To apply security on the *Samples (Olympic Data)* folder, click the red *Override* button at the top-right and add desired users, groups and roles. Once added, click the *Read-only* checkbox if you want them to have read-only access. Read-only access prevents from creating, editing, or removing any content.
+
+![](/img/security_folder2.png)
+
 
 ## Configuration
 

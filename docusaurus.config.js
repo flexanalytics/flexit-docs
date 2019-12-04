@@ -6,24 +6,24 @@
  */
 
 module.exports = {
-  title: 'FlexIt Analytics Documentation',
-  tagline: 'Full documentation for FlexIt',
+  title: 'Welcome to FlexIt Learning',
+  tagline: 'Docs and guides to help you get started',
   url: 'https://flexit.github.io',
   baseUrl: '/',
-  favicon: 'https://flexitanalytics.com/wp-content/uploads/2018/05/Flex-X-small.png',
+  favicon: '/img/Flex-X-small.png',
   organizationName: 'ataft', // Usually your GitHub org/user name.
   projectName: 'flexit-docs', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'FlexIt Documentation',
+      title: 'FlexIt Analytics Documentation',
       logo: {
         alt: 'FlexIt',
-        src: 'https://flexitanalytics.com/wp-content/uploads/2018/05/Flex-X-small.png',
+        src: '/img/Flex-X-small.png',
       },
       links: [
-        {to: 'docs/gettingstarted', label: 'Getting Started', position: 'right'},
-        //{to: 'docs/install', label: 'Installation', position: 'right'},
-        //{to: 'docs/administration', label: 'Administration', position: 'right'},
+        {to: 'docs/getting-started', label: 'Getting Started', position: 'right'},
+        {to: 'docs/install', label: 'Install', position: 'right'},
+        {to: 'docs/administration', label: 'Administration', position: 'right'},
         {
           href: 'https://flexitanalytics.com',
           label: 'FlexIt Website',
@@ -34,6 +34,7 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [
+        /*
         {
           title: 'Install',
           items: [
@@ -61,10 +62,11 @@ module.exports = {
             },
           ],
         },
+        */
       ],
       logo: {
         alt: 'FlexIt Logo',
-        src: 'https://flexitanalytics.com/wp-content/uploads/2018/05/Flex-X-small.png',
+        src: '/img/Flex-X-small.png',
         href: 'https://flexitanalytics.com/',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Flex Analytics, Inc.`,

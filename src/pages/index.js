@@ -16,31 +16,28 @@ import styles from './styles.module.css';
 const features = [
   {
     title: <>Easy to Use</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    imageUrl: 'img/flex-bridging.png',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        FlexIt is intuitive and speaks to you as a person. Check out our user guides to make your journey even easier.
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <>Bring it all together</>,
+    imageUrl: 'img/flex-network.png',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        FlexIt brings together your data, but more importantly brings together the people that make your organization great.
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: <>T-minus 5 minutes</>,
+    imageUrl: 'img/rocket.png',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        That’s all the time you’ll need to download, install, and see how easy and powerful FlexIt is. T-minus 5, 4, 3, 2, 1…
       </>
     ),
   },
@@ -66,8 +63,8 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="User guides and documentation for FlexIt Analytics">
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
@@ -78,7 +75,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/gettingstarted')}>
+              to={useBaseUrl('docs/getting-started')}>
               Get Started
             </Link>
           </div>
