@@ -29,9 +29,14 @@ blockquote {
   background-color: #f7f7f7;
 }
 
-.container .featureImage_src-pages-, .container .featureImage_3Xqx {
-  height: 150px;
-  width: auto;
+.flx-green {
+  color: #00b852;
+}
+.flx-blue {
+  color: #0094d9;
+}
+.flx-gray {
+  color: #676568;
 }
 
 /* You can override the default Infima variables here. */

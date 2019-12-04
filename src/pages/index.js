@@ -15,44 +15,46 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Easy to Use</>,
-    imageUrl: 'img/flex-bridging.png',
+    title: <>Install FlexIt</>,
+    classes: 'fad fa-box-open flx-blue',
+    docLink: 'docs/install',
     description: (
       <>
-        FlexIt is intuitive and speaks to you as a person. Check out our user guides to make your journey even easier.
+        Got 5 minutes? That’s all the time you’ll need to download, install, and see how easy and powerful FlexIt is.
       </>
     ),
   },
   {
-    title: <>Bring it all together</>,
-    imageUrl: 'img/flex-network.png',
+    title: <>Getting Started</>,
+    classes: 'fad fa-running flx-green',
+    docLink: 'docs/getting-started',
     description: (
       <>
-        FlexIt brings together your data, but more importantly brings together the people that make your organization great.
+        Quick start guide to get you familiar with FlexIt. Learn how to access FlexIt and build your first report and dashboard.
       </>
     ),
   },
   {
-    title: <>T-minus 5 minutes</>,
-    imageUrl: 'img/rocket.png',
+    title: <>Administration</>,
+    classes: 'fad fa-user-cog flx-gray',
+    docLink: 'docs/administration',
     description: (
       <>
-        That’s all the time you’ll need to download, install, and see how easy and powerful FlexIt is. T-minus 5, 4, 3, 2, 1…
+        Administration is easy, but if you need a hand then you can find all you'll need to know in the Admin Guide.
       </>
     ),
   },
 ];
 
-function Feature({imageUrl, title, description}) {
-  const imgUrl = useBaseUrl(imageUrl);
+function Feature({classes, title, description, docLink}) {
   return (
-    <div className={classnames('col col--4', styles.feature)}>
-      {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}
-      <h3>{title}</h3>
+    <div className={classnames('col col--4 flx-gray', styles.feature)}>
+      <div className="text--center">
+        <a href={useBaseUrl(docLink)}>
+          <i className={classnames(classes, styles.featureFont)} style={{fontSize: '112px'}}></i>
+        </a>
+      </div>
+      <h3><a href={useBaseUrl(docLink)}>{title}</a></h3>
       <p>{description}</p>
     </div>
   );

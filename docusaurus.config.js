@@ -7,7 +7,7 @@
 
 module.exports = {
   title: 'Welcome to FlexIt Learning',
-  tagline: 'Docs and guides to help you get started',
+  tagline: 'FlexIt Analytics is business intelligence, built for people',
   url: 'https://flexit.github.io',
   baseUrl: '/',
   favicon: '/img/Flex-X-small.png',
@@ -21,9 +21,9 @@ module.exports = {
         src: '/img/Flex-X-small.png',
       },
       links: [
-        {to: 'docs/getting-started', label: 'Getting Started', position: 'right'},
-        {to: 'docs/install', label: 'Install', position: 'right'},
-        {to: 'docs/administration', label: 'Administration', position: 'right'},
+        {to: 'docs/getting-started', label: 'Docs', position: 'right'},
+        //{to: 'docs/install', label: 'Install', position: 'right'},
+        //{to: 'docs/administration', label: 'Administration', position: 'right'},
         {
           href: 'https://flexitanalytics.com',
           label: 'FlexIt Website',
@@ -84,5 +84,8 @@ module.exports = {
         },
       },
     ],
+  ],
+  stylesheets: [
+    'node_modules/@fortawesome/fontawesome-pro/css/all.css',
   ],
 };
