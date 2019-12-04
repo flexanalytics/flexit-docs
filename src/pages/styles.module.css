@@ -36,8 +36,10 @@
   width: 100%;
 }
 
-.featureFont {
-  padding: 20px;
+.featureImage {
+  height: 150px;
+  width: 150px;
+  padding: 10px;
 }
 
 .row .col {

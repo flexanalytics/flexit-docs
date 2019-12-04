@@ -16,7 +16,7 @@ import styles from './styles.module.css';
 const features = [
   {
     title: <>Install FlexIt</>,
-    classes: 'fad fa-box-open flx-blue',
+    imageUrl: 'img/home_install.png',
     docLink: 'docs/install',
     description: (
       <>
@@ -26,7 +26,7 @@ const features = [
   },
   {
     title: <>Getting Started</>,
-    classes: 'fad fa-running flx-green',
+    imageUrl: 'img/home_start.png',
     docLink: 'docs/getting-started',
     description: (
       <>
@@ -35,8 +35,8 @@ const features = [
     ),
   },
   {
-    title: <>Administration</>,
-    classes: 'fad fa-user-cog flx-gray',
+    title: <>Admin Guide</>,
+    imageUrl: 'img/home_admin.png',
     docLink: 'docs/administration',
     description: (
       <>
@@ -46,12 +46,13 @@ const features = [
   },
 ];
 
-function Feature({classes, title, description, docLink}) {
+function Feature({imageUrl, title, description, docLink}) {
+  const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={classnames('col col--4 flx-gray', styles.feature)}>
       <div className="text--center">
         <a href={useBaseUrl(docLink)}>
-          <i className={classnames(classes, styles.featureFont)} style={{fontSize: '112px'}}></i>
+          <img className={styles.featureImage} src={imgUrl} alt={title} />
         </a>
       </div>
       <h3><a href={useBaseUrl(docLink)}>{title}</a></h3>
