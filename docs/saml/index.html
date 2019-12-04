@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="generator" content="Docusaurus">
-<script type="text/javascript">/*<![CDATA[*/window.__chunkMapping={"17896441":["/17896441.812986f5.js"],"main":["/main.63a6507c.js"],"121d2a59":["/121d2a59.eb3df7cd.js"],"1be78505":["/1be78505.91af4301.js"],"37efb314":["/37efb314.cc9d5caa.js"],"57d941a4":["/57d941a4.00aef4ba.js"],"5b27ad36":["/5b27ad36.b43361d8.js"],"7095af98":["/7095af98.ddb96c97.js"],"81704dbe":["/81704dbe.9e50d1ec.js"],"9c9e4252":["/9c9e4252.d3835638.js"],"9f3e32d5":["/9f3e32d5.721de992.js"],"c80c675b":["/c80c675b.d17d219f.js"],"d04ae2ec":["/d04ae2ec.c599bc88.js"],"d09b4859":["/d09b4859.0762ba41.js"],"d6d15183":["/d6d15183.2667feed.js"],"dc5f160a":["/dc5f160a.66d82148.js"],"e7b6bb1e":["/e7b6bb1e.ab7a9c35.js"],"ece76bd1":["/ece76bd1.8df51e7d.js"],"f0b12943":["/f0b12943.41a248fd.js"],"f395e7cf":["/f395e7cf.0b5d22ba.js"],"f62180bf":["/f62180bf.e4163edc.js"]};/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/window.__chunkMapping={"17896441":["/17896441.45c63220.js"],"main":["/main.1120f7b1.js"],"121d2a59":["/121d2a59.96d1ab31.js"],"1be78505":["/1be78505.e3aa5c11.js"],"37efb314":["/37efb314.1ca44771.js"],"57d941a4":["/57d941a4.4e5cb785.js"],"5b27ad36":["/5b27ad36.7f06eb91.js"],"7095af98":["/7095af98.9722eb1b.js"],"81704dbe":["/81704dbe.0b495f0a.js"],"9c9e4252":["/9c9e4252.d3835638.js"],"9f3e32d5":["/9f3e32d5.59f68bf2.js"],"bbc52011":["/bbc52011.213ffe41.js"],"c80c675b":["/c80c675b.c5144913.js"],"d04ae2ec":["/d04ae2ec.9d89e41e.js"],"d09b4859":["/d09b4859.57d51467.js"],"d6d15183":["/d6d15183.456ecddb.js"],"dc5f160a":["/dc5f160a.5fcf0bd6.js"],"e7b6bb1e":["/e7b6bb1e.88a6f2ee.js"],"ece76bd1":["/ece76bd1.161c890e.js"],"f0b12943":["/f0b12943.42d19032.js"],"f395e7cf":["/f395e7cf.47d0d0aa.js"],"f62180bf":["/f62180bf.94a4bd28.js"]};/*]]>*/</script>
 
 <title data-react-helmet="true">Set up SAML single sign-on in Okta</title>
 
@@ -28,26 +28,26 @@
 <img src="https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2019/05/okta_flexit_ipmetadata.png"/></p></li><li><p>Keep this page open in a separate tab or browser window. You will return to this page later in this guide and copy the 3 settings into the FlexIt Configuration
 <img src="https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2019/05/okta_flexit_samlconfig.png"/></p></li><li><p>Log in to FlexIt as an Administrator, click on “Configuration” under Administration, then click “Authentication”
 <img src="https://i2.wp.com/flexitanalytics.com/wp-content/uploads/2019/05/flexit_config_auth.png"/></p></li><li><p>Select the “SAML 2.0” type from the drop-down and map the items from step 10 above into the FlexIt configuration
-<img src="https://i2.wp.com/flexitanalytics.com/wp-content/uploads/2019/05/flexit_config_authmap.png"/></p></li><li><p>In the FlexIt configuration, the “User Attribute Statements” and “Group Attribute Statements” should match the names used in step 7 above. Note the following options:</p><ul><li>“Sync Provider Groups?” defaults to “none”. Set it to “seed” if you want FlexIt to automatically assign the user group ONLY on the first login. Set it to “sync” if you always want FlexIt to use the Okta groups. If you use “seed” or “sync”, FlexIt will automatically assign the Okta group “FlexIt Admin” to the “Admin” role, “FlexIt Author” to the “Author” role, and “FlexIt Consumer” to the “Consumer” role. Note that the Okta group names must be assigned to the FlexIt Analytics application and exactly match FlexIt <!-- -->[Admin, Author, Consumer]<!-- -->.</li><li>“Default Group” defaults to “none”. If a user is assigned to the FlexIt Analytics application in Okta, but is not part of any Okta groups, you can automatically assign them either as a “Consumer” or “Author” in FlexIt.</li></ul></li><li><p>Click “Save” to finish the configuration in FlexIt. Okta SAML 2.0 authentication is now enabled.</p></li></ol></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/etl"><h5 class="pagination-nav__link--sublabel">Previous</h5><h4 class="pagination-nav__link--label">« <!-- -->Data Transformation (ETL)</h4></a></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div class="margin-bottom--sm"><a href="https://flexitanalytics.com/" target="_blank" rel="noopener noreferrer" class="footerLogoLink_1Wg7"><img class="footer__logo" alt="FlexIt Logo" src="/img/Flex-X-small.png"/></a></div>Copyright © 2019 Flex Analytics, Inc.</div></div></footer>
+<img src="https://i2.wp.com/flexitanalytics.com/wp-content/uploads/2019/05/flexit_config_authmap.png"/></p></li><li><p>In the FlexIt configuration, the “User Attribute Statements” and “Group Attribute Statements” should match the names used in step 7 above. Note the following options:</p><ul><li>“Sync Provider Groups?” defaults to “none”. Set it to “seed” if you want FlexIt to automatically assign the user group ONLY on the first login. Set it to “sync” if you always want FlexIt to use the Okta groups. If you use “seed” or “sync”, FlexIt will automatically assign the Okta group “FlexIt Admin” to the “Admin” role, “FlexIt Author” to the “Author” role, and “FlexIt Consumer” to the “Consumer” role. Note that the Okta group names must be assigned to the FlexIt Analytics application and exactly match FlexIt <!-- -->[Admin, Author, Consumer]<!-- -->.</li><li>“Default Group” defaults to “none”. If a user is assigned to the FlexIt Analytics application in Okta, but is not part of any Okta groups, you can automatically assign them either as a “Consumer” or “Author” in FlexIt.</li></ul></li><li><p>Click “Save” to finish the configuration in FlexIt. Okta SAML 2.0 authentication is now enabled.</p></li></ol></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/ataft/flexit-docs/edit/master/docs/saml.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/etl"><h5 class="pagination-nav__link--sublabel">Previous</h5><h4 class="pagination-nav__link--label">« <!-- -->Data Transformation (ETL)</h4></a></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div class="margin-bottom--sm"><a href="https://flexitanalytics.com/" target="_blank" rel="noopener noreferrer" class="footerLogoLink_1Wg7"><img class="footer__logo" alt="FlexIt Logo" src="/img/Flex-X-small.png"/></a></div>Copyright © 2019 Flex Analytics, Inc.</div></div></footer>
 </div>
 
-<script type="text/javascript" src="/styles.f053f795.js"></script>
+<script type="text/javascript" src="/styles.78375832.js"></script>
 
-<script type="text/javascript" src="/runtime~main.c3f32ea8.js"></script>
+<script type="text/javascript" src="/runtime~main.06c3033e.js"></script>
 
-<script type="text/javascript" src="/main.63a6507c.js"></script>
+<script type="text/javascript" src="/main.1120f7b1.js"></script>
 
-<script type="text/javascript" src="/1be78505.91af4301.js"></script>
+<script type="text/javascript" src="/1be78505.e3aa5c11.js"></script>
 
-<script type="text/javascript" src="/23.b0324868.js"></script>
+<script type="text/javascript" src="/24.9ed269f7.js"></script>
 
 <script type="text/javascript" src="/9c9e4252.d3835638.js"></script>
 
-<script type="text/javascript" src="/17896441.812986f5.js"></script>
+<script type="text/javascript" src="/17896441.45c63220.js"></script>
 
-<script type="text/javascript" src="/81704dbe.9e50d1ec.js"></script>
+<script type="text/javascript" src="/81704dbe.0b495f0a.js"></script>
 
-<script type="text/javascript" src="/9f3e32d5.721de992.js"></script>
+<script type="text/javascript" src="/9f3e32d5.59f68bf2.js"></script>
 
 </body>
 </html>
