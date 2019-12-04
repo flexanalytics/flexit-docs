@@ -12,7 +12,7 @@ When you are given access to FlexIt, you should receive details regarding log in
 ## Welcome Page (Home)
 When you first log in, you'll be taken to the FlexIt home page. Your role(s) will determine what you see since different roles have access to different content (reports, dashboards, folders).
 
-[![](/img/start_home.png)](/img/start_home.png)
+![](/img/start_home.png)
 
 ### Accessing Content
 The menu on the left will be for creating and running reports and dashboards.
@@ -64,7 +64,7 @@ OK, let's get started:
 6.  Click on the **Viz** button and try different chart types and settings
 7.  Now say "wow, that was easy!". Save your report, or keep making it great...
 
-[![](/img/start_createreport.gif)](/img/start_createreport.gif)
+<img src="/img/start_createreport.gif" />
 
 
 ## My First Dashboard
@@ -79,7 +79,7 @@ OK, let's get started:
 4.  Repeat the step above, adding *Scatter Plot (with regression)* to the top-right panel and *Sankey Chart* to the bottom panel
 5.  That's it! Save your dashboard, or keep making it great...
 
-[![](/img/start_createdashboard.gif)](/img/start_createdashboard.gif)
+<img src="/img/start_createdashboard.gif" />
 
 ## That's All, Folks!
 

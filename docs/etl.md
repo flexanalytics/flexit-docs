@@ -81,7 +81,7 @@ There are a few ways to run ETL jobs and tasks.
 ### Interactive
 Interactive mode allows you to run the entire job or individual tasks with real-time updates on status, rows loaded, etc. You can run individual Data Flow tasks by right-clicking on them in the design pane and selecting *Run*. The entire job can be run by clicking on the *Run* button in the top-right. Both of these will immediately run the tasks and show results in your browser, as shown here:
 
-[![](/img/etl_concurrent.png)](/img/etl_concurrent.png)
+<img src="/img/etl_concurrent.png" />
 
 ### Background
 Background mode allows you to run the job in the background, either immediately or scheduled for later. To run the background job, go to the list of jobs and click on the ellipsis:
