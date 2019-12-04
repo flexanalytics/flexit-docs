@@ -15,7 +15,7 @@ module.exports = {
   projectName: 'flexit-docs', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'FlexIt Analytics Documentation',
+      title: 'FlexIt Documentation',
       logo: {
         alt: 'FlexIt',
         src: '/img/Flex-X-small.png',
