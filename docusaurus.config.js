@@ -86,6 +86,6 @@ module.exports = {
     ],
   ],
   stylesheets: [
-    'node_modules/@fortawesome/fontawesome-pro/css/all.css',
+    //'node_modules/@fortawesome/fontawesome-pro/css/all.css',
   ],
 };
