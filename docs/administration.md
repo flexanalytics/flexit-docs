@@ -1,8 +1,11 @@
 ---
 id: administration
 title: Administration
+hide_title: true
 sidebar_label: Administration
 ---
+
+# Administration
 
 ## Overview
 

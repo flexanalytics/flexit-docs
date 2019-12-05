@@ -1,8 +1,11 @@
 ---
 id: datamodeling
 title: Metadata Modeling
+hide_title: true
 sidebar_label: Metadata Modeling
 ---
+
+# Metadata Modeling
 
 ## Overview
 

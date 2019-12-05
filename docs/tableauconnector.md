@@ -1,8 +1,11 @@
 ---
 id: tableauconnector
 title: Tableau Web Data Connector
+hide_title: true
 sidebar_label: Tableau Connector
 ---
+
+# Tableau Web Data Connector
 
 ## Overview
 

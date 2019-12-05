@@ -1,8 +1,11 @@
 ---
 id: etl
 title: Data Transformation (ETL)
+hide_title: true
 sidebar_label: Data Transformation (ETL)
 ---
+
+# Data Transformation (ETL)
 
 ## Overview
 The data transformation feature can be used to Extract, Transform, and Load (ETL) data from one place to another. Data flows make it easy to pull data from many different sources of data in order to cleanse, validate, transform, and integrate data into a wide array of databases. 

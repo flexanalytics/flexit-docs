@@ -1,8 +1,11 @@
 ---
 id: new
 title: Release History
+hide_title: true
 sidebar_label: Release History
 ---
+
+# Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 

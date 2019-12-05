@@ -1,8 +1,11 @@
 ---
 id: install
 title: Installation
+hide_title: true
 sidebar_label: Installation
 ---
+
+# Installation
 
 ## Before you begin
 

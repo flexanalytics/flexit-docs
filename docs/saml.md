@@ -1,8 +1,13 @@
 ---
 id: saml
 title: Set up SAML single sign-on in Okta
+hide_title: true
 sidebar_label: SAML in Okta
 ---
+
+# SAML in Okta
+
+Set up SAML single sign-on in Okta.
 
 The first step in configuring an application to support SAML based Single Sign-On from Okta is to set up an application in Okta.
 
