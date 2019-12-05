@@ -14,6 +14,11 @@ module.exports = {
   organizationName: 'ataft', // Usually your GitHub org/user name.
   projectName: 'flexit-docs', // Usually your repo name.
   themeConfig: {
+    algolia: {
+      apiKey: '04948da940dc579697cd957e0acf432b',
+      indexName: 'flexitanalytics',
+      algoliaOptions: {}, // Optional, if provided by Algolia
+    },
     navbar: {
       title: 'FlexIt Documentation',
       logo: {
