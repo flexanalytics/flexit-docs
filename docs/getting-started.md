@@ -1,8 +1,11 @@
 ---
 id: getting-started
 title: Getting Started with FlexIt Analytics
+hide_title: true
 sidebar_label: Getting Started
 ---
+
+# Getting Started
 
 FlexIt is a business intelligence and analytics solution built for everyone in your organization. Intuitive design enables business people to create analyses without training. Powerful integrations and advanced features enable the most sophisticated users to do what they need. No matter who you are, FlexIt works for you.
 
