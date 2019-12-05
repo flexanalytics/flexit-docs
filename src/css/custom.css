@@ -11,6 +11,11 @@
  * work well for content-centric websites.
  */
 
+.markdown>h2 {
+  border-top: 1px solid #efefef;
+  padding-top: 15px;
+}
+
 .markdown p img {
   max-width: 80%;
   border: 1px solid gray;
@@ -27,6 +32,14 @@
 blockquote {
   border-left-color: var(--ifm-color-primary);
   background-color: #f7f7f7;
+}
+
+.menu .menu__link {
+  border-radius: 0;
+}
+
+.menu .menu__list .menu__list {
+  border-left: 1px solid #eee;
 }
 
 .flx-green {
