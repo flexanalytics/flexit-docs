@@ -7,7 +7,7 @@ sidebar_label: Getting Started
 
 # Getting Started
 
-FlexIt Analytics is a business intelligence and analytics solution built for everyone in your organization. Intuitive design enables business people to create analyses without training. Powerful integrations and advanced features enable the most sophisticated users to do what they need. No matter who you are, FlexIt works for you.
+FlexIt Analytics is a business intelligence and analytics solution built for everyone in your organization. Intuitive design enables business people to create analyses without training. Powerful integrations and advanced features enable the most advanced users to do what they need. No matter who you are, FlexIt works for you.
 
 ## Logging In
 When you are given access to FlexIt, you should receive details regarding log in. If you do not have an account, you can go to the FlexIt login page and click *Request Account* at the bottom. If you have an account, you may also be able to reset by clicking *Forgot Password?* at the bottom.
