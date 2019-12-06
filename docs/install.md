@@ -61,7 +61,7 @@ If you want to customize your FlexIt installation and configuration, here are yo
     ![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/05/setup_configure.jpg)
 
     *   **FlexIt Analytics Port**: this is the port that FlexIt runs on. If another process is using this port, the installer will force you to pick another port.
-    > You can change the port later from [Administration > Configuration > Server Settings](administration#server-settings) or enable HTTPS ([see how](administration#https)).
+    > You can change the port later from [Administration > Configuration > Server Settings](administration.md#server-settings) or enable HTTPS ([see how](administration.md#https)).
     *   **Windows Service Name** (Windows only): when the machine you install FlexIt on restarts, the Windows Service makes sure that FlexIt is also up and running.
     *   **Install Postgres Database**: FlexIt needs a database to store content (i.e. reports, dashboards, users, etc.). If you want to use the default PostgreSQL 10 database server (high performing enterprise-level), leave this checked and select a port (default: 5433). If you do not check this, FlexIt will ask you to configure another database later. As mentioned above, that database must be one of the following: Microsoft SQL Server, PostgreSQL, MySQL, or Oracle.
 
@@ -71,7 +71,7 @@ If you want to customize your FlexIt installation and configuration, here are yo
 
 ### Modify Configuration
 
-You can modify the FlexIt configuration from within the web application as an Admin at any point, as shown below. The database you chose to store content can be configured under “Content Database”. The server port and other settings can be configured under “Server Settings”. For detailed documenation on these and other configuration settings, see the [Administration](administration.md) guide
+You can modify the FlexIt configuration from within the web application as an Admin at any point, as shown below. The database you chose to store content can be configured under “Content Database”. The server port and other settings can be configured under “Server Settings”. For detailed documentation on these and other configuration settings, see the [Administration](administration.md) guide
 
 ![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/05/flexit_admin_config.jpg)
 

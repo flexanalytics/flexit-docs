@@ -21,7 +21,7 @@ When you first log in, you'll be taken to the FlexIt home page. Your role(s) wil
 The menu on the left will be for creating and running reports and dashboards.
 
 *   **My Content** - contains personal items that *only* you have access to.
-*   **Shared Content** - contains shared items that are publicly accessible. Depending on your group/role, you may not see all folders. See the [Administration Guide](administration#securing-content) for more details on securing content.
+*   **Shared Content** - contains shared items that are publicly accessible. Depending on your group/role, you may not see all folders. See the [Administration Guide](administration.md#securing-content) for more details on securing content.
 *   **Recent** - shows the last 10 items that you ran with date
 *   **Favorite** - shows items that you have marked as *favorite* by clicking on the *fav* star on reports or dashboards
 
@@ -38,7 +38,7 @@ Now let's go ahead and create our [First Analysis](#my-first-analysis)!
 ### Administration
 
 If you are assigned to the *Admin* role, then you will see the *Administration* menu at the bottom-left.
-> Read the full guide: [Administration](administration)
+> Read the full guide: [Administration](administration.md)
 
 ### My Account
 
@@ -54,7 +54,7 @@ For help, click the question mark in the top-right for access to:
 
 ## My First Analysis
 
-For this exercise, we'll use the *Samples* model. If you don't have access to this model, use another model or have an administrator [deploy the Samples model](administration#samples).
+For this exercise, we'll use the *Samples* model. If you don't have access to this model, use another model or have an administrator [deploy the Samples model](administration.md#samples).
 
 OK, let's get started:
 
@@ -72,7 +72,7 @@ OK, let's get started:
 
 ## My First Dashboard
 
-For this exercise, we'll use the *Samples* reports. If you don't have access to this, use other reports or have an administrator [deploy the Samples](administration#samples).
+For this exercise, we'll use the *Samples* reports. If you don't have access to this, use other reports or have an administrator [deploy the Samples](administration.md#samples).
 
 OK, let's get started:
 
@@ -88,8 +88,8 @@ OK, let's get started:
 
 Now you have a pretty good handle on how things work in FlexIt. Check out our more in-depth guides.
 
-> [Administration Guide](administration) for tasks like managing users, data sources and models, server configuration, and more
+> [Administration Guide](administration.md) for tasks like managing users, data sources and models, server configuration, and more
 
-> [Metadata Modeling Guide](datamodeling) for creating business views
+> [Metadata Modeling Guide](datamodeling.md) for creating business views
 
 Enjoy!

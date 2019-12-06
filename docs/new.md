@@ -105,7 +105,7 @@ This is a full list of new features, bug fixes, and other items for all versions
 ## 2019.03.001 – Data Transformation
 
 *   Use the new Data Transformation feature for Extract Transform Build (ETL) processes.
-*   Added Oracle BI as a Datasource for extracting data via webservice calls
+*   Added Oracle BI as a Data Source for extracting data via web service calls
 
 ## 2019.02.001 – Net Aggregation
 

@@ -33,7 +33,7 @@ Data flow tasks are used to extract data from a source and load it into a destin
 To change the name/description to something unique, simply click the "Data Flow" text and enter a name.
 
 #### Source
-Data transform sources extract data from configured [data sources](administration#data-sources). The drop-down list in the top-left shows existing data sources and also allows you to create a new data source by selecting *Add New*. The "# Rows" drop-down will limit the number of rows returned, allowing you to more efficiently test the SQL and set the columns. The limit is only applied for testing in this window, but does not apply when the transformation is ran later.
+Data transform sources extract data from configured [data sources](administration.md#data-sources). The drop-down list in the top-left shows existing data sources and also allows you to create a new data source by selecting *Add New*. The "# Rows" drop-down will limit the number of rows returned, allowing you to more efficiently test the SQL and set the columns. The limit is only applied for testing in this window, but does not apply when the transformation is ran later.
 
 Click the *Run* button to test and verify your SQL and/or data results.
 
@@ -68,7 +68,7 @@ If the source and destination database are the same, then an additional "Quick M
 ## Configure (Settings)
 While designing an ETL process, you can click on ![](/img/etl_configbtn.png) in the top-right to open the configuration properties. There are three main areas:
 
-1. Success Handling - configuration for what to do when the job runs successfully. *Email Admins on Success* will send an email to all FlexIt users in the *Admin* role. *Email on Success* allows you to enter comma separated email addresses that might differ from the admins. An SMTP email server must be configured ([show me](administration#smtp-email)).
+1. Success Handling - configuration for what to do when the job runs successfully. *Email Admins on Success* will send an email to all FlexIt users in the *Admin* role. *Email on Success* allows you to enter comma separated email addresses that might differ from the admins. An SMTP email server must be configured ([show me](administration.md#smtp-email)).
 2. Error Handling - similar to *Success Handling*, but also has an option for *Stop on Fail*. This stops the job immediately if any task fails. If this is not checked, individual task failures will still result in a successful job run.
 3. Specification - this is the text specification for the current job. This can be used to import/export jobs, which is useful for backups or migrating a job from one environment to another. The specification is in JSON format.
 
@@ -121,7 +121,7 @@ Cloning a data transformation is an easy way to copy the transformation. This ca
 > **Tip** - there are a couple other ways to back up data transformations:
 >
 > 1. Copy the specification from the transformation [Configuration](#configure-settings) and save in a text file
-> 2. Create a backup using the [Admin > Config > Backup and Restore](administration#backup-and-restore) feature
+> 2. Create a backup using the [Admin > Config > Backup and Restore](administration.md#backup-and-restore) feature
 
 ## Extract Data from Oracle BI
 You can use Oracle BI (OBIEE) as a source to extract data from. Source data can come from either an existing Oracle BI report or a Logical SQL statement.
@@ -150,7 +150,7 @@ You can select an existing report to extract source data. If the selected report
 
 ### Connecting to Oracle BI
 
-Connect to Oracle BI by creating a new [Data Source](administration#data-sources). Similar to other data sources, you give the connection a *name* and enter a *host* and *port*. 
+Connect to Oracle BI by creating a new [Data Source](administration.md#data-sources). Similar to other data sources, you give the connection a *name* and enter a *host* and *port*. 
 
 *   **Web Services Path** - defaults to */analytics-ws/saw.dll*
 *   **Web Services Version** - enter the version that your Oracle BI installation is using. You can typically verify the web services version by going to the full URL and typing *?wsdl* at the end. For example, https://abcd.fa.us2.oraclecloud.com/analytics-ws/saw.dll?wsdl.

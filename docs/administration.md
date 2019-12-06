@@ -32,7 +32,7 @@ FlexIt has default groups and roles that cannot be modified or removed:
 *   **Authenticated** - All authenticated users. Anyone that can log into FlexIt is in this group. Users cannot be individually assigned to this group.
 *   **Public** - Everyone, no authentication required. See note below.
 
-> **Public Group** - to use the *Public* group, you must enable the *Allow Public Access?* setting under [Administration > Configuration > Authentication](administration#authentication)
+> **Public Group** - to use the *Public* group, you must enable the *Allow Public Access?* setting under [Administration > Configuration > Authentication](administration.md#authentication)
 
 ## Data Sources
 
@@ -42,7 +42,7 @@ Data sources are the connection details for the underlying databases and other s
 
 Data models are the presentation layer (a.k.a business view, metadata layer) the report and dashboard authors see when they create new content. Data models connect to underlying data sources and define metadata such as relationships between entities, user-friendly names (e.g. First Name instead of F_NAME), calculations, formatting, drill paths, and more. See the “Metadata Modeling (Business Views)” knowledge base article for detailed instructions on how to create metadata models.
 
-> Read the full guide: [Metadata Modeling (Business Views)](datamodeling)
+> Read the full guide: [Metadata Modeling (Business Views)](datamodeling.md)
 
 ## Securing Content
 
@@ -103,7 +103,7 @@ By default, authentication is handled by storing secured credentials in the Flex
 
 See also:
 
-*   [Set up SAML based Single Sign-On in Okta](https://flexitanalytics.com/learn/setting-up-saml-based-single-sign-on-in-okta/)
+*   [Set up SAML based Single Sign-On in Okta](saml.md)
 
 
 For the “SAML Configuration” section, the identity provider (Okta, OneLogin, etc.) will provide you with the following when you set up a new application in their tool:

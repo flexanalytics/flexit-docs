@@ -15,7 +15,7 @@ Metadata modeling is the process of creating “business views” in order to ma
 
 Prior to creating a metadata model, you’ll need to create a data source that the model will pull tables/columns from. Data Sources are created via the Administration menu in the FlexIt portal. More details can be found in the  “Data Sources” section of the Administration knowledge base article.
 
-> See also: [Administration > Data Sources](administration#data-sources)
+> See also: [Administration > Data Sources](administration.md#data-sources)
 
 
 ## 2) Create a Data Model
