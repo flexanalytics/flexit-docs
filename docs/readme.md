@@ -67,7 +67,7 @@ OK, let's get started:
 6.  Click on the **Viz** button and try different chart types and settings
 7.  Now say "wow, that was easy!". Save your report, or keep making it great...
 
-<img src="/img/start_createreport.gif" />
+![](/img/start_createreport.gif)
 
 
 ## My First Dashboard
@@ -82,7 +82,7 @@ OK, let's get started:
 4.  Repeat the step above, adding *Scatter Plot (with regression)* to the top-right panel and *Sankey Chart* to the bottom panel
 5.  That's it! Save your dashboard, or keep making it great...
 
-<img src="/img/start_createdashboard.gif" />
+![](/img/start_createdashboard.gif)
 
 ## That's All, Folks!
 
