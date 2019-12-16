@@ -124,10 +124,13 @@ Cloning a data transformation is an easy way to copy the transformation. This ca
 > 2. Create a backup using the [Admin > Config > Backup and Restore](administration.md#backup-and-restore) feature
 
 ## Extract Data from Oracle BI
-You can use Oracle BI (OBIEE) as a source to extract data from. Source data can come from either an existing Oracle BI report or a Logical SQL statement.
+You can use Oracle BI (OBIEE) as a source to extract data from. Source data can come from either an existing Oracle BI report or a Logical SQL statement. 
+
+> **Loop** - Oracle BI may be configured with a limit to the number of rows that a report or Logical SQL statement can return, or the load might cause Oracle BI to fail. In this case, you can use the *Looper* feature to send multiple smaller requests for data instead of one large request. See the documentation below for instructions on using the looper with either Logical SQL or a report.
 
 ### Logical SQL Source
 
+#### Logical SQL Syntax
 > Reference Guide: https://docs.oracle.com/middleware/12212/biee/BIESQ/toc.htm
 
 Logical SQL must adhere to the Oracle BI syntax. You can get the Logical SQL for a report from the *Advanced* tab, shown here:
@@ -138,11 +141,25 @@ You can test run the Logical SQL from Oracle BI administration. Click on *Admini
 
 ![](/img/oracle_logicalsqladmin.png)
 
+#### Logical SQL Looper
+
+The Logical SQL looper will send multiple smaller requests to the Oracle BI server for data. To use the looper, enclose the list of items in the SQL `WHERE` clause in double curly braces.
+
+For example, `in ('0000','0100')` becomes `in ({{'0000','0100'}})`, like this Logical SQL statement:
+
+```sql
+SELECT
+   "Budgetary Control - Balances Real Time"."XCC_DEPARTMENT_VI"."Segment Code" s_1,
+   "Budgetary Control - Balances Real Time"."XCC_DEPARTMENT_VI"."Segment Description" s_2
+FROM "Budgetary Control - Balances Real Time"
+WHERE "XCC_DEPARTMENT_VI"."Segment Code" in ({{'0000','0100'}})
+```
+
 ### Report Source
 
 You can select an existing report to extract source data. If the selected report has parameters (i.e. prompts), then you can enter values into the input next to the prompts.
 
-> **Loop** - if there is a limit to the number of rows a report can return, you can use the "Loop" feature. Clicking the loop checkbox sends multiple smaller requests for the data. The example below will send four separate requests to get the data for all four Segment Codes.
+> **Looper** - if there is a limit to the number of rows a report can return, you can use the "Loop" feature. Clicking the loop checkbox sends multiple smaller requests for the data. The example below will send four separate requests to get the data for all four Segment Codes.
 
 ![](/img/etl_reportsource.png)
 

@@ -9,6 +9,14 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2019.12.001 – Improved Viz
+
+* Start "New Analysis" in design-mode for ad-hoc reporting
+* Added "Viz" button when Grid-only
+* Added close button to Grid when Viz and Grid are shown
+* Enhanced metadata column search, select and add
+* Oracle BI: looper for logical SQL; allow GO Url for SQL
+
 ## 2019.11.005 – Minor Fixes
 
 ## 2019.11.004 – Minor Fixes
