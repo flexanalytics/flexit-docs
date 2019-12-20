@@ -18,14 +18,16 @@ From the *Administration > Data Transform* list, click on an existing transforma
 ## Tools
 There are three (Container, SQL Task, Data Flow) simple tools you can use to design your transformation. Drag-and-drop any of the following tools from the *Tools* panel into the *Transformation Design* panel. The number order of the tasks will be the order that they are processed.
 
+![](/img/etl_designpage.png)
+
 ### Container
-Containers can hold *SQL Tasks* or *Data Flows*. Everything inside a container will execute in parallel (i.e. synchronous).
+Containers can hold *SQL Tasks* or *Data Flows*, which will appear inside the blue dotted border of the container. Everything inside a container will execute in parallel (i.e. synchronous).
 
 ### SQL Task
 Use SQL tasks to execute any SQL command. This is commonly used to set database settings or build custom insert/update/delete (CRUD) statements.
 
 ### Data Flow
-Data flow tasks are used to extract data from a source and load it into a destination.
+Data flow tasks are used to extract data from a source and load it into a destination. They appear with a name/label and three buttons for editing the source, mapping, and destination.
 
 ![](/img/etl_dataflow.png)
 
@@ -49,6 +51,7 @@ Click on the arrow to map the source columns to destination columns.
 
 Here are the main options for mapping:
 * Order button: automatically map all the columns based on the order of the columns from the source
+* Name button: automatically map all the columns based on the name of the source and dest columns
 * Clear button: remove all existing mappings
 * Convert: convert data type from source type into destination type
 * Enter Value: manually enter a static value as a source column by setting the Source Column Name to "Enter Value"
