@@ -10,8 +10,11 @@ module.exports = {
     "Getting Started": [
       "getting-started",
       "new",
+      "portal",
     ],
     "Reports and Dashboards": [
+      "report",
+      "dashboard",
       "tableauconnector",
     ],
     "Administration": [
