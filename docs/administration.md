@@ -40,9 +40,9 @@ Data sources are the connection details for the underlying databases and other s
 
 ## Data Models
 
-Data models are the presentation layer (a.k.a business view, metadata layer) the report and dashboard authors see when they create new content. Data models connect to underlying data sources and define metadata such as relationships between entities, user-friendly names (e.g. First Name instead of F_NAME), calculations, formatting, drill paths, and more. See the “Metadata Modeling (Business Views)” knowledge base article for detailed instructions on how to create metadata models.
+Data models are the presentation layer (a.k.a business view, metadata layer) the report and dashboard authors see when they create new content. Data models connect to underlying data sources and define metadata such as relationships between entities, user-friendly names (e.g. First Name instead of F_NAME), calculations, formatting, drill paths, and more. See the Data Models (Business Views)” knowledge base article for detailed instructions on how to create metadata models.
 
-> Read the full guide: [Metadata Modeling (Business Views)](datamodeling.md)
+> Read the full guide: [Data Models (Business Views)](datamodeling.md)
 
 ## Securing Content
 

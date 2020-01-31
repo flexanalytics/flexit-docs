@@ -1,15 +1,15 @@
 ---
 id: datamodeling
-title: Metadata Modeling
+title: Data Models
 hide_title: true
-sidebar_label: Metadata Modeling
+sidebar_label: Data Models
 ---
 
-# Metadata Modeling
+# Data Models (Business Views)
 
 ## Overview
 
-Metadata modeling is the process of creating “business views” in order to make self-service analytics possible for everyone in the organization. At a high level, this is where you give database tables and attributes user-friendly names (e.g. F_NM becomes First Name), specify relationships between entities (i.e. joins), and create re-usable calculations. This allows SQL to be automatically generated when users drag-and-drop fields from multiple entities on reports. Taking the extra steps to enter user-friendly labels and calculations means that users won’t have to do this on every report they create. The following sections will walk you through the process of creating a new model.
+Data modeling is the process of creating “business views” in order to make self-service analytics possible for everyone in the organization. At a high level, this is where you give database tables and attributes user-friendly names (e.g. F_NM becomes First Name), specify relationships between entities (i.e. joins), and create re-usable calculations. This allows SQL to be automatically generated when users drag-and-drop fields from multiple entities on reports. Taking the extra steps to enter user-friendly labels and calculations means that users won’t have to do this on every report they create. The following sections will walk you through the process of creating a new model.
 
 ## 1) Create a Data Source
 
@@ -50,7 +50,7 @@ Drag-and-drop items from the Source Data Server pane into the Data Model pane.
 
 #### Joins (i.e. Entity Relationships)
 
-Once you’ve brought items into the Data Model pane, the ![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/10/Visual-Editor.png?resize=89%2C22&ssl=1) button allows you to create relationships between entities. In the top-right, use the “Smart Join” button to automatically detect relationships between entities and the “Auto-organize” button to neatly organize all the entities and relationships. Right-click on entities or relationships to make changes or create new ones. Here’s a screenshot of what it looks like when you use the Smart Join:
+Once you’ve brought items into the Data Model pane, the *![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/10/Visual-Editor.png?resize=89%2C22&ssl=1)* button allows you to create relationships between entities. In the top-right, use the “Smart Join” button to automatically detect relationships between entities and the “Auto-organize” button to neatly organize all the entities and relationships. Right-click on entities or relationships to make changes or create new ones. Here’s a screenshot of what it looks like when you use the Smart Join:
 
 ![](https://i2.wp.com/flexitanalytics.com/wp-content/uploads/2018/10/Visual-Editor-Window.png)
 

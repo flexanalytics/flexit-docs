@@ -8,6 +8,6 @@
 * [Administration](administration.md)
     * [Installation](install.md)
     * [Administration](administration.md)
-    * [Metadata Modeling](datamodeling.md)
+    * [Data Models](datamodeling.md)
     * [Data Transformation (ETL)](etl.md)
     * [SAML in Okta](saml.md)

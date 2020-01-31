@@ -21,6 +21,10 @@
   border: 1px solid gray;
 }
 
+.markdown p em img {
+  border: none;
+}
+
 .contents ul > li {
   font-size: 12px;
 }

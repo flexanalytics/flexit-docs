@@ -92,6 +92,6 @@ Now you have a pretty good handle on how things work in FlexIt. Check out our mo
 
 > [Administration Guide](administration.md) for tasks like managing users, data sources and models, server configuration, and more
 
-> [Metadata Modeling Guide](datamodeling.md) for creating business views
+> [Data Models Guide](datamodeling.md) for creating business views
 
 Enjoy!

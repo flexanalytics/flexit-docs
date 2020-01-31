@@ -29,7 +29,7 @@ Click the home icon to bring you back to the last place you left off, perhaps vi
 
 You can have as many reports or dashboards as you'd like all open at the same time. They will show up as clickable tabs that you can toggle between. As you tab between items, the URL in your browser is updated to reflect the unique URL for that report. You can use that direct URL to open a report directly, or share it with others.
 
-**User**
+#### User
 * My Account - check your email, name, and role(s)
 * Sign Out - make sure you log out of FlexIt when you're done
 

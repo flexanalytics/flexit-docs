@@ -29,7 +29,7 @@ Use SQL tasks to execute any SQL command. This is commonly used to set database 
 ### Data Flow
 Data flow tasks are used to extract data from a source and load it into a destination. They appear with a name/label and three buttons for editing the source, mapping, and destination.
 
-![](/img/etl_dataflow.png)
+*![](/img/etl_dataflow.png)*
 
 #### Name
 To change the name/description to something unique, simply click the "Data Flow" text and enter a name.
@@ -69,7 +69,7 @@ If the source and destination database are the same, then an additional "Quick M
 
 
 ## Configure (Settings)
-While designing an ETL process, you can click on ![](/img/etl_configbtn.png) in the top-right to open the configuration properties. There are three main areas:
+While designing an ETL process, you can click on *![](/img/etl_configbtn.png)* in the top-right to open the configuration properties. There are three main areas:
 
 1. Success Handling - configuration for what to do when the job runs successfully. *Email Admins on Success* will send an email to all FlexIt users in the *Admin* role. *Email on Success* allows you to enter comma separated email addresses that might differ from the admins. An SMTP email server must be configured ([show me](administration.md#smtp-email)).
 2. Error Handling - similar to *Success Handling*, but also has an option for *Stop on Fail*. This stops the job immediately if any task fails. If this is not checked, individual task failures will still result in a successful job run.
