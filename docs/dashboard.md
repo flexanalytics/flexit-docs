@@ -7,4 +7,4 @@ sidebar_label: Dashboards
 
 # Building Dashboards
 
-Here's how to build a dashboard
+Coming soon...

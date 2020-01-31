@@ -24,7 +24,7 @@ When starting a new report, you'll add fields from the left pane and add filters
 
 ### Add Fields
 
-From the *Fields* menu on the left, you can add fields by dragging, double-clicking, or right-clicking. As you bring fields into the working area, data will be displayed in a grid/table. You can visualize (chart) your data by simply clicking the ![](/img/report/viz_button.png) Viz button at the top-right of the grid.
+From the *Fields* menu on the left, you can add fields by dragging, double-clicking, or right-clicking. As you bring fields into the working area, data will be displayed in a grid/table. You can visualize (chart) your data by simply clicking the *![](/img/report/viz_button.png)* button at the top-right of the grid.
 
 When fields are already on a report, you can add new fields to specific areas of the grid or visualization by dragging, shown below:
 
@@ -138,55 +138,123 @@ The example below shows how to do an *Advanced Aggregation* and set different ag
 
 #### Calculations
 
+Create a new calculation by right-clicking a column and selecting *Calculate*.
+
+1. Math - allow you to do math functions (add, subtract, multiply, divide, etc.). You can perform math functions on any column in the data model, report, or also a number that you manually enter. Click the *Add Item* button to add new field items, or the *Add Operation* button to add math functions, then drag them around to create the expression.
+![](/img/report/calculation.gif)
+
+2. Text - allow you to apply character-based functions, such as substring(), left(), right(), and replace().
+
+3. If..then..else (Case Statement) - allow you to use complex logic to define calculated results, as shown below.
+![](/img/report/calc_ifelse.png)
+
+#### Drills
+
+When you click on a number/measure on the grid, it will automatically show you any existing drills and also allow you to add a new drill. To add a new drill, click *New Drill* and search for the report you'd like to drill to, as shown below.
+
+![](/img/report/drill_measure.gif)
+
+You can also drill down or sideways on any text/dimension field. The example below shows a drill on *Country* down to *Athlete Name*. This action adds a filter for *Country = 'United States'* and replaces the *Country* column with *Athlete Name*, as shown here:
+
+![](/img/report/drill_dimension.gif)
+
+You can also drill to external websites and pass columns from the report to the URL parameters. To pass a column from the report, put it in the URL inside of {} curley braces. You can also set a condition to only allow the drill when certain criteria are met. For example, you could create a drill on *Athlete Name* that opens a Google Search, as shown below.
+
+![](/img/report/drill_url.png)
+
+> **Edit Column Drills** - Drills for a column can always be edited from [Field Configuration](#field-configuration).
+
+#### Conditional Formatting
+
+Style formatting can be applied to text, background, or the entire row based on conditions. From [Field Configuration](#field-configuration), you can add *rules* next to *Conditional Formatting*, as shown below.
+
+![](/img/report/condition_rule.png)
+
+Each row of data on the report will be tested to see if any of the rules apply. If a rule applies, then that cell or row is formatted based on the rule, as shown below.
+
+![](/img/report/condition_result.png)
 
 
 #### Field Configuration
 
-Field (More Settings...)
-Hide Field
-Drills
-Data Type
+All options for a column can be found and modified by right-clicking a column and selecting *More Settings...*.
 
-Re-order columns
+![](/img/report/field_config.png)
 
+* **ID** - the unique identifier for the field (not editable)
+* **Label** - the text title for the field
+* **Description** - a text/html description that shows detailed information about fields
+* **Data Type** - should the field be treated as a String (text), Number, or Date. Numbers can be treated as text, text as numbers, and so on
+* **Aggregation Type** - type of [aggregate](#aggregate), if any
+* **Format** - formats for number, date, percent, currency, and text
+* **Sort** - ascending, descending, or none
+* **Sort by Other Field** - sort this column by another field that is not displayed on the report
+* **Hidden** - keep the field on the report, but hide it from view
+* **Drills** - create or edit [drills](#drills)
+* **Conditional Formatting** - manage [conditional formatting](#conditional-formatting) for the column
 
-Save/Save As
+#### Re-order columns
 
+Move grid columns around by dragging the column header to the desired position. You can also re-order columns from the [Builder Page](#builder-page).
 
-Favorite
+#### Export to Excel/CSV
 
-Load External Data
+You can export to Excel and CSV from the [Grid Configuration](#grid-configuration) button menu at the top-right of the grid.
 
+> **Copy to clipboard** - Drag/select the cells you want and using your keyboard copy/paste commands.
 
 #### Grid Configuration
 
-Grid
-    Export Data
-    Fit Columns
-    Auto-size
-    Suppress Zeros
-    Summary Footer
-    Groups Expanded
-    Conditional Formatting
+To access grid settings, click the *![](/img/report/grid_config_button.png)* button at the top-right of the grid.
+
+* **Export to Excel** - download the data into .XLSX format
+* **Export to CSV** - download the data into comma separated .CSV format
+* **Advanced Export** - specify inclusion of column headings, groups, and totals in download to Excel or CSV
+* **Fit Columns** - set column widths to fit the length of text in each column
+* **More Settings** - access more grid configuration properties, as shown here:
+    * Show Summary Footer - display summaries at the bottom of the grid
+    * Summary Footer Text - text to display at the left of the summaries
+    * Auto-size Width - grid columns will auto-size to fit the width of your screen. If there are too many columns, you may want to use *Fit Columns* to properly see the columns.
+    * Auto-size Height - grid rows will auto-size to fit the height of your screen. Unchecking this may cause performance issues with large amounts of data.
+    * Suppress Zeros - hide rows where all the measures are zero
+    * Groups Expanded - grouped rows are expanded by default
+
+### Charts (Visualization)
+
+Once you're done exploring your data and are ready to explain your data, there are a few ways you can show a chart/visualization.
+
+1. Clicking the *![](/img/report/viz_button.png)* button at the top-right of a grid, which will give you a Viz quick selection dropdown, shown here:
+
+    ![](/img/report/viz_types_quick.png)
+
+2. Selecting *Chart & Grid* or *Chart Only* in the report menu, shown here:
+
+    ![](/img/report/chart_and_grid.png)
+
+Once you have a visualization displayed, you can very quickly change the chart type and all of it's properties from the *![](/img/report/viz_button.png)* at the top-right of the viz, shown here:
+
+![](/img/report/viz_types.gif)
 
 
-Charts (Visualization)
 
+### Report Options
 
-Admin
-    View SQL
+#### Report Menu
 
+*![](/img/report/chart_and_grid.png)*
 
-Report Settings
-    Report ID
-    Run Automatically
-    Change Data Model
-    Specification
-
-
-Import/Export Report from specification
-
-
+The report menu is located in the top-right of the report and is used to Save, set Favorites, display Viz/Grid/Both, and access a handful of other useful settings:
+* Builder Page - brings you to the [Builder Page](#builder-page), allowing you to work on the report with no data (i.e. not ad-hoc/live data)
+* Load External Data - join with external data from a CSV file, similar to a VLOOKUP in Excel
+* View SQL - view the SQL that the report generates (certain roles do not see this)
+* Edit SQL - if the report is from a SQL Analysis, this is where you edit the SQL statement
+* Run Automatically - uncheck this box in order to always display the Builder Page when the report is ran
+* More Settings - access more report properties:
+    * Report ID - unique identifier for the report
+    * Run Automatically - uncheck this box in order to always display the Builder Page when the report is ran
+    * Data Model - change the data model the report is using. This may result in an invalid report.
+    * Footer Expression - display text at bottom of report page. For example, display the date/time the data warehouse was refreshed.
+    * Specification - paste a specification in here to build report from specs, copy a specification to move and use as a backup later.
 
 ## Builder Page
 
@@ -194,9 +262,24 @@ The *Builder Page* allows you to create your report without live (ad-hoc) data. 
 
 > To always open to the builder page, go to report settings and uncheck *Run Automatically*
 
+![](/img/report/builder_page.png)
+
 ### Prompts
 
 Prompts are filters displayed on the Builder Page that allow users to narrow the data results before the report is run. For example, a car sales report might prompt the user to select *Year*, *Make*, and *Car Model*. This helps users focus their data results, but also ensures that reports run faster by querying less data. Prompts can be added to the Builder Page with no selections made, or they can also have some default selections.
 
+For more detailed information, check the [Filters](#filters) section above.
+
+### Field Selection
+
+The builder page can be a much quicker way to create reports if you know how to use it. Quickly add fields, order them, and set grouping, pivoting, and more from here. Use the *Metadata search* to quickly search and add your fields, shown here:
+
+![](/img/report/field_select.gif)
+
 ## SQL Report
 
+Depending on your role, you may be able to create an analysis based on custom SQL. When you create a new report, instead of selecting a Data Model, select *New SQL Analysis* and it takes you to this screen:
+
+![](/img/report/sql_report.png)
+
+Build and test your SQL, then click *Create Report* in the top right. If you need to edit your SQL in the future, you can do so from the [Report Menu](#report-menu).

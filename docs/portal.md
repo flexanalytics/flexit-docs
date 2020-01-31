@@ -94,4 +94,6 @@ Only users in the *Admin* group have access to this menu
 
 ## Content
 
+Reports, dashboards, recent, favs, data models, and everything else will be displayed in the *Content Pane*, shown here:
+
 ![](/img/portal/content.png)
