@@ -9,6 +9,23 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2020.02.001 – Conditional Formatting, Advanced Date Filters
+
+* Added conditional formatting feature
+* Added date filter improvement for next/last *n* days/weeks/months/years
+* Added text calculation "replace"
+
+## 2020.01.002 – Advanced CSV/Excel export, Query-based footer
+
+* Advanced CSV/Excel export allowing selection of header/footer/groups and more
+* Ability to add query-based text to the bottom right of reports, e.g. "As of Jan 29, 2020 6:23am" based on datawarehouse refresh table query
+
+## 2020.01.001 – ETL Column Mapping, SQL Server and Oracle upgrades
+
+* ETL column mapping and data type conversion improvements
+* Upgrade drivers for SQL Server and Oracle databases
+* Viz fixes, REST API accessibility, and other minor enhancements
+
 ## 2019.12.001 – Improved Viz
 
 * Start "New Analysis" in design-mode for ad-hoc reporting
