@@ -35,12 +35,12 @@ const features = [
     ),
   },
   {
-    title: <>Admin Guide</>,
-    imageUrl: 'img/home_admin.png',
-    docLink: 'docs/administration',
+    title: <>Reporting Guide</>,
+    imageUrl: 'img/home_analysis.png',
+    docLink: 'docs/report',
     description: (
       <>
-        Administration is easy, but if you need a hand then you can find all you'll need to know in the Admin Guide.
+        Learn everything you need to know about creating reports in this detailed guide that walks you through all FlexIt has to offer. 
       </>
     ),
   },

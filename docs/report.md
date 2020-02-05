@@ -9,7 +9,7 @@ sidebar_label: Reporting User Guide
 
 ## New Analysis
 
-To create a new report, click on the *New Analysis* button in the portal. You'll see a list of [Data Models](datamodeling.md) that you have permission to (contact your admin if your data model is not shown). Some users may see the [*New SQL Analysis*](#sql-report) button, which allows you to write custom SQL to pull report data.
+To create a new report, click on the *![](/img/portal/btn_new_analysis.png)* button in the portal. You'll see a list of [Data Models](datamodeling.md) that you have permission to (contact your admin if your data model is not shown). Some users may see the [*New SQL Analysis*](#sql-report) button, which allows you to write custom SQL to pull report data.
 
 > **Note**: the *Consumer* role does not have access to create new reports, and thus will not see the *New Analysis* or *New SQL Analysis* buttons. Check your role from [My Account](portal.md#user).
 
