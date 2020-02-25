@@ -9,6 +9,17 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2020.02.002 – Mapping Viz and Geo Data
+
+* Map Viz (GeoJSON and Lat/Lng)
+* Geo data for world countries (points, boundaries), world postal codes (points), US States (boundaries), and US Zip Codes (points)
+* Source Geo data from remote
+* Create Dashboard from New Analysis
+* Dashboard filter/prompt improvements
+* Sankey Viz legend control
+* Fix "Top/Bottom" viz menu
+* Fix ETL date conversion (Oracle)
+
 ## 2020.02.001 – Conditional Formatting, Advanced Date Filters
 
 * Added conditional formatting feature
