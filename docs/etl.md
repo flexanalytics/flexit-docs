@@ -58,14 +58,14 @@ Here are the main options for mapping:
 
 
 #### Destination
-Configuring the destination allows you to set the table that you would like to load source data into. Checking "Truncate" will execute the `TRUNCATE TABLE TABLENAME;` command, emptying the table rows, prior to loading data.
+Configuring the destination allows you to set the table that you would like to load source data into. 
 
-![](/img/etl_destdiff.png)
-
-If the source and destination database are the same, then an additional "Quick Mode" option is available. This executes the `insert into [DEST] select cols from [SOURCE]` statement rather than chunking data, which is typically much faster.
+* **Datasource** - the destination data source connection
+* **Entity** - the destination table to load data into
+* **Quick Mode** - If the source and destination database are the same, then an additional "Quick Mode" option is available. This executes the `insert into [DEST] select cols from [SOURCE]` statement rather than chunking data, which is typically much faster.
+* **Truncate** - Options for "Do not truncate", "Truncate", and "Truncate (if source rows)". Truncate will execute the `TRUNCATE TABLE TABLENAME;` command, emptying the table rows prior to loading data. If you select the "if source rows" option, it only truncates when the source query returns rows.
 
 ![](/img/etl_destsame.png)
-
 
 
 ## Configure (Settings)
