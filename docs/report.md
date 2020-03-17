@@ -86,6 +86,7 @@ Individual filter configuration allows you to modify the following attributes:
 Report-level filter configuration allows you to modify the following attributes:
 * Filter Cascading - filter values in dropdown will be based on all other report filters. For example, if a report on olympics data has a filter for *Country=USA*, then a new filter for *Athlete* will only show values for *USA*. If an individual filter has *No Cascade* enabled, then filter cascading will not apply for that filter. 
 * Number of Required Filters - users must have at least this many filters on a report. This is typically used to prevent users from accidentally running reports with no filters, often on larger data sets.
+* Show Empty Filters - always show filters on report page, even if the filter has no selections
 * Expression - allows for building of complex filter expression
 
 ![](/img/report/filter_report.png)
