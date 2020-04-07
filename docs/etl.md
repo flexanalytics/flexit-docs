@@ -96,6 +96,16 @@ Background mode allows you to run the job in the background, either immediately 
 1.  *Run Now* starts the job immediately and runs it in the background
 2.  *Schedule* allows you to set a date/time in the future to run the job ([show me](#schedule))
 
+### External Job Scheduler
+You can start FlexIt ETL jobs from an external job scheduler such as JAMS or any 3rd party software that can execute a binary/executable, such as Windows Task Manager.
+
+To start a job, run the `flexit` binary located in the *[flexit_install_dir]\bin* folder with the `runJob -jobId job_id` arguments. `job_id` is the ID of the Data Transform etl job, which is the last number in the URL when you have the Data Transform open. For example, if the URL is `https://flexitserver:443/#datatransforms/123`, then the jobId is 123.
+
+```
+C:\Program Files\FlexIt Analytics\bin> flexit runJob -jobId 123
+```
+
+> Make sure you run the `flexit` binary as administrator, otherwise you may get an **connect EPERM** error.
 
 ## History
 History shows the status and detail of jobs. To show a history for all jobs, click the *Job History* button at the top of the jobs list page. To show the history for an individual job, there are two methods:
