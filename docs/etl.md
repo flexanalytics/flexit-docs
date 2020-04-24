@@ -20,6 +20,13 @@ There are three (Container, SQL Task, Data Flow) simple tools you can use to des
 
 ![](/img/etl_designpage.png)
 
+Right-click on any of the tools to access a menu of options:
+* Run - run only the selected item
+* Disable - disable the selected item from running when the entire job is ran
+* Clone - make a copy of the selected item
+* Delete - delete the selected item
+* Actions - perform actions based on the result when the item is ran. [See more](#actions) about Actions below.
+
 ### Container
 Containers can hold *SQL Tasks* or *Data Flows*, which will appear inside the blue dotted border of the container. Everything inside a container will execute in parallel (i.e. synchronous).
 
@@ -67,6 +74,17 @@ Configuring the destination allows you to set the table that you would like to l
 
 ![](/img/etl_destsame.png)
 
+## Actions
+
+Perform actions on SQL or Data Flow tasks based on run results.
+
+![](/img/etl_actions.png)
+
+* Enabled - when on, actions will be executed if "On Event" criteria are met
+* On Event - criteria for when action will be executed
+* Send Email To - if criteria met, send email to a comma separated list of email addresses
+* Fail Task - if criteria met, fail the task
+* Execute Task - if criteria met, execute the selected task next. Actions can execute tasks that are disabled.
 
 ## Configure (Settings)
 While designing an ETL process, you can click on *![](/img/etl_configbtn.png)* in the top-right to open the configuration properties. There are three main areas:
