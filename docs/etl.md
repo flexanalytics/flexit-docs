@@ -208,3 +208,35 @@ Connect to Oracle BI by creating a new [Data Source](administration.md#data-sour
 *   **Allow GO Url** - in some cases, the Oracle BI *GO Url* can be faster and more reliable than the Oracle web services. Enable this setting to allow FlexIt to choose which method to use, with the goal of increasing performance and reliability.
 
 ![](/img/oracle_datasource.png)
+
+## Extract Data from PeopleSoft Query
+You can use PeopleSoft Query as a source to extract data. Set up a connection to PeopleSoft Query, then choose the query as you would any other ETL data source for either SQL or Data Flow tasks.
+
+### Connecting to PeopleSoft Query
+
+Connect to PeopleSoft Query by creating a new [Data Source](administration.md#data-sources). Here are the data source properties:
+
+*   **Query URL** - this will be the base URL for the query. The URL should contain everything except for the actual query name, which will be plugged in from individual ETL tasks.
+*   **Username** - enter a username to connect with. It's good practice to use a system account here, if possible.
+*   **Password** - enter the password to connect with. This is encrypted with the most advanced encryption methodologies.
+*   **Session Timeout (minutes)** - leave the connection open for the specified time, in minutes.
+*   **Retry on Fail** - if a connection fails, retry *n* times.
+
+![](/img/psquery_datasource.png)
+
+> Note - this process uses the [Selenium Web Driver](https://selenium.dev/), a widely-used and secure tool. You'll need to provide a custom script on the FlexIt server under *[flexit_install_dir]/config/custom/PSQuery.js* to properly authenticate and allow access to PeopleSoft environment.
+
+### Query Source
+
+![](/img/etl_psquery.png)
+
+Once you've created the connection, PeopleSoft Query data can be extracted using SQL or Data Flow tasks. Select the PeopleSoft Query data source and enter the Query Name. Then, click either *Get Params* to pull the Query report parameters without running the query, or click the *Run* button to run the query and fetch data.
+
+#### Advanced Parameter Functions
+
+Built-in parameter functions give you the ability to specify dates, years, months, etc. in the past or future as parameters. The functions must be enclosed in double brackets, and can use basic math operations outside the brackets to add or reduce. For example, a function to get yesterday would be *{{today}}-1*. Here are the available functions:
+* {{today}} - returns today's date in format *mm/dd/yyyy*. Use +/- to specify days in the past or future, e.g. *{{today}}-30*.
+* {{year}} - returns the current year in *yyyy* format. Use +/- to specify past or future years.
+* {{fiscal_year}} - returns the current fiscal year, starting on July 1.
+* {{month}} - returns the current month as an integer. Use +/- to specify months in the past or future.
+* {{fiscal_month}} - returns the current fiscal month as an integer, where July is *1* and June is *12*.
