@@ -26,12 +26,13 @@ Right-click on any of the tools to access a menu of options:
 * Clone - make a copy of the selected item
 * Delete - delete the selected item
 * Actions - perform actions based on the result when the item is ran. [See more](#actions) about Actions below.
+* Parameters - set variable parameters based on source results and use them in downstream extracts. [See more](#parameters) about Parameters below.
 
 ### Container
 Containers can hold *SQL Tasks* or *Data Flows*, which will appear inside the blue dotted border of the container. Everything inside a container will execute in parallel (i.e. synchronous).
 
 ### SQL Task
-Use SQL tasks to execute any SQL command. This is commonly used to set database settings or build custom insert/update/delete (CRUD) statements.
+Use SQL tasks to execute any SQL command. This is commonly used to set database settings or build custom insert/update/delete (CRUD) statements. You can use [parameters](#parameters) and [functions](#functions) in SQL Tasks.
 
 ### Data Flow
 Data flow tasks are used to extract data from a source and load it into a destination. They appear with a name/label and three buttons for editing the source, mapping, and destination.
@@ -42,7 +43,7 @@ Data flow tasks are used to extract data from a source and load it into a destin
 To change the name/description to something unique, simply click the "Data Flow" text and enter a name.
 
 #### Source
-Data transform sources extract data from configured [data sources](administration.md#data-sources). The drop-down list in the top-left shows existing data sources and also allows you to create a new data source by selecting *Add New*. The "# Rows" drop-down will limit the number of rows returned, allowing you to more efficiently test the SQL and set the columns. The limit is only applied for testing in this window, but does not apply when the transformation is ran later.
+Data transform sources extract data from configured [data sources](administration.md#data-sources). The drop-down list in the top-left shows existing data sources and also allows you to create a new data source by selecting *Add New*. The "# Rows" drop-down will limit the number of rows returned, allowing you to more efficiently test the SQL and set the columns. The limit is only applied for testing in this window, but does not apply when the transformation is ran later. You can use [parameters](#parameters) and [functions](#functions) in source queries.
 
 Click the *Run* button to test and verify your SQL and/or data results.
 
@@ -70,9 +71,32 @@ Configuring the destination allows you to set the table that you would like to l
 * **Datasource** - the destination data source connection
 * **Entity** - the destination table to load data into
 * **Quick Mode** - If the source and destination database are the same, then an additional "Quick Mode" option is available. This executes the `insert into [DEST] select cols from [SOURCE]` statement rather than chunking data, which is typically much faster.
-* **Truncate** - Options for "Do not truncate", "Truncate", and "Truncate (if source rows)". Truncate will execute the `TRUNCATE TABLE TABLENAME;` command, emptying the table rows prior to loading data. If you select the "if source rows" option, it only truncates when the source query returns rows.
+* **Delete/Truncate** - Options for Do not truncate, Truncate, Truncate (if source rows), Delete, and Delete (if source rows). Truncate will execute the `TRUNCATE TABLE TABLENAME;` command, emptying the table rows prior to loading data. If you select the "if source rows" option, it only truncates when the source query returns rows. Delete will give you an option to include a *Where Clause*, which can use [parameters](#parameters) and [functions](#functions).
 
 ![](/img/etl_destsame.png)
+
+## Functions
+
+Built-in functions give you the ability to specify dates, years, months, etc. in the past or future. The functions must be enclosed in double brackets, and accept arguments to add/reduce by days/months/years or to format dates. For example, a function to get yesterday would be *[[today,-1]]*. Here are the available functions, where *n* is an integer and  *patterns* are allowed:
+* **today** - [[today, *n*, *pattern*]] - returns today's date +/- *n* days. Default *pattern* is *mm/dd/yyyy*, or use any [here](https://momentjs.com/docs/#/displaying/format/). e.g. *[[today, -30, yyyy-mm-dd]]*.
+* **year** - [[year, *n*]] - returns the current year in *yyyy* format +/- *n* years.
+* **fiscal_year** - [[fiscal_year, *n*]] - returns the current fiscal year, starting on July 1.
+* **month** - [[month, *n*]] - returns the current month as an integer. Use +/- to specify months in the past or future.
+* **fiscal_month** - [[fiscal_month, *n*]] - returns the current fiscal month as an integer, where July is *1* and June is *12*.
+
+## Parameters
+
+Right-click on any SQL or Data Flow task to add parameters. Parameter values will be based on the source query. For example, if you add parameters to a task with "select HOST_YEAR, HOST_CITY from GAMES" as the query, then you can create parameter names for the HOST_YEAR and HOST_CITY columns, as such:
+
+![](/img/etl_parameters.png)
+
+Once you've created parameters, you can use them in the destination *DELETE* where clause or any downstream SQL Source by enclosing the parameter name inside double brackets with an @ character. If the SQL source that sets the parameter returns multiple values, the parameter value will be a comma separated list of these values. Using the example above, you can use the pHostYear parameter like this:
+
+``` sql
+select *
+from OLYMPIC_DATA
+where YEAR in ([[@pHostYear]])
+```
 
 ## Actions
 
@@ -232,11 +256,4 @@ Connect to PeopleSoft Query by creating a new [Data Source](administration.md#da
 
 Once you've created the connection, PeopleSoft Query data can be extracted using SQL or Data Flow tasks. Select the PeopleSoft Query data source and enter the Query Name. Then, click either *Get Params* to pull the Query report parameters without running the query, or click the *Run* button to run the query and fetch data.
 
-#### Advanced Parameter Functions
-
-Built-in parameter functions give you the ability to specify dates, years, months, etc. in the past or future as parameters. The functions must be enclosed in double brackets, and can use basic math operations outside the brackets to add or reduce. For example, a function to get yesterday would be *{{today}}-1*. Here are the available functions:
-* {{today}} - returns today's date in format *mm/dd/yyyy*. Use +/- to specify days in the past or future, e.g. *{{today}}-30*.
-* {{year}} - returns the current year in *yyyy* format. Use +/- to specify past or future years.
-* {{fiscal_year}} - returns the current fiscal year, starting on July 1.
-* {{month}} - returns the current month as an integer. Use +/- to specify months in the past or future.
-* {{fiscal_month}} - returns the current fiscal month as an integer, where July is *1* and June is *12*.
+You can use both [parameters](#parameters) and [functions](#functions) in any of the parameter inputs
