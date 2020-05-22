@@ -9,6 +9,37 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2020.05.003 – Data Flow Improvements
+
+* Added 'rows per batch' feature
+* Added 'retry on insert' feature
+* SQL Editor larger, fixed resizing, and default cols to no aggregate
+* Fixes to PeopleSoft Query and Oracle BI extracts
+
+## 2020.05.002 – User and Group Management
+
+* Ability to email FlexIt groups
+* Improvements to nested groups/roles
+
+## 2020.05.001 – ETL Improvements
+
+* Added ETL Actions for SQL or Data Flow tasks based on run results
+* Added ETL Parameters to use as variables in design flow
+* Added ETL External Job scheduler
+* PeopleSoft Query data extraction
+
+## 2020.04.001 – Dashboard Enhancements
+
+* Dashboard share and embed improvements
+* Added dashboard 'Rich Text' card
+* Dashboard UI improvements
+
+## 2020.03.001 – Visualization Improvements
+
+* New color schemes
+* Added visualizations to samples
+* Improved validation
+
 ## 2020.02.002 – Mapping Viz and Geo Data
 
 * Map Viz (GeoJSON and Lat/Lng)
