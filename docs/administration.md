@@ -15,13 +15,29 @@ Administration is done in the FlexIt web application as shown here:
 
 ## User Management
 
-There are a few ways for new users to be added:
+![](/img/admin/users.png)
 
+### Adding Users
+
+New users can be added by clicking the *New Users* button and doing one of the following:
 1.  **Bulk User Upload** – from a .csv file
 2.  **Add Individual User** – enter username, fullname, and role. The user will be emailed a link to set their own password (if using FlexIt authentication).
-3.  **Self-registration** – Users can click the “Register” link on the Login page. This will send an email to Admin users and will also show “1 new user request” when the Admins log into the FlexIt portal. Once the user has been approved, they will be emailed a link to set their own password (if using FlexIt authentication).
+
+Users can also *Self-register* from the Login page by clicking on the *Register* link. This will send an email to Admin users and will also show “1 new user request” when the Admins log into the FlexIt portal. Once the user has been approved, they will be emailed a link to set their own password (if using FlexIt authentication).
+
+### Email Users
+
+Send custom emails to all FlexIt users by clicking *Send Email* at the top of the Users page, or send to individual users from the ellipsis next to the user name.
+
+### Impersonate User
+
+Administrators can impersonate individual users, which gives them the ability to see FlexIt *exactly* as that person sees it. This is helpful for ensuring everything works as expected when securing folders, reports, FlexIt features, and more. When impersonating, you'll see that person's name in the top-right and you will not be able to edit or save any of that users content. Click *Stop Impersonating* at the top-right to get back to your regular user profile.
+
+![](/img/admin/impersonate.png)
 
 ## Groups & Roles
+
+![](/img/admin/groups_and_roles.png)
 
 *Roles* define what features of FlexIt users have access to. *Groups* define what data and content (folders, reports, dashboards, etc.) a set of users has access to. Both groups and roles can be used to secure content and data, but only roles can define application functionality (e.g. create new dashboard).
 
@@ -33,6 +49,18 @@ FlexIt has default groups and roles that cannot be modified or removed:
 *   **Public** - Everyone, no authentication required. See note below.
 
 > **Public Group** - to use the *Public* group, you must enable the *Allow Public Access?* setting under [Administration > Configuration > Authentication](administration.md#authentication)
+
+### Adding Groups
+
+New groups can be added by clicking the *New Group* button at the top of the Groups & Roles page. Once the group is added, you can then add users and/or groups to this group. When you add groups to groups, you are *nesting* them, which gives child groups access to everything the parent group has access to.
+
+### Email Groups
+
+Send custom emails to users in a group by clicking the ellipsis next to the group name and selecting *Send Message*.
+
+### Impersonate Group/Role
+
+Administrators can impersonate a group/role, which gives them the ability to see FlexIt *exactly* as a person in that group/role sees it. This is helpful for ensuring everything works as expected when securing folders, reports, FlexIt features, and more. To impersonate a group, click on the ellipsis next to the group and select *Impersonate XYZ Group*.
 
 ## Data Sources
 
