@@ -9,6 +9,30 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2020.06.004 – Minor Fixes and Enhancements
+
+* Fix for calculated fields
+* Impersonation applied to data models
+* Fix for content copy
+* Datasource connection management
+
+## 2020.06.003 – Direct SQL
+
+* Introduction of direct sql, which allows reports to be created from SQL that is directly executed against the database rather than wrapped in sub-queries.
+* Improve suppress zeros logic
+* Email: allow "tls-min-v1.0"
+* External scheduler exit with 0=success and 1=failure, log details using -showMessages
+
+## 2020.06.002 – Impersonation
+
+* Administrators can impersonate any FlexIt user or group, giving them the ability to see FlexIt exactly as that user/group does.
+* Improved viz axis sorting to allow sort by alpha or values
+
+## 2020.06.001 – Bug Fixes
+
+* Fix for Viz Legend Click
+* Other minor fixes
+
 ## 2020.05.003 – Data Flow Improvements
 
 * Added 'rows per batch' feature

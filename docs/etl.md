@@ -144,8 +144,12 @@ You can start FlexIt ETL jobs from an external job scheduler such as JAMS or any
 To start a job, run the `flexit` binary located in the *[flexit_install_dir]\bin* folder with the `runJob -jobId job_id` arguments. `job_id` is the ID of the Data Transform etl job, which is the last number in the URL when you have the Data Transform open. For example, if the URL is `https://flexitserver:443/#datatransforms/123`, then the jobId is 123.
 
 ```
-C:\Program Files\FlexIt Analytics\bin> flexit runJob -jobId 123
+C:\Program Files\FlexIt Analytics\bin> flexit runJob -showMessages -jobId 123
 ```
+
+#### runJob Arguments
+* jobId: the Id of the ETL job
+* showMessages: include this argument if you want to see detailed messages
 
 > Make sure you run the `flexit` binary as administrator, otherwise you may get an **connect EPERM** error.
 

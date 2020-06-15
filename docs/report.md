@@ -284,3 +284,5 @@ Depending on your role, you may be able to create an analysis based on custom SQ
 ![](/img/report/sql_report.png)
 
 Build and test your SQL, then click *Create Report* in the top right. If you need to edit your SQL in the future, you can do so from the [Report Menu](#report-menu).
+
+> **Direct SQL** - the *Direct SQL* option in the top-right will execute SQL exactly as it appears. This could cause performance issues on large datasets and is not recommended unless it is necessary.
