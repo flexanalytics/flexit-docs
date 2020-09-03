@@ -9,6 +9,31 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2020.09.001 – Map and Geo Enhancements
+
+* Geo enhancements: new base layers and geoJSON sources
+* Map configuration and other enhancements
+* Allow Windows Authentication for SQL Server login
+
+## 2020.08.001 – Data Portals
+
+* Data Portals - data portals allow you to create a custom portal web page with tiles to access FlexIt content
+* Strong password - Added requireStrongPassword option to FlexIt authentication
+* Search improvements - all search is now live in a smart dropdown
+* Visualization enhancements
+* SQL Engine filter improvements
+
+## 2020.07.001 – Rich Text Editor
+
+* Big Number (KPI) viz enhancements
+* Rich Text editor improvements and use for all HTML tooltips
+* Sparkline bar chart for Grid percentage columns
+* ETL: get details of running job
+* use Rich Text editor for creating tooltip descriptions
+* ETL and connection improvements
+* improvements to scheduling reports
+* minor bug fixes
+
 ## 2020.06.004 – Minor Fixes and Enhancements
 
 * Fix for calculated fields
