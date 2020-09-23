@@ -9,6 +9,15 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2020.09.002 – New Visualizations
+
+* Added Funnel, Gauge, Calendar, Boxplot
+* Viz icon re-design
+* Improved viz auto-selection
+* Improved viz Top-N feature
+* Mapping improvements
+* Improved Samples data, reports, dashboards and data portals
+
 ## 2020.09.001 – Map and Geo Enhancements
 
 * Geo enhancements: new base layers and geoJSON sources
