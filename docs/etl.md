@@ -62,7 +62,7 @@ Here are the main options for mapping:
 * Name button: automatically map all the columns based on the name of the source and dest columns
 * Clear button: remove all existing mappings
 * Convert: convert data type from source type into destination type
-* Enter Value: manually enter a static value as a source column by setting the Source Column Name to "Enter Value"
+* Enter Value: manually enter a value as a source column by setting the Source Column Name to "Enter Value"
 
 
 #### Destination
@@ -141,7 +141,7 @@ Background mode allows you to run the job in the background, either immediately 
 ### External Job Scheduler
 You can start FlexIt ETL jobs from an external job scheduler such as JAMS or any 3rd party software that can execute a binary/executable, such as Windows Task Manager.
 
-To start a job, run the `flexit` binary located in the *[flexit_install_dir]\bin* folder with the `runJob -jobId job_id` arguments. `job_id` is the ID of the Data Transform etl job, which is the last number in the URL when you have the Data Transform open. For example, if the URL is `https://flexitserver:443/#datatransforms/123`, then the jobId is 123.
+To start a job, run the `flexit` binary located in the *[flexit_home]\bin* folder with the `runJob -jobId job_id` arguments. `job_id` is the ID of the Data Transform etl job, which is the last number in the URL when you have the Data Transform open. For example, if the URL is `https://flexitserver:443/#datatransforms/123`, then the jobId is 123.
 
 ```
 C:\Program Files\FlexIt Analytics\bin> flexit runJob -showMessages -jobId 123
@@ -232,7 +232,7 @@ Connect to Oracle BI by creating a new [Data Source](administration.md#data-sour
 *   **Web Services Version** - enter the version that your Oracle BI installation is using. You can typically verify the web services version by going to the full URL and typing *?wsdl* at the end. For example, https://abcd.fa.us2.oraclecloud.com/analytics-ws/saw.dll?wsdl.
 *   **Username** - enter a username to connect with. It's good practice to use a system account here, if possible.
 *   **Retry on Fail** - if a connection fails, retry *n* times. Oracle BI web service requests often fail for no apparent reason. This setting can help mitigate the issue by retrying the request if it initially fails.
-*   **Use Custom Login** - if two-factor (2FA) or multi-factor authentication (MFA) are used, you may need to use a custom login script. This setting allows you to use the Node JS script *[flexit_install_dir]/config/custom/CustomModule.js* to properly authenticate and allow access to web services and/or the Oracle GO Url. This process uses the [Selenium Web Driver](https://selenium.dev/), a widely-used and secure tool. 
+*   **Use Custom Login** - if two-factor (2FA) or multi-factor authentication (MFA) are used, you may need to use a custom login script. This setting allows you to use the Node JS script *[flexit_home]/config/custom/CustomModule.js* to properly authenticate and allow access to web services and/or the Oracle GO Url. This process uses the [Selenium Web Driver](https://selenium.dev/), a widely-used and secure tool. 
 *   **Allow GO Url** - in some cases, the Oracle BI *GO Url* can be faster and more reliable than the Oracle web services. Enable this setting to allow FlexIt to choose which method to use, with the goal of increasing performance and reliability.
 
 ![](/img/oracle_datasource.png)
@@ -252,7 +252,7 @@ Connect to PeopleSoft Query by creating a new [Data Source](administration.md#da
 
 ![](/img/psquery_datasource.png)
 
-> Note - this process uses the [Selenium Web Driver](https://selenium.dev/), a widely-used and secure tool. You'll need to provide a custom script on the FlexIt server under *[flexit_install_dir]/config/custom/PSQuery.js* to properly authenticate and allow access to PeopleSoft environment.
+> Note - this process uses the [Selenium Web Driver](https://selenium.dev/), a widely-used and secure tool. You'll need to provide a custom script on the FlexIt server under *[flexit_home]/config/custom/PSQuery.js* to properly authenticate and allow access to PeopleSoft environment.
 
 ### Query Source
 

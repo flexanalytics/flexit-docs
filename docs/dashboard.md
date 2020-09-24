@@ -11,7 +11,7 @@ sidebar_label: Dashboards
 
 ## New Dashboard
 
-To create a new dashboard, click on the *![](/img/portal/btn_new_dashboard.png)* button in the portal. Now you can select a layout template with predefined cards, or build the dashboard from scratch, as shown below.
+To create a new dashboard, click on the *![](/img/portal/new.png)* button in the portal and select *New Dashboard*. Now you can select a layout template with predefined cards, or build the dashboard from scratch, as shown below.
 
 ![](/img/dashboard/layouts.png)
 
@@ -39,7 +39,7 @@ Cards are panels that hold charts, tables, filters, or other content such as ric
 
 Content cards allow you to add report objects such as charts and grid/tables to the dashboard. Click the *![](/img/dashboard/card_addcontent.png)* button in the middle of the card to add new content to the card. You can always edit the content in the future from the [Card Toolbar](#card-toolbar) edit button.
 
-Clicking the *Add* or *Edit* buttons will open the Card Designer (shown below), which allows you to design new content from a *![](/img/portal/btn_new_analysis.png)* or search existing content. When searching existing content, double-click the report to open it for designing. Once you're done designing your content, click *Done* and it will be added to the dashboard.
+Clicking the *Add* or *Edit* buttons will open the Card Designer (shown below), which allows you to design new content from a *New Analysis* or search existing content. When searching existing content, double-click the report to open it for designing. Once you're done designing your content, click *Done* and it will be added to the dashboard.
 
 ![](/img/dashboard/card_designer.png)
 
@@ -61,7 +61,6 @@ Rich Text cards allow you to design with advanced text and image features to get
 
 The card toolbar appears in the top-right of a card when you hover your cursor over the card. The options available are:
 * *![](/img/dashboard/card_newwindow.png)* - opens the card in a new window/tab
-* *![](/img/dashboard/card_snap.png)* - snap fit-to-space expands the card until it bumps into other cards
 * *![](/img/dashboard/card_edit.png)* - edit the card content, or add new content
 * *![](/img/dashboard/card_delete.png)* - removes the card from the dashboard
 

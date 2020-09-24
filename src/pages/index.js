@@ -15,12 +15,12 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Install FlexIt</>,
+    title: <>Deploy FlexIt</>,
     imageUrl: 'img/home_install.png',
-    docLink: 'docs/install',
+    docLink: 'docs/deploy',
     description: (
       <>
-        Got 5 minutes? That’s all the time you’ll need to download, install, and see how easy and powerful FlexIt is.
+        Got 3 minutes? That's all the time you need to spin up a cloud or on premises instance and check out how easy and powerful FlexIt is.
       </>
     ),
   },

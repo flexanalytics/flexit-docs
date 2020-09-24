@@ -15,10 +15,11 @@ module.exports = {
     "Reports and Dashboards": [
       "report",
       "dashboard",
+      "dataportal",
       "tableauconnector",
     ],
     "Administration": [
-      "install",
+      "deploy",
       "administration",
       "datamodeling",
       "etl",

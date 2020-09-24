@@ -11,7 +11,7 @@ sidebar_label: Administration
 
 Administration is done in the FlexIt web application as shown here:
 
-![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/05/flexit_admin_config.jpg)
+![](/img/admin/admin.png)
 
 ## User Management
 
@@ -101,16 +101,16 @@ To apply security on the *Samples (Olympic Data)* folder, click the red *Overrid
 ## Configuration
 
 The FlexIt configuration settings can be managed under the “Administration > Configuration” menu, as shown here:  
-![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/05/flexit_admin_config.jpg)
 
+![](/img/admin/configuration.png)
 
 Details for each of the configuration settings can be found below.
 
 ### Content Database
 
-The content database is where everything (reports, dashboards, users, groups, folders, etc.) is stored. By default, FlexIt comes with an enterprise-grade PostgresSQL 10 deployment that is production-ready. See the “Install and Configure FlexIt Server” knowledge base document for details on managing this database. If you do not use the default database, or would like to change to another database, you can change the settings under “Configuration > Content Database,” as shown below:
+The content database is where everything (reports, dashboards, users, groups, folders, etc.) is stored. By default, FlexIt comes with an enterprise-grade PostgresSQL deployment that is production-ready. See the "Deploy FlexIt Server" knowledge base document for details on managing this database. If you do not use the default database, or would like to change to another database, you can change the settings under “Configuration > Content Database,” as shown below:
 
-![](https://i2.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_content.jpg)
+![](/img/admin/content_database.png)
 
 
 ### Authentication
@@ -119,12 +119,12 @@ By default, authentication is handled by storing secured credentials in the Flex
 
 **FlexIt Authentication**
 
-![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_auth_flex.jpg)
+![](/img/admin/authentication.png)
 
 
 **LDAP/Active Directory**
 
-![](https://i2.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_auth_ldap.jpg)
+![](/img/admin/authentication_ldap.png)
 
 
 **SAML Single Sign On Provider**
@@ -145,7 +145,7 @@ The “User Attribute Statements” and “Group Attribute Statements” should 
 *   “Sync Provider Groups?” defaults to “none”. Set it to “seed” if you want FlexIt to automatically assign the user group ONLY on the first login. Set it to “sync” if you always want FlexIt to use the Okta groups. If you use “seed” or “sync”, FlexIt will automatically assign the Okta group “FlexIt Admin” to the “Admin” role, “FlexIt Author” to the “Author” role, and “FlexIt Consumer” to the “Consumer” role. Note that the Okta group names must be assigned to the FlexIt Analytics application and exactly match FlexIt [Admin, Author, Consumer].
 *   “Default Group” defaults to “none”. If a user is assigned to the FlexIt Analytics application in Okta, but is not part of any Okta groups, you can automatically assign them either as a “Consumer” or “Author” in FlexIt.
 
-![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_config_saml.png)
+![](/img/admin/authentication_saml.png)
 
 
 ### SMTP Email
@@ -155,33 +155,46 @@ The “User Attribute Statements” and “Group Attribute Statements” should 
 
 By default, FlexIt comes with a development SMTP server configuration so that you don’t have to configure anything to test FlexIt. For production purposes and to properly secure your email transmissions, you may want to use your own SMTP server. Configuration details are shown below:
 
-![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_smtp.jpg)
+![](/img/admin/smtp.png)
 
 
 ### Server Settings
 
-You can change the host name, port, and number of processes to use for load balancing, as shown below:
+Set the host name, port, number of processes to use for load balancing, logging level, or enable/disable the [HTTPS/SSL](#https) and the REST API.
 
-![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_server.jpg)
-
+![](/img/admin/server_settings.png)
 
 > Click the View Servers button at the top to manage the individual server processes.
 
 
 ### Backup and Restore
 
-Back up and restore the entire content database, or individual reports, folders, dashboards, models, etc. Backups are stored in physical .zip files on your server under the installation directory “[installdir]/deployments”.
+Back up and restore the entire content database, or individual reports, folders, dashboards, models, etc. Backups are stored in physical .zip files on your server under the "[flexit_home]/deployments” directory.
 
-![](https://i1.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_backup.jpg)
+![](/img/admin/backup.png)
 
+### Maps
+
+Manage map styles or data points such as GeoJSON and latitude/longitude.
+
+![](/img/admin/maps.png)
+
+#### Styles
+
+Map styles allow you to use map tiles from any server, such as Open Street Map, Carto DB, and Mapbox. Some services, such as Mapbox, will require an access_token in the tile server URL. By default, FlexIt comes with a lot of free tile servers.
+
+![](/img/admin/map_style.png)
+
+#### Custom Maps
+
+You can create any type of map that can be imagined using GeoJSON or Latitude/Longitude sources. FlexIt comes preloaded with country boundaries, country lat/lon, United States boundaries, and United States lat/lon. You can add your own maps from remote servers or add maps to the "[flexit_install]\webcontent\geo" directory. Configure maps as shown below.
+
+![](/img/admin/map_custom.png)
 
 ### Samples
 
-If you want to deploy the samples data to any database, change the setting here and Save:
-
-![](https://i0.wp.com/flexitanalytics.com/wp-content/uploads/2018/09/flexit_admin_samples.jpg)
-
+Deploy the sample data module, reports, visualizations, dashboards, and data portals by selecting the database and clicking *Save*.
 
 ### HTTPS
 
-To enable https on the server, you must place both the Private Key and Certificate file on the server under the “[installdir]/config/certs” folder. The Private Key must be in a PEM file named “privatekey.pem”. The Certificate can be in a file named “certificate.pem” or “certificate.cert”. You may also need to change the port to 443, see the Server Settings administration section. Restart the server for changes to take affect.
+To enable https on the server, you must place both the Private Key and Certificate file on the server under the “[flexit_home]/config/certs” folder. The Private Key must be in a PEM file named “privatekey.pem”. The Certificate can be in a file named “certificate.pem” or “certificate.cert”. You may also need to change the port to 443, see the Server Settings administration section. Restart the server for changes to take affect.

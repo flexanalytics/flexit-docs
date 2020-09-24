@@ -9,7 +9,7 @@ sidebar_label: Reporting User Guide
 
 ## New Analysis
 
-To create a new report, click on the *![](/img/portal/btn_new_analysis.png)* button in the portal. You'll see a list of [Data Models](datamodeling.md) that you have permission to (contact your admin if your data model is not shown). Some users may see the [*New SQL Analysis*](#sql-report) button, which allows you to write custom SQL to pull report data.
+To create a new report, click on the *![](/img/portal/new.png)* button in the portal and select *New Analysis*. You'll see a list of [Data Models](datamodeling.md) that you have permission to (contact your admin if your data model is not shown). Some users may see the [*New SQL Analysis*](#sql-report) button, which allows you to write custom SQL to pull report data.
 
 > **Note**: the *Consumer* role does not have access to create new reports, and thus will not see the *New Analysis* or *New SQL Analysis* buttons. Check your role from [My Account](portal.md#user).
 
@@ -34,9 +34,7 @@ When fields are already on a report, you can add new fields to specific areas of
 
 ### Filters
 
-Add filters to narrow your search and focus your data exploration. They also improve performance on large data sets. The *![](/img/report/add_filter.png)* button is a quick way to search all your fields and apply a filter to a selected field, regardless of whether or not the field is displayed on in the report grid and/or visualization. Filters can be applied to fields with data types of text/string, numeric, or date/time. Depending on the data type, the filter will have different options. 
-
-
+Add filters to narrow your search and focus your data exploration. They also improve performance on large data sets. The *![](/img/report/add_filter.png)* button is a quick way to search all your fields and apply a filter to a selected field, regardless of whether or not the field is displayed on in the report grid and/or visualization. Filters can be applied to fields with data types of text/string, numeric, or date/time. Depending on the data type, the filter will have different options. All filter types allow you to check *Include null* if you would like to keep null database values in the result.
 
 #### Filter data types
 
@@ -51,6 +49,8 @@ The text/string filter will allow you to include/exclude selected items or filte
 The numeric filter will allow you to include/exclude values in a certain range (leaving to/from blank sets the range to min/max).
 
 ![](/img/report/filter_numeric.png)
+
+> **Filter Detail Values** - by default, numeric filters are applied to the summary values. Check *Apply filter to detail values?* in order to filter by individual rows.
 
 **Date/time**
 
@@ -155,7 +155,7 @@ When you click on a number/measure on the grid, it will automatically show you a
 
 ![](/img/report/drill_measure.gif)
 
-You can also drill down or sideways on any text/dimension field. The example below shows a drill on *Country* down to *Athlete Name*. This action adds a filter for *Country = 'United States'* and replaces the *Country* column with *Athlete Name*, as shown here:
+You can also drill down or across on any text/dimension field. The example below shows a drill on *Country* down to *Athlete Name*. This action adds a filter for *Country = 'United States'* and replaces the *Country* column with *Athlete Name*, as shown here:
 
 ![](/img/report/drill_dimension.gif)
 

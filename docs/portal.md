@@ -53,19 +53,20 @@ Click the *hamburger* bars icon to expand or collapse the portal sidebar. Collap
 
 **Search**
 
-Search all reports and dashboards that you have access to, listing the results in the main content area
+Search all reports and dashboards that you have access to
 
-**New Analysis**
+**New Analysis, Dashboard, Data Portal**
 
-Create a new report/analysis. The *Consumer* role will not see this button.
+Create a new report/analysis, dashboard, or data portal. The *Consumer* role will not see these buttons.
+
+![](/img/portal/new_open.png)
 
 > Read the [Reporting User Guide](report.md) for detailed information on how to build reports
 
-**New Dashboard**
-
-Create a new dashboard. The *Consumer* role will not see this button.
-
 > Read the [Dashboards User Guide](dashboard.md) for detailed information on how to build dashboards.
+
+> Read the [Data Portals User Guide](dataportal.md) for detailed information on how to build data portals.
+
 
 **My Content**
 

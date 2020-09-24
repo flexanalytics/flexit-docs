@@ -9,7 +9,7 @@ sidebar_label: Getting Started
 
 FlexIt Analytics is a business intelligence and analytics solution built for everyone in your organization. Intuitive design enables business people to create analyses without training. Powerful integrations and advanced features enable the most advanced users to do what they need. No matter who you are, FlexIt works for you.
 
-This guide assumes that FlexIt has already been [installed](install.md) and [configured](administration.md).
+This guide assumes that FlexIt has already been [deployed](deploy.md) and [configured](administration.md).
 
 ## Logging In
 When you are given access to FlexIt, you should receive details regarding log in. If you do not have an account, you can go to the FlexIt login page and click *Request Account* at the bottom. If you have an account, you may also be able to reset by clicking *Forgot Password?* at the bottom.
@@ -60,14 +60,12 @@ For this exercise, we'll use the *Samples* model. If you don't have access to th
 
 OK, let's get started:
 
-1.  Click on **New Analysis** and select the **Samples** data model
-2.  From **Available Fields**, add *Country*, *Host Year*, and *Gold Medals* into **Selected Fields**
+1.  Click on the *![](/img/portal/new.png)* button in the portal and select *New Analysis*.
+2.  Select the **Samples** data model
+3.  From **Fields** in the left panel, add *Country*, *Host Year*, and *Gold Medals*
     > Add fields by double-clicking, drag-and-drop, or search
-3.  Click **Run Report**
-4.  Right-click on *Host Year* in the grid and click **Pivot**
-5.  In the top-right report menu, change from *Grid Only* to *Chart Only*
-6.  Click on the **Viz** button and try different chart types and settings
-7.  Now say "wow, that was easy!". Save your report, or keep making it great...
+4.  In the top-right, click on the *![](/img/report/viz_button.png)* to try different visualizations
+5.  Now say "wow, that was easy!". Save your report, or keep making it great...
 
 ![](/img/start_createreport.gif)
 
@@ -78,7 +76,7 @@ For this exercise, we'll use the *Samples* reports. If you don't have access to 
 
 OK, let's get started:
 
-1.  Click on **New Dashboard**
+1.  Click on the *![](/img/portal/new.png)* button in the portal and select *New Dashboard*.
 2.  Select the 3rd template with 2 top panels and 1 bottom panel
 3.  Click the plus button in the top-left panel to add a visualization. Find and add the *Area Chart (100% Stacked)* report.
 4.  Repeat the step above, adding *Scatter Plot (with regression)* to the top-right panel and *Sankey Chart* to the bottom panel

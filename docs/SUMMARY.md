@@ -6,7 +6,7 @@
 * [Reports & Dashboards](tableauconnector.md)
     * [Tableau Connector](tableauconnector.md)
 * [Administration](administration.md)
-    * [Installation](install.md)
+    * [Deployment](deploy.md)
     * [Administration](administration.md)
     * [Data Models](datamodeling.md)
     * [Data Transformation (ETL)](etl.md)

@@ -28,7 +28,7 @@ module.exports = {
       },
       links: [
         {to: 'docs/getting-started', label: 'Docs', position: 'right'},
-        //{to: 'docs/install', label: 'Install', position: 'right'},
+        //{to: 'docs/deploy', label: 'Deploy', position: 'right'},
         //{to: 'docs/administration', label: 'Administration', position: 'right'},
         {
           href: 'https://flexitanalytics.com',
@@ -42,11 +42,11 @@ module.exports = {
       links: [
         /*
         {
-          title: 'Install',
+          title: 'Deploy',
           items: [
             {
-              label: 'Install',
-              to: 'docs/install',
+              label: 'Deploy',
+              to: 'docs/deploy',
             },
           ],
         },
