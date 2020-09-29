@@ -62,13 +62,13 @@ OK, let's get started:
 
 1.  Click on the *![](/img/portal/new.png)* button in the portal and select *New Analysis*.
 2.  Select the **Samples** data model
-3.  From **Fields** in the left panel, add *Country*, *Host Year*, and *Gold Medals*
-    > Add fields by double-clicking, drag-and-drop, or search
+3.  From **Fields** in the left panel, add *Country*, *Host Year*, and *Gold Medals* by double-clicking, drag-and-drop, or search
 4.  In the top-right, click on the *![](/img/report/viz_button.png)* to try different visualizations
 5.  Now say "wow, that was easy!". Save your report, or keep making it great...
 
-![](/img/start_createreport.gif)
+> Check out the [Reporting User Guide](report.md) to learn everything about creating analyses
 
+![](/img/start_createreport.gif)
 
 ## My First Dashboard
 
@@ -81,6 +81,8 @@ OK, let's get started:
 3.  Click the plus button in the top-left panel to add a visualization. Find and add the *Area Chart (100% Stacked)* report.
 4.  Repeat the step above, adding *Scatter Plot (with regression)* to the top-right panel and *Sankey Chart* to the bottom panel
 5.  That's it! Save your dashboard, or keep making it great...
+
+> Check out the [Dashboarding User Guide](dashboard.md) to learn everything about creating dashboards
 
 ![](/img/start_createdashboard.gif)
 
