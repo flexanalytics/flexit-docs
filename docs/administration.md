@@ -66,6 +66,8 @@ Administrators can impersonate a group/role, which gives them the ability to see
 
 Data sources are the connection details for the underlying databases and other sources used to pull data for reporting.
 
+> **Best practice**: [Encrypt](#encryption) sensitive information, such as passwords
+
 ## Data Models
 
 Data models are the presentation layer (a.k.a business view, metadata layer) the report and dashboard authors see when they create new content. Data models connect to underlying data sources and define metadata such as relationships between entities, user-friendly names (e.g. First Name instead of F_NAME), calculations, formatting, drill paths, and more. See the Data Models (Business Views)” knowledge base article for detailed instructions on how to create metadata models.
@@ -198,3 +200,14 @@ Deploy the sample data module, reports, visualizations, dashboards, and data por
 ### HTTPS
 
 To enable https on the server, you must place both the Private Key and Certificate file on the server under the “[flexit_home]/config/certs” folder. The Private Key must be in a PEM file named “privatekey.pem”. The Certificate can be in a file named “certificate.pem” or “certificate.cert”. You may also need to change the port to 443, see the Server Settings administration section. Restart the server for changes to take affect.
+
+## Encryption
+
+To encrypt sensitive information, set the environment `FLEXIT_ENCRYPTION_KEY` variable on the FlexIt server to a 32-character string. You can use a secure random key generator such as Open SSL to generate the key.
+
+For example, the following Open SSL command will randomly generate a 32-character key:
+```
+openssl rand -base64 32
+```
+
+Do not to lose this key because you cannot decrypt connection details without it. If you lose (or change) it, you will have to reset all of the connection details that have been encrypted.
