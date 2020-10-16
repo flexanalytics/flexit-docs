@@ -35,10 +35,11 @@ You need to have the FlexIt installer for the applicable operating system. If yo
 **Database Server**
 
 The FlexIt server needs a database to store content. By default, it comes with an enterprise-level PostgreSQL database, but you can change this to any of the following supported databases.
+*   PostgreSQL
 *   MySQL
 *   Microsoft SQL Server
+*   MariaDB
 *   Oracle
-*   PostgreSQL
 
 ### Install FlexIt
 
@@ -73,7 +74,7 @@ If you want to customize your FlexIt installation and configuration, here are yo
     *   **FlexIt Analytics Port**: this is the port that FlexIt runs on. If another process is using this port, the installer will force you to pick another port.
     > You can change the port later from [Administration > Configuration > Server Settings](administration.md#server-settings) or enable HTTPS ([see how](administration.md#https)).
     *   **Windows Service Name** (Windows only): when the machine you install FlexIt on restarts, the Windows Service makes sure that FlexIt is also up and running.
-    *   **Install Postgres Database**: FlexIt needs a database to store content (i.e. reports, dashboards, users, etc.). If you want to use the default PostgreSQL 10 database server (high performing enterprise-level), leave this checked and select a port (default: 5433). If you do not check this, FlexIt will ask you to configure another database later. As mentioned above, that database must be one of the following: Microsoft SQL Server, PostgreSQL, MySQL, or Oracle.
+    *   **Install Postgres Database**: FlexIt needs a database to store content (i.e. reports, dashboards, users, etc.). If you want to use the default PostgreSQL 10 database server (high performing enterprise-level), leave this checked and select a port (default: 5433). If you do not check this, FlexIt will ask you to configure another database later. As mentioned above, that database must be one of the following: Microsoft SQL Server, PostgreSQL, MySQL, MariaDB, or Oracle.
 
 3.  **Finish** – click “Next” on the rest of the screens and finish the installation
 
