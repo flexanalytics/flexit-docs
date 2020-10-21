@@ -61,6 +61,8 @@ blockquote {
   --ifm-color-primary-light: #199edc;
   --ifm-color-primary-lighter: #32a9e0;
   --ifm-color-primary-lightest: #4cb4e4;
+
+  --ifm-navbar-link-color: #676568;
 }
 
 .docusaurus-highlight-code-line {
@@ -71,5 +73,9 @@ blockquote {
 }
 
 .react-toggle {
+  display: none !important;
+}
+
+.DocSearch-Button-Key {
   display: none !important;
 }

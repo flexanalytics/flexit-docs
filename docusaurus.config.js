@@ -20,13 +20,16 @@ module.exports = {
       indexName: 'flexitanalytics',
       algoliaOptions: {}, // Optional, if provided by Algolia
     },
+    gtag: {
+      trackingID: 'UA-127440102-1',
+    },
     navbar: {
       title: 'FlexIt Documentation',
       logo: {
         alt: 'FlexIt',
         src: '/img/Flex-X-small.png',
       },
-      links: [
+      items: [
         {to: 'docs/getting-started', label: 'Docs', position: 'right'},
         //{to: 'docs/deploy', label: 'Deploy', position: 'right'},
         //{to: 'docs/administration', label: 'Administration', position: 'right'},

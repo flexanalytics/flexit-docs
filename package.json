@@ -9,10 +9,10 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.36",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.36",
+    "@docusaurus/core": "2.0.0-alpha.66",
+    "@docusaurus/preset-classic": "2.0.0-alpha.66",
     "classnames": "^2.2.6",
-    "plugin-image-zoom": "github:ataft/plugin-image-zoom",
+    "plugin-image-zoom": "github:ataft/plugin-image-zoom#1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
