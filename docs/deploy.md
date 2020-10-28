@@ -89,9 +89,7 @@ You can modify the FlexIt configuration from within the web application as an Ad
 
 #### Start/Stop FlexIt Server
 
-> **Windows Only** - it is best to use the Windows Service to start and stop FlexIt. The service starts both the FlexIt server and the default PostgreSQL server (if installed)
-
-You can start or stop the FlexIt service manually using scripts in the “[FlexIt Install Directory]/bin” directory.
+It is best to use the FlexIt service, which starts and stops both the FlexIt server and the default PostgreSQL server (if installed). You can also start or stop the FlexIt service manually using scripts in the “[FlexIt Install Directory]/bin” directory.
 
 Start FlexIt by running the `start_flexit` script
 
