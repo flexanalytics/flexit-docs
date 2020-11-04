@@ -46,6 +46,15 @@ blockquote {
   font-size: 14px;
 }
 
+.table-of-contents li ul li {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.table-of-contents li ul a.table-of-contents__link {
+  font-size: 12px;
+}
+
 .flx-green {
   color: #00b852;
 }
