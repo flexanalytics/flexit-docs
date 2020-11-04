@@ -9,6 +9,12 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2020.11.001 – Linux and AWS Improvements
+
+* Improved Linux services
+* Improvements for running FlexIt on AWS
+* Minor fixes to Data Portals and SQL Editor
+
 ## 2020.10.001 – SQL Editor Improvements and MariaDB
 
 * Added Maria DB data source
