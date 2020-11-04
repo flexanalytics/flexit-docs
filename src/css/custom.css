@@ -42,6 +42,10 @@ blockquote {
   border-left: 1px solid #eee;
 }
 
+.menu .menu__list-item .menu__list .menu__list-item {
+  font-size: 14px;
+}
+
 .flx-green {
   color: #00b852;
 }
