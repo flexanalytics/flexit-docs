@@ -250,6 +250,7 @@ The report menu is located in the top-right of the report and is used to Save, s
 * View SQL - view the SQL that the report generates (certain roles do not see this)
 * Edit SQL - if the report is from a SQL Analysis, this is where you edit the SQL statement
 * Run Automatically - uncheck this box in order to always display the Builder Page when the report is ran
+* Share - share the report as a link, pdf, or image (See [Sharing](#share-pdf-image-link-or-embed))
 * More Settings - access more report properties:
     * Report ID - unique identifier for the report
     * Run Automatically - uncheck this box in order to always display the Builder Page when the report is ran
@@ -276,6 +277,12 @@ For more detailed information, check the [Filters](#filters) section above.
 The builder page can be a much quicker way to create reports if you know how to use it. Quickly add fields, order them, and set grouping, pivoting, and more from here. Use the *Metadata search* to quickly search and add your fields, shown here:
 
 ![](/img/report/field_select.gif)
+
+## Share (PDF, Image, Link) or Embed
+
+The toolbar *Share* button allows reports to be shared as a link, .pdf, or .png image. They can also be embedded in other sites using the Embed link.
+
+![](/img/dashboard/share.png)
 
 ## SQL Report
 

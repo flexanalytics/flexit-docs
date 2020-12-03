@@ -29,6 +29,12 @@ The dashboard toolbar allows you to *Save*, *Share*, add to *Favorites*, and add
 
 *![](/img/dashboard/toolbar.png)*
 
+### Share (PDF, Image, Link) or Embed
+
+The toolbar *Share* button allows dashboards to be shared as a link, .pdf, or .png image. They can also be embedded in other sites using the Embed link.
+
+![](/img/dashboard/share.png)
+
 ## Cards
 
 Cards are panels that hold charts, tables, filters, or other content such as rich text/html. If you selected a layout template when you first created the dashboard, then blank cards will already be in the design work area. Otherwise, you'll need to add cards from the Toolbar. New blank cards look like this:
@@ -63,6 +69,10 @@ The card toolbar appears in the top-right of a card when you hover your cursor o
 * *![](/img/dashboard/card_newwindow.png)* - opens the card in a new window/tab
 * *![](/img/dashboard/card_edit.png)* - edit the card content, or add new content
 * *![](/img/dashboard/card_delete.png)* - removes the card from the dashboard
+* *![](/img/dashboard/card_filters.png)* - shows filters applied to the card
+
+![](/img/dashboard/card_filters_detail.png)
+
 
 ## Using Dashboards
 

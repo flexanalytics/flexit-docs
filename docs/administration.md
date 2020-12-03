@@ -201,6 +201,13 @@ Deploy the sample data module, reports, visualizations, dashboards, and data por
 
 To enable https on the server, you must place both the Private Key and Certificate file on the server under the “[flexit_home]/config/certs” folder. The Private Key must be in a PEM file named “privatekey.pem”. The Certificate can be in a file named “certificate.pem” or “certificate.cert”. You may also need to change the port to 443, see the Server Settings administration section. Restart the server for changes to take affect.
 
+### PDF Download
+
+To enable PDF download of reports, dashboards, and data portals, a chromium browser (e.g. Google Chrome) must be installed on the FlexIt server. FlexIt will look for the chromium binary executable in the following order:
+1. Using the `CHROMIUM_PATH` environment variable
+2. On Windows: `C:\Program Files\Google\Chrome\Application\chrome.exe` or `C:\Program Files (x86)\Google\Chrome\Application\chrome.exe`
+3. On Linux: `/usr/bin/chromium-browser`
+
 ## Encryption
 
 To encrypt sensitive information, set the environment `FLEXIT_ENCRYPTION_KEY` variable on the FlexIt server to a 32-character string. You can use a secure random key generator such as Open SSL to generate the key.
