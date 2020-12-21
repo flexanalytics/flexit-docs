@@ -9,6 +9,8 @@ sidebar_label: Dashboards
 
 ![](/img/dashboard/dashboard.png)
 
+![](/img/dashboard/dashboard_2.png)
+
 ## New Dashboard
 
 To create a new dashboard, click on the *![](/img/portal/new.png)* button in the portal and select *New Dashboard*. Now you can select a layout template with predefined cards, or build the dashboard from scratch, as shown below.
@@ -56,6 +58,8 @@ Clicking the *Add* or *Edit* buttons will open the Card Designer (shown below), 
 Filter panels are cards that contain *global* filters. Global filters are applied to the data in every card on the dashboard. Like regular cards, filter panels can be resized and moved to anywhere on the dashboard.
 
 ![](/img/dashboard/filter_panel.png)
+
+> **Note** - if a filter card does not exist in the dashboard, then the filter panel will display in the dashboard header.
 
 ### Rich Text
 
