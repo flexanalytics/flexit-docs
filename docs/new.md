@@ -9,6 +9,13 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2020.12.002 – New Vizzes and Dashboard Improvements
+
+* Four new visualizations: bullet, parallel, tree, donut
+* KPI card improvements (multi-KPI, parameters, comparison)
+* Sparkline improvements
+* Improved sample reports and dashboards
+
 ## 2020.12.001 – PDF Export and New Calculations
 
 * PDF and Image export for reports, dashboards and data portals
