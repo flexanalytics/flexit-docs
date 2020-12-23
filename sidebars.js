@@ -21,6 +21,7 @@ module.exports = {
     "Visualizations": [
       "viz/guide",
       "viz/treemap",
+      "viz/heatmap",
     ],
     "Administration": [
       "deploy",

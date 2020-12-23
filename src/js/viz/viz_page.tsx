@@ -10,6 +10,7 @@ export const Highlight = ({children, type}) => (
       borderRadius: '6px',
       color: '#fff',
       padding: '2px 4px',
+      'margin-left': '4px',
     }}>
     {children}
   </span>
@@ -22,10 +23,10 @@ const Iframe = ({src}) => (
 function VizPage({type}): JSX.Element | null {
 
   const getReqTest = (obj, type) => {
-    const isSingular = (obj.min===obj.max);
+    const isSame = (obj.min===obj.max);
     return <>
-      <em>{(isSingular && `${obj.min} `) || (!obj.max && `${obj.min} or more `) || `${obj.min} to ${obj.max} `}</em>
-      <Highlight type={type}>{type}{isSingular?'':'s'}</Highlight>
+      <em>{(isSame && `${obj.min} `) || (!obj.max && `${obj.min} or more `) || `${obj.min} to ${obj.max} `}</em>
+      <Highlight type={type}>{type}{isSame&&obj.min===1?'':'s'}</Highlight>
       </>;
   }
 
@@ -39,14 +40,18 @@ function VizPage({type}): JSX.Element | null {
       <br/>
       <blockquote>
         <p>
-          <strong>Minimum Requirements</strong> - {getReqTest(vizConfig.dim, 'dimension')} and {getReqTest(vizConfig.fact, 'measure')}
+          <strong>Minimum Requirements</strong>
+          <br/>
+          {getReqTest(vizConfig.dim, 'dimension')}
+          <br/>
+          {getReqTest(vizConfig.fact, 'measure')}
         </p>
       </blockquote>
       <h2>Interactive Example</h2>
-      <Iframe src={`http://localhost:3030/#analysis/${type}/embed`} />
+      <Iframe src={`https://cloud.flexitanalytics.com/#analysis/${vizConfig.uuid||type}/embed`}/>
       <h2>Similar Charts</h2>
       <p>{vizConfig.label} is similar to:</p>
-      <VizList items={['heatmap','packed_bubble']}/>
+      <VizList items={vizConfig.similar}/>
     </>
   );
 
