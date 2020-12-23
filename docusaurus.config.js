@@ -14,7 +14,7 @@ module.exports = {
   organizationName: 'ataft', // Usually your GitHub org/user name.
   projectName: 'flexit-docs', // Usually your repo name.
   themeConfig: {
-    zoomSelector: '.markdown img',
+    zoomSelector: '.markdown :not(em) > img',
     algolia: {
       apiKey: '04948da940dc579697cd957e0acf432b',
       indexName: 'flexitanalytics',

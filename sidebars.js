@@ -18,6 +18,10 @@ module.exports = {
       "dataportal",
       "tableauconnector",
     ],
+    "Visualizations": [
+      "viz/guide",
+      "viz/treemap",
+    ],
     "Administration": [
       "deploy",
       "administration",

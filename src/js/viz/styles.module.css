@@ -1,0 +1,22 @@
+.featureImage {
+  float: right;
+}
+
+.vizItem {
+  display: inline-block;
+  width: 160px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin: 10px 20px;
+}
+
+.vizItem:hover {
+  background-color: #cce9f7;
+}
+
+.vizItem img {
+  height: 60px;
+  width: 60px;
+}
