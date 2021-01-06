@@ -52,8 +52,9 @@ module.exports = {
             "viz/calendar",
             "viz/column",
             "viz/donut",
-            "viz/heatmap",
+            "viz/funnel",
             "viz/gauge",
+            "viz/heatmap",
             "viz/big_number",            
             "viz/line",
             "viz/map",
@@ -64,8 +65,8 @@ module.exports = {
             "viz/sankey",
             "viz/scatter",
             "viz/sunburst",
-            "viz/tree",
             "viz/treemap",
+            "viz/tree",
             "viz/word_cloud",
           ]
         }
