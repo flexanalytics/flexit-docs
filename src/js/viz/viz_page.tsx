@@ -3,14 +3,14 @@ import styles from './styles.module.css';
 import vizzes from './vizzes';
 import VizList from './viz_list';
 
-export const Highlight = ({children, type}) => (
+const Highlight = ({children, type}) => (
   <span
     style={{
       backgroundColor: (type==='dimension'?'#0094d9':'orange'),
       borderRadius: '6px',
       color: '#fff',
       padding: '2px 4px',
-      'margin-left': '4px',
+      marginLeft: '4px',
     }}>
     {children}
   </span>
@@ -18,6 +18,15 @@ export const Highlight = ({children, type}) => (
 
 const Iframe = ({src}) => (
   <iframe src={src} width="100%" height="500px"></iframe>
+);
+
+const Examples = ({arr}) => (
+  (!arr.length&&'None') || arr.map(example => {
+    return (<>
+      <h3>{example.title}</h3>
+      <Iframe src={`https://cloud.flexitanalytics.com/#analysis/${example.id}/embed`}/>
+    </>)
+  })
 );
 
 function VizPage({type}): JSX.Element | null {
@@ -35,7 +44,7 @@ function VizPage({type}): JSX.Element | null {
     <>
       <h1>{vizConfig.label} <em><img src={`/img/viz/${type}.png`} className={styles.featureImage}/></em></h1>
       <h2>Description</h2>
-      {vizConfig.desc}
+      <div dangerouslySetInnerHTML={{ __html: vizConfig.desc }} />
       <br/>
       <br/>
       <blockquote>
@@ -47,8 +56,8 @@ function VizPage({type}): JSX.Element | null {
           {getReqTest(vizConfig.fact, 'measure')}
         </p>
       </blockquote>
-      <h2>Interactive Example</h2>
-      <Iframe src={`https://cloud.flexitanalytics.com/#analysis/${vizConfig.uuid||type}/embed`}/>
+      <h2>Interactive Examples</h2>
+      <Examples arr={vizConfig.examples}/>
       <h2>Similar Charts</h2>
       <p>{vizConfig.label} is similar to:</p>
       <VizList items={vizConfig.similar}/>

@@ -6,29 +6,71 @@
  */
 
 module.exports = {
-  docs: {
-    "Getting Started": [
-      "getting-started",
-      "new",
-      "portal",
-    ],
-    "Reports and Dashboards": [
-      "report",
-      "dashboard",
-      "dataportal",
-      "tableauconnector",
-    ],
-    "Visualizations": [
-      "viz/guide",
-      "viz/treemap",
-      "viz/heatmap",
-    ],
-    "Administration": [
-      "deploy",
-      "administration",
-      "datamodeling",
-      "etl",
-      "saml",
-    ],
-  },
+  docs: [
+    {
+      type: 'category',
+      label: 'Getting Started',
+      items: [
+        "getting-started",
+        "new",
+        "portal",
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Reports and Dashboards',
+      items: [
+        "report",
+        "dashboard",
+        "dataportal",
+        "tableauconnector",
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Administration',
+      items: [
+        "deploy",
+        "administration",
+        "datamodeling",
+        "etl",
+        "saml",
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Visualizations',
+      items: [
+        "viz/guide",
+        {
+          "Viz Types": [
+            "viz/area",
+            "viz/bar",
+            "viz/boxplot",
+            "viz/bubble",
+            "viz/bullet",
+            "viz/calendar",
+            "viz/column",
+            "viz/donut",
+            "viz/heatmap",
+            "viz/gauge",
+            "viz/big_number",            
+            "viz/line",
+            "viz/map",
+            "viz/packed_bubble",
+            "viz/parallel",
+            "viz/pie",
+            "viz/radar",
+            "viz/sankey",
+            "viz/scatter",
+            "viz/sunburst",
+            "viz/tree",
+            "viz/treemap",
+            "viz/word_cloud",
+          ]
+        }
+        
+      ],
+    },
+  ],
 };

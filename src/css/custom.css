@@ -11,6 +11,10 @@
  * work well for content-centric websites.
  */
 
+.hero__title {
+  color: inherit;
+}
+
 .markdown>h2 {
   border-top: 1px solid #efefef;
   padding-top: 15px;
@@ -44,6 +48,13 @@ blockquote {
 
 .menu .menu__list-item .menu__list .menu__list-item {
   font-size: 14px;
+}
+
+.menu .menu__list-item .menu__list .menu__list-item .menu__list .menu__list-item {
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 26px;
 }
 
 .table-of-contents li ul li {

@@ -25,7 +25,7 @@ function VizList({ items }): JSX.Element | null {
                         return '';
                     }
                 }
-                return <VizItem vizId={item[0]} vizProps={item[1]} />;
+                return <VizItem key={item[0]} vizId={item[0]} vizProps={item[1]} />;
             })}
         </>
     );
