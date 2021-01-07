@@ -17,6 +17,15 @@
   overflow: hidden;
 }
 
+.heroBtn {
+  background-color: #ffffff;
+  color: var(--ifm-color-primary);
+}
+
+.heroBtn:hover {
+  color: var(--ifm-heading-color);
+}
+
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
