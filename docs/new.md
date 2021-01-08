@@ -9,6 +9,11 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2021.01.001 - FlexIt Public Improvements
+* UI enhancements for public users
+* Improved URL Slugs
+* Other minor UI enhancements
+
 ## 2020.12.002 – New Vizzes and Dashboard Improvements
 
 * Four new visualizations: bullet, parallel, tree, donut

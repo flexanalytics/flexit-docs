@@ -3,6 +3,8 @@ import styles from './styles.module.css';
 import vizzes from './vizzes';
 import VizList from './viz_list';
 
+const baseUrl = 'https://cloud.flexitanalytics.com'; //'http://carbon1:3030';
+
 const Highlight = ({children, type}) => (
   <span
     style={{
@@ -17,14 +19,15 @@ const Highlight = ({children, type}) => (
 );
 
 const Iframe = ({src}) => (
-  <iframe src={src} width="100%" height="500px"></iframe>
+  <iframe src={src} className={styles.vizFrame}></iframe>
 );
 
 const Examples = ({arr}) => (
   (!arr.length&&'None') || arr.map(example => {
     return (<>
       <h3>{example.title}</h3>
-      <Iframe src={`https://cloud.flexitanalytics.com/#analysis/${example.id}/embed`}/>
+      <Iframe src={`${baseUrl}/#analysis/${example.id}/embed`}/>
+      <i className="fa fa-external-link"></i> <a target="_blank" href={`${baseUrl}/#analysis/${example.id}`}>Open in New Window</a>
     </>)
   })
 );
