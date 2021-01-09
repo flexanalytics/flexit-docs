@@ -41,7 +41,7 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 4rem 0;
+  padding: 3rem 0;
   width: 100%;
 }
 
@@ -49,6 +49,13 @@
   height: 150px;
   width: 150px;
   padding: 10px;
+}
+
+.featureBlock {
+  padding: 20px 40px;
+  margin: 0 40px;
+  border-bottom: 1px solid #eeeeee;
+  height: 350px;
 }
 
 .row .col {

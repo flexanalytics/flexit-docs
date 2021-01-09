@@ -226,7 +226,7 @@ Once you're done exploring your data and are ready to explain your data, there a
 
 1. Clicking the *![](/img/report/viz_button.png)* button at the top-right of a grid, which will give you a Viz quick selection dropdown, shown here:
 
-    ![](/img/report/viz_types_quick.png)
+    ![](/img/vizzes.png)
 
 2. Selecting *Chart & Grid* or *Chart Only* in the report menu, shown here:
 

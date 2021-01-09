@@ -15,6 +15,16 @@ import styles from './styles.module.css';
 
 const features = [
   {
+    title: <>Visualization Guide</>,
+    imageUrl: 'img/vizzes.png',
+    docLink: 'docs/viz/guide',
+    description: (
+      <>
+        The visualization guide is a catalogue and learning source, but it is also interactive so you can get hands-on experience.
+      </>
+    ),
+  },
+  {
     title: <>Deploy FlexIt</>,
     imageUrl: 'img/home_install.png',
     docLink: 'docs/deploy',
@@ -49,14 +59,16 @@ const features = [
 function Feature({imageUrl, title, description, docLink}) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={classnames('col col--4 flx-gray', styles.feature)}>
-      <div className="text--center">
-        <a href={useBaseUrl(docLink)}>
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </a>
+    <div className={classnames('col col--6 flx-gray', styles.feature)}>
+      <div className={styles.featureBlock}>
+        <div className="text--center">
+          <a href={useBaseUrl(docLink)}>
+            <img className={styles.featureImage} src={imgUrl} alt={title} />
+          </a>
+        </div>
+        <h3><a href={useBaseUrl(docLink)}>{title}</a></h3>
+        <p>{description}</p>
       </div>
-      <h3><a href={useBaseUrl(docLink)}>{title}</a></h3>
-      <p>{description}</p>
     </div>
   );
 }
