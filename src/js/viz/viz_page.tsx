@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.module.css';
+import styles from '../../pages/styles.module.css';
 import vizzes from './vizzes';
 import VizList from './viz_list';
 
@@ -45,7 +45,7 @@ function VizPage({type}): JSX.Element | null {
   const vizConfig = vizzes[type];
   return (
     <>
-      <h1>{vizConfig.label} <em><img src={`/img/viz/${type}.png`} className={styles.featureImage}/></em></h1>
+      <h1>{vizConfig.label} <em><img src={`/img/viz/${type}.png`} className={styles.vizImage}/></em></h1>
       <h2>Description</h2>
       <div dangerouslySetInnerHTML={{ __html: vizConfig.desc }} />
       <br/>

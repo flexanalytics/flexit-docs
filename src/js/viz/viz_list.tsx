@@ -1,14 +1,12 @@
 import React from 'react';
-import styles from './styles.module.css';
+import styles from '../../pages/styles.module.css';
 import vizzes from './vizzes';
 
 const VizItem = ({ vizId, vizProps }) => (
     <a href={`/docs/viz/${vizId}`}>
         <div className={styles.vizItem}>
-            <em>
-                <img src={`/img/viz/${vizId}.png`} />
-            </em>
-            <div>
+            <img src={`/img/viz/${vizId}.png`} />
+            <div className={styles.vizText}>
                 {vizProps.label}
             </div>
         </div>

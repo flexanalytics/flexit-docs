@@ -12,11 +12,12 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import VizList from '../js/viz/viz_list';
 
 const features = [
   {
     title: <>Visualization Guide</>,
-    imageUrl: 'img/vizzes.png',
+    component: <VizList/>,
     docLink: 'docs/viz/guide',
     description: (
       <>
@@ -56,18 +57,24 @@ const features = [
   },
 ];
 
-function Feature({imageUrl, title, description, docLink}) {
-  const imgUrl = useBaseUrl(imageUrl);
+function FeatureImg({props}) {
+  const imgUrl = useBaseUrl(props.imageUrl);
+  return (
+  <a href={useBaseUrl(props.docLink)}>
+    <img className={styles.featureImage} src={imgUrl} alt={props.title} />
+  </a>
+  );
+}
+
+function Feature({props}) {
   return (
     <div className={classnames('col col--6 flx-gray', styles.feature)}>
       <div className={styles.featureBlock}>
-        <div className="text--center">
-          <a href={useBaseUrl(docLink)}>
-            <img className={styles.featureImage} src={imgUrl} alt={title} />
-          </a>
+        <div className={classnames('text--center', styles.featureText)}>
+          {props.imageUrl?<FeatureImg props={props}/>:props.component}
         </div>
-        <h3><a href={useBaseUrl(docLink)}>{title}</a></h3>
-        <p>{description}</p>
+        <h3><a href={useBaseUrl(props.docLink)}>{props.title}</a></h3>
+        <p>{props.description}</p>
       </div>
     </div>
   );
@@ -102,7 +109,7 @@ function Home() {
             <div className="container">
               <div className="row">
                 {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
+                  <Feature key={idx} props={props} />
                 ))}
               </div>
             </div>

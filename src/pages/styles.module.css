@@ -58,7 +58,62 @@
   height: 350px;
 }
 
+.featureText {
+  height: 200px;
+  padding: 0 30px;
+}
+
 .row .col {
   padding-left: 2em;
   padding-right: 2em;
+}
+
+
+
+
+/*Viz*/
+.vizImage {
+  float: right;
+  height: 75px;
+}
+
+.vizItem {
+  display: inline-block;
+  width: 160px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin: 10px 20px;
+}
+
+.featureBlock .vizItem {
+  width: 42px;
+  height: 42px;
+  margin: 2px;
+  padding: 2px;
+}
+
+.featureBlock .vizItem img {
+  height: 36px;
+  width: 36px;
+}
+
+.featureBlock .vizText {
+  display: none;
+}
+
+.vizItem:hover {
+  background-color: #cce9f7;
+}
+
+.vizItem img {
+  height: 60px;
+  width: 60px;
+}
+
+.vizFrame {
+  width: 100%;
+  height: 625px;
+  border: none;
 }
