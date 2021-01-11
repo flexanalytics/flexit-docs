@@ -55,11 +55,11 @@
   padding: 20px 40px;
   margin: 0 40px;
   border-bottom: 1px solid #eeeeee;
-  height: 350px;
+  min-height: 350px;
 }
 
 .featureText {
-  height: 200px;
+  min-height: 200px;
   padding: 0 30px;
 }
 
