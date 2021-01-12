@@ -5,7 +5,7 @@ import vizzes from './vizzes';
 const VizItem = ({ vizId, vizProps }) => (
     <a href={`/docs/viz/${vizId}`}>
         <div className={styles.vizItem}>
-            <img src={`/img/viz/${vizId}.png`} />
+            <em><img src={`/img/viz/${vizId}.png`} /></em>
             <div className={styles.vizText}>
                 {vizProps.label}
             </div>
