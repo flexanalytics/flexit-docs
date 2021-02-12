@@ -9,7 +9,7 @@ sidebar_label: Reporting User Guide
 
 ## New Analysis
 
-To create a new report, click on the *![](/img/portal/new.png)* button in the portal and select *New Analysis*. You'll see a list of [Data Models](datamodeling.md) that you have permission to (contact your admin if your data model is not shown). Some users may see the [*New SQL Analysis*](#sql-report) button, which allows you to write custom SQL to pull report data.
+To create a new report, click on the *![](/img/portal/new.png)* button in the portal and select *New Analysis*. You'll see a list of [Data Models](datamodeling.md) that you have permission to (contact your admin if your data model is not shown). Some users may see the [*Upload Excel/CSV*](#upload-excelcsv) button or the [*New SQL Analysis*](#sql-report) button, which allows you to write custom SQL to pull report data.
 
 > **Note**: the *Consumer* role does not have access to create new reports, and thus will not see the *New Analysis* or *New SQL Analysis* buttons. Check your role from [My Account](portal.md#user).
 
@@ -167,7 +167,12 @@ You can also drill to external websites and pass columns from the report to the 
 
 #### Conditional Formatting
 
-Style formatting can be applied to text, background, or the entire row based on conditions. From [Field Configuration](#field-configuration), you can add *rules* next to *Conditional Formatting*, as shown below.
+Conditional formatting allows you to display cell contents different ways depending on the rules that you set. From [Field Configuration](#field-configuration), you can add *rules* next to *Conditional Formatting*, as shown below. Conditional style formatting can be applied to:
+* Text - change the text color
+* Background - change the cell background color
+* Entire Row - change the background color of the entire row
+* In-cell Visualization - if an in-cell visualization (e.g. Row Chart sparkline) is selected, you can change the style of the visualization
+* Icon - select from nearly 500 icons to display in the cell, then give it some style
 
 ![](/img/report/condition_rule.png)
 
@@ -184,13 +189,15 @@ All options for a column can be found and modified by right-clicking a column an
 
 * **ID** - the unique identifier for the field (not editable)
 * **Label** - the text title for the field
-* **Description** - a text/html description that shows detailed information about fields
+* **Description** - a text/html description that shows detailed information about fields in a tooltip.
 * **Data Type** - should the field be treated as a String (text), Number, or Date. Numbers can be treated as text, text as numbers, and so on
 * **Aggregation Type** - type of [aggregate](#aggregate), if any
 * **Format** - formats for number, date, percent, currency, and text
+* **Visualize (in-cell)** - display Hightlight Table (Heatmap) or sparkline Bar Chart in grid cells base on metric
 * **Sort** - ascending, descending, or none
 * **Sort by Other Field** - sort this column by another field that is not displayed on the report
 * **Hidden** - keep the field on the report, but hide it from view
+* **Rotate Header Text** - rotate the column header to display vertically
 * **Drills** - create or edit [drills](#drills)
 * **Conditional Formatting** - manage [conditional formatting](#conditional-formatting) for the column
 
@@ -212,13 +219,9 @@ To access grid settings, click the *![](/img/report/grid_config_button.png)* but
 * **Export to CSV** - download the data into comma separated .CSV format
 * **Advanced Export** - specify inclusion of column headings, groups, and totals in download to Excel or CSV
 * **Fit Columns** - set column widths to fit the length of text in each column
-* **More Settings** - access more grid configuration properties, as shown here:
-    * Show Summary Footer - display summaries at the bottom of the grid
-    * Summary Footer Text - text to display at the left of the summaries
-    * Auto-size Width - grid columns will auto-size to fit the width of your screen. If there are too many columns, you may want to use *Fit Columns* to properly see the columns.
-    * Auto-size Height - grid rows will auto-size to fit the height of your screen. Unchecking this may cause performance issues with large amounts of data.
-    * Suppress Zeros - hide rows where all the measures are zero
-    * Groups Expanded - grouped rows are expanded by default
+* **More Settings** - access more grid configuration properties, as shown below
+
+![](/img/report/grid_configuration.png)
 
 ### Charts (Visualization)
 
@@ -242,21 +245,24 @@ Once you have a visualization displayed, you can very quickly change the chart t
 
 #### Report Menu
 
-*![](/img/report/chart_and_grid.png)*
+*![](/img/report/report_menu_open.png)*
 
-The report menu is located in the top-right of the report and is used to Save, set Favorites, display Viz/Grid/Both, and access a handful of other useful settings:
-* Builder Page - brings you to the [Builder Page](#builder-page), allowing you to work on the report with no data (i.e. not ad-hoc/live data)
-* Load External Data - join with external data from a CSV file, similar to a VLOOKUP in Excel
-* View SQL - view the SQL that the report generates (certain roles do not see this)
-* Edit SQL - if the report is from a SQL Analysis, this is where you edit the SQL statement
-* Run Automatically - uncheck this box in order to always display the Builder Page when the report is ran
-* Share - share the report as a link, pdf, or image (See [Sharing](#share-pdf-image-link-or-embed))
-* More Settings - access more report properties:
-    * Report ID - unique identifier for the report
+The report menu is located in the top-right of the report and is used for the following:
+* Save/Save As - save your report, or make a copy with Save As
+* Share - share your report as PDF, Excel, CSV, or as a URL link that can also be embedded. (See [Sharing](#share-pdf-image-link-or-embed))
+* Chart & Grid - toggle to show visualization, data grid table, or both
+* More Options
+    * Builder Page - brings you to the [Builder Page](#builder-page), allowing you to work on the report with no data (i.e. not ad-hoc/live data)
+    * Load External Data - join with external data from a CSV file, similar to a VLOOKUP in Excel
+    * View SQL - view the SQL that the report generates (certain roles do not see this)
+    * Edit SQL - if the report is from a SQL Analysis, this is where you edit the SQL statement
     * Run Automatically - uncheck this box in order to always display the Builder Page when the report is ran
-    * Data Model - change the data model the report is using. This may result in an invalid report.
-    * Footer Expression - display text at bottom of report page. For example, display the date/time the data warehouse was refreshed.
-    * Specification - paste a specification in here to build report from specs, copy a specification to move and use as a backup later.
+    * Add to Favorites - add report to your personal favorites
+    * More Settings - change report configuration properties, shown below
+
+![](/img/report/report_config.png)
+
+> **Report Backup/Migration** - copy/paste from the report Specification to save as a backup or open report from specs
 
 ## Builder Page
 
@@ -293,3 +299,27 @@ Depending on your role, you may be able to create an analysis based on custom SQ
 Build and test your SQL, then click *Create Report* in the top right. If you need to edit your SQL in the future, you can do so from the [Report Menu](#report-menu).
 
 > **Direct SQL** - the *Direct SQL* option in the top-right will execute SQL exactly as it appears. This could cause performance issues on large datasets and is not recommended unless it is necessary.
+
+## Upload Excel/CSV
+
+Depending on your role, you may be able to create an analysis from an Excel, CSV, or Tab delimited spreadsheet. When you create a new report, instead of selecting a Data Model, select *Upload Excel/CSV* at the top
+
+![](/img/report/upload_excelcsv.png)
+
+Set the options for parsing the spreadsheet:
+* Use first row as headers - this will make the column names based on the first row in the spreadsheet, and the data starts on row 2
+* Auto-detect Datatypes - automatically detect data types numeric, date, text, as well as formatting (e.g. number of decimals)
+* Auto-sum Numbers - automatically aggregate numeric columns
+
+Select a file in the top-left, then a sheet if you're using Excel. The data will load automatically so that you can manipulate the data in the grid below. Once you are satisfied with the data in the grid, you can either Load Data into a database or Create Report on the fly.
+
+**Load Data**
+
+When loading data into a database, you will take three steps:
+1. Select Destination Table ([see more](etl/#destination))
+2. Map Columns ([see more](etl/#column-mapping))
+3. Run Data Load
+
+**Create Report**
+
+Instantly analyze your data. Please note that you cannot save this report unless you load the data, as shown above.

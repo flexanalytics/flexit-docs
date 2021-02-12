@@ -68,12 +68,14 @@ Here are the main options for mapping:
 #### Destination
 Configuring the destination allows you to set the table that you would like to load source data into. 
 
+![](/img/etl_destdiff.png)
+
 * **Datasource** - the destination data source connection
 * **Entity** - the destination table to load data into
+* **Delete/Truncate** - Options for Do not truncate, Truncate, Truncate (if source rows), Delete, and Delete (if source rows). If you select the "if source rows" option, it only delete/truncates when the source query returns rows. Delete will give you an option to include a *Where Clause*, which can use [parameters](#parameters) and [functions](#functions).
+* **Retry Insert On Fail** - in some instances (e.g. connectivity is unstable), a load can be retried if it fails the first time.
+* **Rows Per Batch** - number of rows to insert at a time.
 * **Quick Mode** - If the source and destination database are the same, then an additional "Quick Mode" option is available. This executes the `insert into [DEST] select cols from [SOURCE]` statement rather than chunking data, which is typically much faster.
-* **Delete/Truncate** - Options for Do not truncate, Truncate, Truncate (if source rows), Delete, and Delete (if source rows). Truncate will execute the `TRUNCATE TABLE TABLENAME;` command, emptying the table rows prior to loading data. If you select the "if source rows" option, it only truncates when the source query returns rows. Delete will give you an option to include a *Where Clause*, which can use [parameters](#parameters) and [functions](#functions).
-
-![](/img/etl_destsame.png)
 
 ## Functions
 

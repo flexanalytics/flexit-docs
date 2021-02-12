@@ -9,6 +9,15 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2021.02.001 - Excel/CSV Upload, Highlight Grid
+* Upload Excel/CSV to database or instant analysis
+* Added Highlight/Heatmap feature to grid
+* Improved Sparkline bar chart on grid
+* Added column rotate feature
+* Added conditional icon (~500 icons) feature to grid
+* Added configuration for showNullAs and row alternateRowColor on grid
+* Added advanced color picker
+
 ## 2021.01.001 - FlexIt Public Improvements
 * UI enhancements for public users
 * Improved URL Slugs
