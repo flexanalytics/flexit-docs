@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../pages/styles.module.css';
-import vizzes from './vizzes';
+import vizzes from '../../../../flexit/client/js/config/vizzes';
 import VizList from './viz_list';
 
 const baseUrl = 'https://cloud.flexitanalytics.com'; //'http://carbon1:3030';
@@ -43,6 +43,23 @@ function VizPage({type}): JSX.Element | null {
   }
 
   const vizConfig = vizzes[type];
+
+  const obj = {
+    dimension: {min:0},
+    measure: {min:0},
+  }
+
+  vizConfig.dataFields.forEach(df => {
+    const x = obj[df.attrtype];
+    if(x && df.id!=='play') {
+      x.min += (df.min || 0);
+      if(df.max) {
+        x.max = x.max || 0;
+        x.max += df.max;
+      }
+    }
+  });
+
   return (
     <>
       <h1>{vizConfig.label} <em><img src={`/img/viz/${type}.png`} className={styles.vizImage}/></em></h1>
@@ -50,15 +67,17 @@ function VizPage({type}): JSX.Element | null {
       <div dangerouslySetInnerHTML={{ __html: vizConfig.desc }} />
       <br/>
       <br/>
+      {
       <blockquote>
         <p>
           <strong>Minimum Requirements</strong>
           <br/>
-          {getReqTest(vizConfig.dim, 'dimension')}
+          {getReqTest(obj.dimension, 'dimension')}
           <br/>
-          {getReqTest(vizConfig.fact, 'measure')}
+          {getReqTest(obj.measure, 'measure')}
         </p>
       </blockquote>
+      }
       <h2>Interactive Examples</h2>
       <Examples arr={vizConfig.examples}/>
       <h2>Similar Charts</h2>

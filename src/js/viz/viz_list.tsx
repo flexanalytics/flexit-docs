@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../pages/styles.module.css';
-import vizzes from './vizzes';
+import vizzes from '../../../../flexit/client/js/config/vizzes';
 
 const VizItem = ({ vizId, vizProps }) => (
     <a href={`/docs/viz/${vizId}`}>
