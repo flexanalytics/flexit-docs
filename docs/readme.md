@@ -62,8 +62,8 @@ OK, let's get started:
 
 1.  Click on the *![](/img/portal/new.png)* button in the portal and select *New Analysis*.
 2.  Select the **Samples** data model
-3.  From **Fields** in the left panel, add *Country*, *Host Year*, and *Gold Medals* by double-clicking, drag-and-drop, or search
-4.  In the top-right, click on the *![](/img/report/viz_button.png)* to try different visualizations
+3.  From **Fields** in the right panel, add *Country*, *Host Year*, and *Gold Medals* by double-clicking, drag-and-drop, or search
+4.  Try different visualizations in the **Visualizations** panel on the right
 5.  Now say "wow, that was easy!". Save your report, or keep making it great...
 
 > Check out the [Reporting User Guide](report.md) to learn everything about creating analyses

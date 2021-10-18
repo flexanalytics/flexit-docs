@@ -9,6 +9,25 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2021.10.001 - Visualization Overhaul
+* Complete visualization overhaul
+* Advanced viz configuration
+* 6 new vizzes: Column and Line, Chord, Gantt, Stream, Waterfall, Histogram
+* Improved field drag-and-drop
+* Improved content backup and restore
+* SQL Editor improvements
+
+## 2021.06.001 - Minor Security Enhancements
+* Security enhancements
+* Minor fixes to drills
+* Filter improvements
+
+## 2021.05.001 - Scatterplot Timeline
+* Added scatterplot timeline and marker size
+* Enhancements to scatterplot, sankey, heatmap, word cloud
+* Enhancements to top/bottom filters
+* Oracle BI and PeopleSoft connector enhancements
+
 ## 2021.02.001 - Excel/CSV Upload, Highlight Grid
 * Upload Excel/CSV to database or instant analysis
 * Added Highlight/Heatmap feature to grid

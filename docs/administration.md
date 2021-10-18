@@ -11,7 +11,7 @@ sidebar_label: Administration
 
 Administration is done in the FlexIt web application as shown here:
 
-![](/img/admin/admin.png)
+![](/img/admin/configuration.png)
 
 ## User Management
 

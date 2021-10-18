@@ -18,15 +18,15 @@ One you've selected a data model, you'll be taken to the Report design page.
 
 ## Report Design (ad-hoc)
 
-When starting a new report, you'll add fields from the left pane and add filters from the top pane. New reports start in "ad-hoc" mode, meaning that live data is retrieved as you add new fields and filters. You can exit "ad-hoc" mode by clicking the [*Builder Page*](#builder-page) button in the middle of a new analysis or from the report menu.
+When starting a new report, you'll add fields from the right pane and add filters from the top pane. New reports start in "ad-hoc" mode, meaning that live data is retrieved as you add new fields and filters. You can exit "ad-hoc" mode by clicking the [*Builder Page*](#builder-page) option from the menu in the top-right of the report.
 
 ![](/img/report/report_page.png)
 
 ### Add Fields
 
-From the *Fields* menu on the left, you can add fields by dragging, double-clicking, or right-clicking. As you bring fields into the working area, data will be displayed in a grid/table. You can visualize (chart) your data by simply clicking the *![](/img/report/viz_button.png)* button at the top-right of the grid.
+From the *Fields* menu on the right, you can add fields by dragging, double-clicking, or right-clicking. As you bring fields into the working area, data will be displayed in a grid/table. You can visualize (chart) your data by simply clicking any of the charts in the *Visualizations* panel on the right.
 
-When fields are already on a report, you can add new fields to specific areas of the grid or visualization by dragging, shown below:
+You can drag fields into `Data Fields` in the *Visualizations* panel, shown below:
 
 ![](/img/report/field_drag.gif)
 
@@ -40,7 +40,7 @@ Add filters to narrow your search and focus your data exploration. They also imp
 
 **Text/string**
 
-The text/string filter will allow you to include/exclude selected items or filter items that start with, end with, or contain certain text.
+The text/string filter will allow you to include/exclude selected items or filter items that start with, end with, or contain certain text. You can also filter a chosen number of items in the top or bottom of a specific measure (e.g. *Top 10 Country by Gold Medals*).
 
 ![](/img/report/filter_text.png)
 
@@ -225,21 +225,9 @@ To access grid settings, click the *![](/img/report/grid_config_button.png)* but
 
 ### Charts (Visualization)
 
-Once you're done exploring your data and are ready to explain your data, there are a few ways you can show a chart/visualization.
-
-1. Clicking the *![](/img/report/viz_button.png)* button at the top-right of a grid, which will give you a Viz quick selection dropdown, shown here:
-
-    ![](/img/vizzes.png)
-
-2. Selecting *Chart & Grid* or *Chart Only* in the report menu, shown here:
-
-    ![](/img/report/chart_and_grid.png)
-
-Once you have a visualization displayed, you can very quickly change the chart type and all of it's properties from the *![](/img/report/viz_button.png)* at the top-right of the viz, shown here:
+Once you're done exploring your data and are ready to explain your data, choose one of the many vizzes in the *Visualization Panel*. Each viz has it's own *Data Fields* and configuration options that can be changed below. See the [Visualization Guide](viz/guide) for in-depth details about the different vizzes.
 
 ![](/img/report/viz_types.gif)
-
-
 
 ### Report Options
 

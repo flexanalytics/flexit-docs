@@ -27,7 +27,7 @@ To build a dashboard, add [Cards](#cards) to the design work area and then add w
 
 ## Toolbar
 
-The dashboard toolbar allows you to *Save*, *Share*, add to *Favorites*, and add [Cards](#cards). Cards are dashboard content that can be visualizations, grid/tables, filters, or rich text/html. In the dashboard toolbar, you'll need to click *Edit* to enter design mode, which allows you to add, move, and resize cards.
+The dashboard toolbar allows you to *Save*, *Share*, add to *Favorites*, add [Cards](#cards), and *Configure*. Cards are dashboard content that can be visualizations, grid/tables, filters, or rich text/html. In the dashboard toolbar, you'll need to click *Edit* to enter design mode, which allows you to add, move, and resize cards.
 
 *![](/img/dashboard/toolbar.png)*
 
@@ -82,15 +82,9 @@ The card toolbar appears in the top-right of a card when you hover your cursor o
 
 When running dashboards, you are no longer in [Design Mode](#dashboard-design). Although you can no longer move, resize, or edit cards, there are many interactions available.
 
-In the top-right of each card, you can change to any type of visualization, shown here:
+In the top-right of each card, you can click the *![](/img/dashboard/card_newwindow.png)* New Window button in the [card toolbar](#card-toolbar), which opens the card in a new tab.
 
-*![](/img/dashboard/viz_selector.png)*
-
-You can also click the *![](/img/dashboard/card_newwindow.png)* New Window button in the [card toolbar](#card-toolbar), which opens the card in a new tab.
-
-You can also change metrics, series, x-axis, and more from the title. In the example below, you can click on *Total Medals* and change it to *Gold Medals* to see a different metric:
-
-*![](/img/dashboard/changedata.png)*
+Next to the Open in New Window icon, the filter icon allows you to quickly see what filters are applied to the specific card.
 
 Lastly, you can interact with the visualization just like any other report by hovering, clicking, and so on.
 
