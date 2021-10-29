@@ -9,6 +9,11 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2021.11.001 - Natural Language Query
+* Added *Natural Language Processing* (NLP) to analyses
+* Snowflake Connector added
+* Rendering performance improvements
+
 ## 2021.10.001 - Visualization Overhaul
 * Complete visualization overhaul
 * Advanced viz configuration

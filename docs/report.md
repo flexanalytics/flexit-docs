@@ -252,6 +252,12 @@ The report menu is located in the top-right of the report and is used for the fo
 
 > **Report Backup/Migration** - copy/paste from the report Specification to save as a backup or open report from specs
 
+### Natural Language Query
+
+Natural language query allows you to use text to generate a report by asking a question, similar to a Google search. For example, `show me Top 10 Gold Medals by Country on a Column Chart` will get you a `Column Chart` with the `Gold Medals` metric and the top 10 `Country` dimension. On a new report, just enter text in the search input in the middle of the page. On an existing report, click the `Ask` button in the top-right.
+
+![](/img/report/nlp.png)
+
 ## Builder Page
 
 The *Builder Page* allows you to create your report without live (ad-hoc) data. You can add fields, prompts/filters, pivots, etc. When you're done building, you can click *Run Report* and start working with the data. 
