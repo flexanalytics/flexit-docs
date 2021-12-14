@@ -260,6 +260,10 @@ Connect to PeopleSoft Query by creating a new [Data Source](administration.md#da
 
 ![](/img/etl_psquery.png)
 
-Once you've created the connection, PeopleSoft Query data can be extracted using SQL or Data Flow tasks. Select the PeopleSoft Query data source and enter the Query Name. Then, click either *Get Params* to pull the Query report parameters without running the query, or click the *Run* button to run the query and fetch data.
+Once you've created the connection, PeopleSoft Query data can be extracted using SQL or Data Flow tasks. Select the PeopleSoft Query data source and enter the Query Name.
+
+Click **Get Params** to pull the Query report parameters without running the query
+
+Click **Run** to execute the query and fetch data. You can specify the output type from the PeopleSoft Query as either *CSV* or *XML*.
 
 You can use both [parameters](#parameters) and [functions](#functions) in any of the parameter inputs
