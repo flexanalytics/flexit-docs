@@ -9,6 +9,12 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2022.01.001 - FlexIt Usage Reporting
+* Package FlexIt with reports and models to report on FlexIt usage
+* Improved query engine join logic
+* Minor Natural Language Query improvements
+* Other minor fixes
+
 ## 2021.12.001 - Global Filters
 * Natural Language Query improvements
 * SQL Editor improvements
