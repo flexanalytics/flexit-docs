@@ -28,12 +28,18 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Data and Modeling',
+      items: [
+        "datamodeling",
+        "etl",
+      ]
+    },
+    {
+      type: 'category',
       label: 'Administration',
       items: [
         "deploy",
         "administration",
-        "datamodeling",
-        "etl",
         "saml",
       ]
     },
