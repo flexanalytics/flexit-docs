@@ -15,22 +15,27 @@ In SAML terminology, what you will be doing here is configuring Okta (your SAML 
 
 Here is how to set up a SAML application in Okta:
 
-> **Important**: If you are using the Developer Console you will first need to switch to the Classic UI. If you see Developer Console in the top left, click it and select Classic UI to switch.
-
 1.  Log in to your Okta organization as a user with administrative privileges. If you don’t have an Okta organization, you can [create a free Okta Developer Edition organization](https://developer.okta.com/signup/).
-2.  Click on the Applications link in the upper navigation bar
-3.  Click on the green Create New App button
-4.  In the dialog that opens, select the “SAML 2.0” option, then click the green “Create” button. If you do not see this option, make sure you are in the Classic UI (see Note above).
-![](/img/saml/okta_flexit_new.png)
+
+2.  Click on the Applications link in the menu
+
+3.  Click on the Create App Integration button
+
+4.  In the dialog that opens, select the “SAML 2.0” option and then click *Next*
+
+    ![](/img/saml/okta_flexit_new.png)
 
 5.  In Step 1 “General Settings”, enter “FlexIt Analytics” in the “App name” field
-![](/img/saml/okta_flexit_generalsettings.png)
 
-6.  Upload the FlexIt app logo, then click the green Next button.
-![](/img/saml/X.png)
+    ![](/img/saml/okta_flexit_generalsettings.png)
+
+6.  Upload the FlexIt app logo, then click the *Next* button.
+
+    ![](/img/saml/X.png)
 
 7.  In Step 2 “Configure SAML,” section A “SAML Settings”, paste the URL below into the “Single sign on URL” and “Audience URI (SP Entity ID)” fields. The FlexIt URL will be in the form of protocol://servername:port/auth/callback, for example: https://carbon1:3030/auth/callback
-![](/img/saml/okta_flexit_samlsettingsgeneral.png)
+
+    ![](/img/saml/okta_flexit_samlsettingsgeneral.png)
 
 8.  In the “Attribute Statements” section, add three attribute statements. In the “Group Attribute Statements”, add one statement:
     1.  Attribute Statements
@@ -40,24 +45,33 @@ Here is how to set up a SAML application in Okta:
     2.  Group Attribute Statements
         *   “Groups” set to “Starts with” text of “FlexIt”
     3.  Click Next to continue
+
     ![](/img/saml/okta_flexit_generalattributes.png)
 
 9.  In Step 3 “Feedback”, select “I’m an Okta customer adding an internal app”, and “This is an internal app that we have created,” then click Finish.
-![](/img/saml/okta_flexit_finish.png)
 
-10.  The “Sign On” section of your newly created “FlexIt Analytics” application appears. Click on “View Setup Instructions” 
-![](/img/saml/okta_flexit_ipmetadata.png)
+    ![](/img/saml/okta_flexit_finish.png)
+
+10.  The “Sign On” section of your newly created “FlexIt Analytics” application appears. Click on “View Setup Instructions”
+
+    ![](/img/saml/okta_flexit_ipmetadata.png)
 
 11.  Keep this page open in a separate tab or browser window. You will return to this page later in this guide and copy the 3 settings into the FlexIt Configuration
-![](/img/saml/okta_flexit_samlconfig.png)
+
+    ![](/img/saml/okta_flexit_samlconfig.png)
 
 12.  Log in to FlexIt as an Administrator, click on “Configuration” under Administration, then click “Authentication”
-![](/img/saml/flexit_config_auth.png)
+
+    ![](/img/saml/flexit_config_auth.png)
 
 13.  Select the “SAML 2.0” type from the drop-down and map the items from step 10 above into the FlexIt configuration
-![](/img/saml/flexit_config_authmap.png)
+
+    ![](/img/saml/flexit_config_authmap.png)
 
 14.  In the FlexIt configuration, the “User Attribute Statements” and “Group Attribute Statements” should match the names used in step 7 above. Note the following options:
-    *   “Sync Provider Groups?” defaults to “none”. Set it to “seed” if you want FlexIt to automatically assign the user group ONLY on the first login. Set it to “sync” if you always want FlexIt to use the Okta groups. If you use “seed” or “sync”, FlexIt will automatically assign the Okta group “FlexIt Admin” to the “Admin” role, “FlexIt Author” to the “Author” role, and “FlexIt Consumer” to the “Consumer” role. Note that the Okta group names must be assigned to the FlexIt Analytics application and exactly match FlexIt [Admin, Author, Consumer].
-    *   “Default Group” defaults to “none”. If a user is assigned to the FlexIt Analytics application in Okta, but is not part of any Okta groups, you can automatically assign them either as a “Consumer” or “Author” in FlexIt.
-15.  Click “Save” to finish the configuration in FlexIt. Okta SAML 2.0 authentication is now enabled.
+
+    **Sync Provider Groups?** defaults to “none”. Set it to “seed” if you want FlexIt to automatically assign the user group ONLY on the first login. Set it to “sync” if you always want FlexIt to use the Okta groups. If you use “seed” or “sync”, FlexIt will automatically assign the Okta group “FlexIt Admin” to the “Admin” role, “FlexIt Author” to the “Author” role, and “FlexIt Consumer” to the “Consumer” role. Note that the Okta group names must be assigned to the FlexIt Analytics application and exactly match FlexIt [Admin, Author, Consumer].
+
+    **Default Group** defaults to “none”. If a user is assigned to the FlexIt Analytics application in Okta, but is not part of any Okta groups, you can automatically assign them either as a “Consumer” or “Author” in FlexIt.
+
+15.  Click **Save** to finish the configuration in FlexIt. Okta SAML 2.0 authentication is now enabled.
