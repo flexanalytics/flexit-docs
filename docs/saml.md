@@ -70,8 +70,16 @@ Here is how to set up a SAML application in Okta:
 
 14.  In the FlexIt configuration, the “User Attribute Statements” and “Group Attribute Statements” should match the names used in step 7 above. Note the following options:
 
-    **Sync Provider Groups?** defaults to “none”. Set it to “seed” if you want FlexIt to automatically assign the user group ONLY on the first login. Set it to “sync” if you always want FlexIt to use the Okta groups. If you use “seed” or “sync”, FlexIt will automatically assign the Okta group “FlexIt Admin” to the “Admin” role, “FlexIt Author” to the “Author” role, and “FlexIt Consumer” to the “Consumer” role. Note that the Okta group names must be assigned to the FlexIt Analytics application and exactly match FlexIt [Admin, Author, Consumer].
+    **Sync Provider Groups?**
 
-    **Default Group** defaults to “none”. If a user is assigned to the FlexIt Analytics application in Okta, but is not part of any Okta groups, you can automatically assign them either as a “Consumer” or “Author” in FlexIt.
+    *none* - (default) do not use groups from the SAML provider. Only use FlexIt groups.
+
+    *seed* - FlexIt will use the mapped user group from the SAML provider *ONLY* on the first login. After the first time logging into FlexIt, any changes to the SAML provider groups will not persist to FlexIt.
+    
+    *sync* - FlexIt will always use the Okta groups. If the groups change in the SAML provider, then the groups in FlexIt will also be updated with the new group mapping.
+
+    > *seed* and *sync* rely on the **Group Mapping** entries that map a FlexIt group name to the SAML provider group name
+
+    **Default Group** defaults to “none”. If a user is assigned to the FlexIt Analytics application in Okta, but is not part of any Okta groups, you can automatically assign them to any group in FlexIt.
 
 15.  Click **Save** to finish the configuration in FlexIt. Okta SAML 2.0 authentication is now enabled.

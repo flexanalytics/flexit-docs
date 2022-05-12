@@ -21,8 +21,11 @@
 }
 
 .markdown p img {
-  max-width: 80%;
-  border: 1px solid gray;
+  /* max-width: 80%; */
+  /* border: 1px solid gray; */
+  border: 1px solid #eaecef;
+  border-radius: 4px;
+  box-shadow: 0 6px 13px rgb(0 0 0 / 9%);
 }
 
 .markdown p em img {

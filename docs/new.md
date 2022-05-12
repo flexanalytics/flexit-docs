@@ -9,6 +9,17 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
 
+## 2022.05.001 - dbt Integration
+* dbt Integration
+* Time grain feature on date fields (day, week, month, quarter, year)
+* Synonym/alias on fields for improved Natural Language Query and searching
+* SAML authentication enhancements
+
+## 2022.04.001 - BigQuery and Redshift Adapters
+* Added Google BigQuery connector
+* Added Amazon Redshift connector
+* Pivot table column totals
+
 ## 2022.01.001 - FlexIt Usage Reporting
 * Package FlexIt with reports and models to report on FlexIt usage
 * Improved query engine join logic

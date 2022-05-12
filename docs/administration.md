@@ -193,9 +193,15 @@ You can create any type of map that can be imagined using GeoJSON or Latitude/Lo
 
 ![](/img/admin/map_custom.png)
 
+### Integrations
+
+Enter details for integration with external third-party applications.
+
+![](/img/admin/integration.png)
+
 ### Samples
 
-Deploy the sample data module, reports, visualizations, dashboards, and data portals by selecting the database and clicking *Save*.
+FlexIt comes packaged with three sample packages that comes with reports & dashboards, metadata model, and data. You can deploy the samples the same way you deploy a backup, using the [Backup and Restore](#backup-and-restore) feature.
 
 ### HTTPS
 

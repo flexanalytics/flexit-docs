@@ -26,6 +26,10 @@ Prior to creating a metadata model, you’ll need to create a data source that t
 
 Data Models are created via the Administration menu in the FlexIt portal. To create a new metadata model, click the *New Data Model* button in the top-right of the Data Models screen. Now, select the Data Source that you would like this model to connect to.
 
+### Create from dbt
+
+Use the [dbt](https://getdbt.com) data transformation tool to provide the metadata layer. See the [FlexIt dbt guide](dbt) for details.
+
 ### Metadata Viewer
 
 Next to the *New Data Model* button, click the *Metadata Viewer* button to browse all your organizations' data models.

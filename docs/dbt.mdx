@@ -1,0 +1,403 @@
+---
+id: dbt
+title: dbt (Data Build Tool) Integration
+hide_title: true
+sidebar_label: dbt Integration
+---
+
+![](/img/dbt/flexit_dbt.png)
+
+# dbt Integration with FlexIt
+
+FlexIt integrates with **dbt Cloud** or **dbt CLI** to enable 100% metadata-less BI with the best of dbt
+
+* Data Lineage
+* Exposures (Dashboard dependencies)
+* Joins (Entity Relationships)
+* Metrics
+* Data freshness
+* Data dictionary (Docs)
+* Statistics
+* Custom `meta` for formatting, synonyms, business names, joins, time grain and more
+
+## Example dbt Project
+
+The [dbt-business-intelligence](https://github.com/flexanalytics/dbt-business-intelligence) github repo provides a great dbt project to highlight BI integration.
+
+## Getting Started
+
+Check out this video to see how a Business Intelligence integration with dbt can enable 100% metadata-less BI
+
+<div style={{
+    position: 'relative',
+    paddingBottom: '56.25%',
+    height: 0,
+}}>
+    <iframe src="https://www.loom.com/embed/10a5a3e079d74e3fbd35726c81517d7e?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+        frameBorder="0"
+        allowFullScreen
+        style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+        }}>
+    </iframe>
+</div>
+<hr/>
+
+This guide assumes that you already have a dbt environment set up, and a FlexIt Analytics instance running. If not, or if you'd like to learn more about either FlexIt or dbt, then check out the links below.
+
+> Check out the **dbt** [docs](https://docs.getdbt.com/docs/introduction) or [get dbt](https://getdbt.com)
+
+> Check out the **FlexIt** [docs](https://learn.flexitanalytics.com/) or [get FlexIt](https://flexitanalytics.com/download)
+
+## Connecting to dbt
+
+If using **dbt Cloud**, you need to enter a Service Token into the dbt integration under *Administration > Configuration > Integrations*, detailed in the [Administration Guide](administration#integrations).
+
+If using **dbt CLI**, you can connect to a Docs server or manually upload `manifest.json` files found in the */target* directory of your dbt project.
+
+From the FlexIt Administration panel, select **Data Models** on the left and then click *Create from dbt* on the top-right, then select the type of connection to dbt. Read more about data models in the [Data Modeling guide](datamodeling).
+
+### dbt Cloud
+
+With a Cloud API service token configured, simply select **Account**, **Project**, **Job** and configure the following settings:
+
+* **Real-time Connection** - enable this to have a live connection to dbt Cloud. If you update a model and run the job, then changes will automatically persist to this FlexIt data model. If real-time connection is disabled, then the FlexIt data model is initially built (seeded) from the dbt metadata, but then you can change the metadata locally in FlexIt. However, this may lead dbt and FlexIt to be out of sync.
+
+* **Only show documented** - enable this to only show models and model columns that are documented in `YAML` files.
+
+![](/img/dbt/meta_cloud.png)
+
+### Docs Server
+
+Enter the base URL for the docs server and FlexIt will automatically source manifest.json, catalog.json, and other artifacts from the docs server. Then, configure the following settings:
+
+* **Real-time Connection** - enable this to have a live connection to dbt Cloud. If you update a model and run the job, then changes will automatically persist to this FlexIt data model. If real-time connection is disabled, then the FlexIt data model is initially built (seeded) from the dbt metadata, but then you can change the metadata locally in FlexIt. However, this may lead dbt and FlexIt to be out of sync.
+
+* **Only show documented** - enable this to only show models and model columns that are documented in `YAML` files.
+
+![](/img/dbt/meta_server.png)
+
+### Upload Manifest
+
+Manually upload the `manifest.json` and `catalog.json` files from your dbt project `target` folder. Then, configure the following settings:
+
+* **Only show documented** - enable this to only show models and model columns that are documented in `YAML` files.
+
+![](/img/dbt/meta_upload.png)
+
+## Metadata
+
+Once you've connected to a dbt project, you'll be in the FlexIt editor with all the dbt metadata automatically populated. If you selected **Real-time Connection** for your dbt config, then you cannot make changes in the editor (see more about this in [Connecting to dbt](#dbt-cloud)). Explore your metadata model and *Save* when you are ready to create analyses. After saving, you can [give access](datamodeling#3-secure-the-data-model) to the metadata model to specific [users, groups, and roles](administration#groups--roles).
+
+> The screenshot below of the metadata editor has orange arrows pointing to dbt-specific features.
+
+![](/img/dbt/meta_editor.png)
+
+## Data Lineage
+
+FlexIt leverages the lineage feature of dbt to show both upstream model dependencies, as well as downstream dashboards and reports. In addition to lineage paths, it shows model, source, and seed refresh times and tooltip descriptions. For downstream exposures, it notifies users if the documented exposures are out of sync with the actual exposures.
+
+![](/img/dbt/lineage.png)
+
+## Exposures
+
+### Model exposures
+
+FlexIt tracks report and dashboard exposures in real-time to show you status
+
+1. **OK** - exposure is in both FlexIt and dbt
+2. **Broken** - exposure is documented in dbt but does not exist in FlexIt
+3. **Info** - exposure is in an external tool, not FlexIt
+4. **Needs Doc** - FlexIt report is not documented as an exposure in dbt
+
+![](/img/dbt/exposure_status.png)
+
+### Column-level exposures
+
+FlexIt also shows column-level exposures for FlexIt reports and dashboards. The screenshot below shows reports with their dependent columns, as well as if there are any issues such as broken links (e.g. a model column does not exist).
+
+![](/img/dbt/exposure_column.png)
+
+
+## Joins (Entity Relationships)
+
+Create relationships (joins) between models one of two ways in the dbt `schema.yml` model definition:
+1. Using the `tests.relationships` property on dbt model columns, which also checks integrity
+2. Using the `meta.joins` property in the dbt model
+
+```yaml title="models/schema.yml"
+models:
+  - name: fact_sales
+    meta:
+      joins:
+        - to: dim_customer
+          type: inner #inner, left, right, full; default 'inner'
+          join_on:
+            - from_field: customer_key
+              exp: '=' #optional; default '='; '=','<>'
+              to_field: customer_key
+    columns:
+      - name: customer_key
+        tests:
+          - not_null
+          - relationships: #JOINS the dbt integrity way
+              to: ref('dim_customer')
+              field: customer_key
+```
+
+Relationships defined in the model `YAML` will appear in FlexIt as shown below
+
+![](/img/dbt/joins.png)
+
+## Metrics
+
+Metrics (aka measures or facts) are numeric values summarized by dimensions. Metrics can be defined in the dbt `schema.yml` using the dbt `metrics` tag or model columns `meta` tag.
+
+### dbt `metrics` tag
+
+Use the dbt `metrics` tag as defined in the [dbt documentation](https://docs.getdbt.com/docs/building-a-dbt-project/metrics), like this:
+
+```yaml title="models/schema.yml"
+metrics:
+  - name: quantity
+    label: Quantity
+    model: ref('fact_sales')
+    description: "Sum of quantity sold"
+    type: sum
+    sql: quantity
+    timestamp: date_day
+    time_grains: [day, week, month, year]
+```
+
+> The dbt `metrics` tag approach is preferred since it is a dbt standard definition
+
+### dbt `meta` tag
+
+You can also use the custom dbt `meta` tag, shown below.
+
+```yaml title="models/schema.yml"
+models:
+  - name: fact_sales
+    columns:
+      - name: quantity
+        meta:
+          metrics:
+            quantity_total:         # identifier for the metric
+              type: sum             # sum, average, count, count_distinct, min, max
+              label: Total Quantity # display label
+            quantity_average:
+              type: average
+```
+
+## Data freshness
+
+In reports or dashboards, users can be aware of data freshness for models and sources throughout the full lineage. The screenshot below shows a source with a status of *pass* and timestamp, as well as the model run status of *success* and timestamp. If source freshness fails, or models in a run do not succeed, users will be notified of the status.
+
+![](/img/dbt/freshness.png)
+
+## Data dictionary (Docs)
+
+All dbt descriptions in models, columns, metrics, sources, seeds, and more are displayed in FlexIt tooltips. Use markdown in descriptions or [Docs Blocks](https://docs.getdbt.com/docs/building-a-dbt-project/documentation#using-docs-blocks) to enable rich html tooltips in FlexIt.
+
+
+```yaml title="models/schema.yml"
+models:
+  - name: fact_sales
+    description: "{{ doc('fact_sales') }}"
+    columns:
+      - name: sales
+        description: "Sum of total sales revenue"
+```
+
+```markdown title="models/schema.md"
+{% docs fact_sales %}
+
+| Metric         | Definition                                       |
+|----------------|--------------------------------------------------|
+| quantity       | Sum of quantity sold                             |
+| price          | Average price for an ordered product             |
+| sales          | Sum of total sales revenue                       |
+| target         | Sum of target sales revenue                      |
+
+
+{% enddocs %}
+```
+
+The model `description` that references the docs block markdown will enable the following tooltip in FlexIt:
+
+![](/img/dbt/docs.png)
+
+## Statistics
+
+Information such as `Number of rows` or `Size` of a table/model can be very informative and build trust in the data. If the underlying data source supports these statistics, then FlexIt makes them available by right-clicking on any model in an analysis.
+
+![](/img/dbt/stats.png)
+
+## Custom `meta`
+
+Many dbt features inherently support the needs of business intelligence, for example:
+
+1. `relationships` test for integrity also enable joins
+2. Metrics define facts for aggregation
+3. Descriptions and docs blocks support data literacy through explanatory tooltips
+4. Lineage enables data literacy and trust
+5. Exposures keep everything in working order and enable trust
+6. Freshness enables trust in letting the users know when there are issues with the underlying data
+
+However, there are many features that are specific to business intelligence, and thus not inherently supported through standard dbt features. This is where the `meta` tag comes in, allowing us to define custom attributes for models, columns, metrics, and more.
+
+### Formatting
+
+Define column formatting for numbers, dates, currency, and text
+
+```yaml title="models/schema.yml"
+models:
+  - name: monthly_sales
+    columns:
+      - name: revenue
+        meta:
+          format:
+            type: number
+            decimalPlaces: 2
+            prefix: "$"
+            displayUnits: auto # auto, thousands, millions, billions, trillions
+      - name: quantity
+        meta:
+          format:
+            type: number
+            suffix: " units sold"
+      - name: date_day
+        meta:
+          format:
+            type: date
+            pattern: 'MMM D, YYYY'
+      - name: mrr_change
+        meta:
+          format:
+            type: percent
+            divideBy100: true
+      - name: descr
+        meta:
+          format:
+            type: text
+            showNullAs: 'No Value Entered'
+
+```
+
+Depending on type, possible attributes are:
+* decimalPlaces
+* prefix
+* suffix
+* displayUnits
+* showNullAs
+* pattern (*date only*)
+* divideBy100 (*percent only*)
+
+### Synonyms (Aliases)
+
+Use meta `synonyms` when you want to assign multiple potential names to a single column. For example, sales might be called revenue, receipts, proceeds, or other names depending on who you ask. Synonyms allow you to define multiple aliases for a column that can be used for both **search** and **Natural Language Query (NLQ)**
+
+```yaml title="models/schema.yml"
+metrics:
+  - name: sales
+    label: Sales
+    model: ref('fact_sales')
+    description: "Sum of total sales revenue"
+    type: sum
+    sql: sales
+    timestamp: date_day
+    time_grains: [day, week, month, year]
+    meta:
+      synonyms: # for business searching and natural language processing
+        - Revenue
+        - Proceeds
+        - Receipts
+```
+
+Defining synonyms in your model `schema.yml` allows them to be search and used for Natural Language Query, as shown below:
+
+![](/img/dbt/nlq.png)
+
+### Business (Friendly) Name
+
+Use meta `label` on models and model columns to give them business friendly names.
+
+```yaml title="models/schema.yml"
+models:
+  - name: fact_sales
+    meta:
+      label: Sales Fact # friendly name
+    columns:
+      - name: rev
+        meta:
+          label: Revenue # friendly name
+```
+
+> Metrics have a `label` attribute, so do not use `meta.label` for metrics
+
+### Model Order
+
+Use the `display_index` meta tag to place models and columns in a specific order
+
+```yaml title="models/schema.yml"
+models:
+  - name: fact_sales
+    meta:
+      label: Sales Fact
+      display_index: 1 # display first
+```
+
+### Hidden
+
+Use the `meta.hidden` attribute on models, model columns, and metrics to hide it from being displayed to end users in the BI tool.
+
+```yaml title="models/schema.yml"
+models:
+  - name: stg_dummy_table
+    meta:
+      hidden: true
+```
+
+### Joins
+
+For one-to-one inner joins where all rows have values for the joining columns, it is recommended that you use the column `relationships` tests so that you get the benefit of testing integrity and automated joins. However, when this is not possible, or you have a more complex join need, then you can use the model `meta` tag to define `joins`.
+
+> See the [Joins (Entity Relationships)](#joins-entity-relationships) section.
+
+Here is an example of defining joins using the `meta.joins` attribute:
+
+```yaml title="models/schema.yml"
+models:
+  - name: fact_sales
+    meta:
+      joins:
+        - to: dim_customer
+          type: inner #inner, left, right, full; default 'inner'
+          join_on:
+            - from_field: customer_key
+              exp: '=' #optional; default '='; '=','<>'
+              to_field: customer_key
+```
+
+### Time Interval (Grain)
+
+Use the `meta.grain` model column attribute to define default time granularity for a field. Set it to `off` to show only the original value of a field without the ability to have specific time grains.
+
+```yaml title="models/schema.yml"
+models:
+  - name: fact_sales
+    columns:
+      - name: prior_year_date_day
+        meta:
+          grain: off # time interval grain; values 'off', 'day', 'week', 'month', 'quarter', 'year'
+```
+
+When grain is not `off`, users will see the following grain options in the FlexIt metadata:
+
+![](/img/dbt/grain.png)
+
+> Grain only applies to *date* columns
