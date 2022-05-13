@@ -53,6 +53,15 @@ This guide assumes that you already have a dbt environment set up, and a FlexIt 
 
 > Check out the **FlexIt** [docs](https://learn.flexitanalytics.com/) or [get FlexIt](https://flexitanalytics.com/download)
 
+## Connect to your data warehouse
+
+:::caution Required
+
+You need to [create a data source connection](administration#data-sources) in FlexIt that will connect to the dbt project databases. dbt holds metadata, but that does not include database connection details.
+
+:::
+
+
 ## Connecting to dbt
 
 If using **dbt Cloud**, you need to enter a Service Token into the dbt integration under *Administration > Configuration > Integrations*, detailed in the [Administration Guide](administration#integrations).
@@ -97,15 +106,43 @@ Once you've connected to a dbt project, you'll be in the FlexIt editor with all 
 
 ![](/img/dbt/meta_editor.png)
 
-## Data Lineage
+## Reports and Dashboards
+
+Once you've saved your Metadata, you can create new reports and dashboards, or load samples.
+
+### Create New
+
+To create a new analysis from your dbt metadata, click on **New** in the top-left and select **New Analysis**. Select the data model that you created in [Metadata](#metadata) above, and then you'll see a blank report ready to drag-and-drop fields from the right.
+
+![](/img/dbt/new_analysis.png)
+
+### Samples
+
+If you used the [Example dbt Project](#example-dbt-project) from above, then you can load pre-built samples from FlexIt:
+
+1. Navigate to "Administration > Configuration > Backup and Restore"
+
+2. Right-click and "Restore" the *samples_sales.zip* item
+    ![](/img/dbt/restore_sales.png)
+
+3. Check the "Samples (Sales)" content to restore, deploy content to "Shared Content", select the data model that you created in [Metadata](#metadata) above, and click *Restore*
+    ![](/img/dbt/restore_content.png)
+
+4. Navigate to the "Shared Content > Samples (Sales)" folder and take a look at the reports and dashboards
+
+## Concepts and Standards
+
+Now that you've tried everything out with the sample project and reports, let's dive into the concepts
+
+### Data Lineage
 
 FlexIt leverages the lineage feature of dbt to show both upstream model dependencies, as well as downstream dashboards and reports. In addition to lineage paths, it shows model, source, and seed refresh times and tooltip descriptions. For downstream exposures, it notifies users if the documented exposures are out of sync with the actual exposures.
 
 ![](/img/dbt/lineage.png)
 
-## Exposures
+### Exposures
 
-### Model exposures
+#### Model exposures
 
 FlexIt tracks report and dashboard exposures in real-time to show you status
 
@@ -116,14 +153,14 @@ FlexIt tracks report and dashboard exposures in real-time to show you status
 
 ![](/img/dbt/exposure_status.png)
 
-### Column-level exposures
+#### Column-level exposures
 
 FlexIt also shows column-level exposures for FlexIt reports and dashboards. The screenshot below shows reports with their dependent columns, as well as if there are any issues such as broken links (e.g. a model column does not exist).
 
 ![](/img/dbt/exposure_column.png)
 
 
-## Joins (Entity Relationships)
+### Joins (Entity Relationships)
 
 Create relationships (joins) between models one of two ways in the dbt `schema.yml` model definition:
 1. Using the `tests.relationships` property on dbt model columns, which also checks integrity
@@ -153,11 +190,11 @@ Relationships defined in the model `YAML` will appear in FlexIt as shown below
 
 ![](/img/dbt/joins.png)
 
-## Metrics
+### Metrics
 
 Metrics (aka measures or facts) are numeric values summarized by dimensions. Metrics can be defined in the dbt `schema.yml` using the dbt `metrics` tag or model columns `meta` tag.
 
-### dbt `metrics` tag
+#### dbt `metrics` tag
 
 Use the dbt `metrics` tag as defined in the [dbt documentation](https://docs.getdbt.com/docs/building-a-dbt-project/metrics), like this:
 
@@ -175,7 +212,7 @@ metrics:
 
 > The dbt `metrics` tag approach is preferred since it is a dbt standard definition
 
-### dbt `meta` tag
+#### dbt `meta` tag
 
 You can also use the custom dbt `meta` tag, shown below.
 
@@ -193,13 +230,13 @@ models:
               type: average
 ```
 
-## Data freshness
+### Data freshness
 
 In reports or dashboards, users can be aware of data freshness for models and sources throughout the full lineage. The screenshot below shows a source with a status of *pass* and timestamp, as well as the model run status of *success* and timestamp. If source freshness fails, or models in a run do not succeed, users will be notified of the status.
 
 ![](/img/dbt/freshness.png)
 
-## Data dictionary (Docs)
+### Data dictionary (Docs)
 
 All dbt descriptions in models, columns, metrics, sources, seeds, and more are displayed in FlexIt tooltips. Use markdown in descriptions or [Docs Blocks](https://docs.getdbt.com/docs/building-a-dbt-project/documentation#using-docs-blocks) to enable rich html tooltips in FlexIt.
 
@@ -231,13 +268,13 @@ The model `description` that references the docs block markdown will enable the 
 
 ![](/img/dbt/docs.png)
 
-## Statistics
+### Statistics
 
 Information such as `Number of rows` or `Size` of a table/model can be very informative and build trust in the data. If the underlying data source supports these statistics, then FlexIt makes them available by right-clicking on any model in an analysis.
 
 ![](/img/dbt/stats.png)
 
-## Custom `meta`
+### Custom `meta`
 
 Many dbt features inherently support the needs of business intelligence, for example:
 
@@ -250,7 +287,7 @@ Many dbt features inherently support the needs of business intelligence, for exa
 
 However, there are many features that are specific to business intelligence, and thus not inherently supported through standard dbt features. This is where the `meta` tag comes in, allowing us to define custom attributes for models, columns, metrics, and more.
 
-### Formatting
+#### Formatting
 
 Define column formatting for numbers, dates, currency, and text
 
@@ -297,7 +334,7 @@ Depending on type, possible attributes are:
 * pattern (*date only*)
 * divideBy100 (*percent only*)
 
-### Synonyms (Aliases)
+#### Synonyms (Aliases)
 
 Use meta `synonyms` when you want to assign multiple potential names to a single column. For example, sales might be called revenue, receipts, proceeds, or other names depending on who you ask. Synonyms allow you to define multiple aliases for a column that can be used for both **search** and **Natural Language Query (NLQ)**
 
@@ -322,7 +359,7 @@ Defining synonyms in your model `schema.yml` allows them to be search and used f
 
 ![](/img/dbt/nlq.png)
 
-### Business (Friendly) Name
+#### Business (Friendly) Name
 
 Use meta `label` on models and model columns to give them business friendly names.
 
@@ -339,7 +376,7 @@ models:
 
 > Metrics have a `label` attribute, so do not use `meta.label` for metrics
 
-### Model Order
+#### Model Order
 
 Use the `display_index` meta tag to place models and columns in a specific order
 
@@ -351,7 +388,7 @@ models:
       display_index: 1 # display first
 ```
 
-### Hidden
+#### Hidden
 
 Use the `meta.hidden` attribute on models, model columns, and metrics to hide it from being displayed to end users in the BI tool.
 
@@ -362,7 +399,7 @@ models:
       hidden: true
 ```
 
-### Joins
+#### Joins
 
 For one-to-one inner joins where all rows have values for the joining columns, it is recommended that you use the column `relationships` tests so that you get the benefit of testing integrity and automated joins. However, when this is not possible, or you have a more complex join need, then you can use the model `meta` tag to define `joins`.
 
@@ -383,7 +420,7 @@ models:
               to_field: customer_key
 ```
 
-### Time Interval (Grain)
+#### Time Interval (Grain)
 
 Use the `meta.grain` model column attribute to define default time granularity for a field. Set it to `off` to show only the original value of a field without the ability to have specific time grains.
 

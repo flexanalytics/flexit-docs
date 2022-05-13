@@ -66,6 +66,8 @@ Administrators can impersonate a group/role, which gives them the ability to see
 
 Data sources are the connection details for the underlying databases and other sources used to pull data for reporting.
 
+![](/img/admin/datasources.png)
+
 > **Best practice**: [Encrypt](#encryption) sensitive information, such as passwords
 
 ## Data Models
