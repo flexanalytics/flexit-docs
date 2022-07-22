@@ -7,7 +7,17 @@ sidebar_label: Release History
 
 # Release History
 
-This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018.
+This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
+
+## 2022.07.001 - Performance and Natural Language Enhancements
+* Improvements to performance of metadata and reports 
+* Natural Language Query improvements
+* Time grain and other minor fixes
+
+## 2022.06.001 - Single-sign On and Tableau Connector Improvements
+* Allow mapping of all FlexIt groups/roles to SAML groups
+* Improved Tableau Connector data type mappings
+* Modernized fonts and icons
 
 ## 2022.05.001 - dbt Integration
 * dbt Integration

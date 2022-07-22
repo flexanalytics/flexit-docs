@@ -57,18 +57,18 @@ This guide assumes that you already have a dbt environment set up, and a FlexIt 
 
 :::caution Required
 
-You need to [create a data source connection](administration#data-sources) in FlexIt that will connect to the dbt project databases. dbt holds metadata, but that does not include database connection details.
+You need to [create a data source connection](administration.md#data-sources) in FlexIt that will connect to the dbt project databases. dbt holds metadata, but that does not include database connection details.
 
 :::
 
 
 ## Connecting to dbt
 
-If using **dbt Cloud**, you need to enter a Service Token into the dbt integration under *Administration > Configuration > Integrations*, detailed in the [Administration Guide](administration#integrations).
+If using **dbt Cloud**, you need to enter a Service Token into the dbt integration under *Administration > Configuration > Integrations*, detailed in the [Administration Guide](administration.md#integrations).
 
 If using **dbt CLI**, you can connect to a Docs server or manually upload `manifest.json` files found in the */target* directory of your dbt project.
 
-From the FlexIt Administration panel, select **Data Models** on the left and then click *Create from dbt* on the top-right, then select the type of connection to dbt. Read more about data models in the [Data Modeling guide](datamodeling).
+From the FlexIt Administration panel, select **Data Models** on the left and then click *Create from dbt* on the top-right, then select the type of connection to dbt. Read more about data models in the [Data Modeling guide](datamodeling.md).
 
 ![](/img/dbt/create_from_dbt.png)
 
@@ -102,7 +102,7 @@ Manually upload the `manifest.json` and `catalog.json` files from your dbt proje
 
 ## Metadata
 
-Once you've connected to a dbt project, you'll be in the FlexIt editor with all the dbt metadata automatically populated. If you selected **Real-time Connection** for your dbt config, then you cannot make changes in the editor (see more about this in [Connecting to dbt](#dbt-cloud)). Explore your metadata model and *Save* when you are ready to create analyses. After saving, you can [give access](datamodeling#3-secure-the-data-model) to the metadata model to specific [users, groups, and roles](administration#groups--roles).
+Once you've connected to a dbt project, you'll be in the FlexIt editor with all the dbt metadata automatically populated. If you selected **Real-time Connection** for your dbt config, then you cannot make changes in the editor (see more about this in [Connecting to dbt](#dbt-cloud)). Explore your metadata model and *Save* when you are ready to create analyses. After saving, you can [give access](datamodeling.md#3-secure-the-data-model) to the metadata model to specific [users, groups, and roles](administration.md#groups--roles).
 
 > The screenshot below of the metadata editor has orange arrows pointing to dbt-specific features.
 

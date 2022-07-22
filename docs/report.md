@@ -310,8 +310,8 @@ Select a file in the top-left, then a sheet if you're using Excel. The data will
 **Load Data**
 
 When loading data into a database, you will take three steps:
-1. Select Destination Table ([see more](etl/#destination))
-2. Map Columns ([see more](etl/#column-mapping))
+1. Select Destination Table ([see more](etl.md/#destination))
+2. Map Columns ([see more](etl.md/#column-mapping))
 3. Run Data Load
 
 **Create Report**
