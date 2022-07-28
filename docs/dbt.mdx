@@ -440,3 +440,9 @@ When grain is not `off`, users will see the following grain options in the FlexI
 ![](/img/dbt/grain.png)
 
 > Grain only applies to *date* columns
+
+## Hosting dbt Docs
+
+You can host the dbt Docs that are created after running `dbt docs generate` on the FlexIt server. Copy the dbt `target` folder to the FlexIt `webcontent` folder and then access the docs with the following URL format: http://flexitserver/webcontent/target. You can rename the `target` folder anything you want, changing the url as well.
+
+> Now you can [connect FlexIt to the dbt Docs server](#docs-server)

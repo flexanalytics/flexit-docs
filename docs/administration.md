@@ -226,3 +226,7 @@ openssl rand -base64 32
 ```
 
 Do not to lose this key because you cannot decrypt connection details without it. If you lose (or change) it, you will have to reset all of the connection details that have been encrypted.
+
+## REST API
+
+Every component can be access via a fully documented REST API. To access the REST API from FlexIt, go to [Server Settings](#server-settings), click "Enable REST API Exporer", and then save. Then, you can click `Try now` on the Server Settings page, or simply append `/exporer` to the FlexIt server hostname (e.g. http://flexitserver/explorer/).

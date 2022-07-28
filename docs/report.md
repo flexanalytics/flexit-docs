@@ -317,3 +317,9 @@ When loading data into a database, you will take three steps:
 **Create Report**
 
 Instantly analyze your data. Please note that you cannot save this report unless you load the data, as shown above.
+
+## Pass Filter in URL
+
+You can filter a report using query string parameters in the URL. The required URL format uses the `specs` parameter and JSON format to allow for simple and advanced filter structures. You can pass any type of filter that can be built in FlexIt. To see the format used, build a report with the desired filter, then go to [Report Options](#report-options) and select More Settings. From there, expand the Report Specifications and look for the `filters` JSON object, which will be the exact structure you can use. Here is an example that also shows how to change report `name` and `uiaction` (run or prompt):
+
+https://cloud.flexitanalytics.com/?specs={"name":"hello world","uiaction":"run","filters":[{"id":"COUNTRY.COUNTRY_DESCR","selections":[{"use":"United States"}]}]}#analysis/olympic-data-detail/embed
