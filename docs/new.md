@@ -9,6 +9,11 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2022.09.001 - Viz Annotations and Marks, Content as Code
+* Feature to create annotation Line, Area, and Point marks on visualizations
+* Dashboards and analyses are code that can be import/exported for migration, source control, etc.
+* SQL Editor improvements (run snippets, better suggestions)
+
 ## 2022.07.001 - Performance and Natural Language Enhancements
 * Improvements to performance of metadata and reports 
 * Natural Language Query improvements
