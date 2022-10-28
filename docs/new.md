@@ -9,6 +9,14 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2022.10.001 - dbt Semantic Layer
+* Added support for the dbt Semantic Layer
+* Show freshness warnings on reports and metadata
+* Show warnings for source and model failures in lineage graph
+* Added 'source freshness' action to alert if data not fresh
+* Added support for dbt Metrics filters
+* Support for dbt 1.3+
+
 ## 2022.09.001 - Viz Annotations and Marks, Content as Code
 * Feature to create annotation Line, Area, and Point marks on visualizations
 * Dashboards and analyses are code that can be import/exported for migration, source control, etc.
