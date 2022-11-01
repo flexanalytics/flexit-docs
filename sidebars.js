@@ -32,7 +32,6 @@ module.exports = {
       items: [
         "datamodeling",
         "etl",
-        "dbt",
       ]
     },
     {
@@ -85,6 +84,14 @@ module.exports = {
         }
         
       ],
+    },
+    {
+      type: 'category',
+      label: 'Integrations',
+      items: [
+        "dbt",
+        "dbt_semantic",
+      ]
     },
   ],
 };

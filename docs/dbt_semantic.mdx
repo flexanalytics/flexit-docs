@@ -1,0 +1,34 @@
+---
+id: dbt_semantic
+title: dbt Semantic Layer
+hide_title: true
+sidebar_label: dbt Semantic Layer
+---
+
+# dbt Semantic Layer
+
+![](/img/dbt/semantic_query.png)
+
+The dbt Semantic Layer integration with FlexIt allows you to query dbt metrics and other dbt objects directly from FlexIt using dbt syntax.
+
+> **Snowflake only** - currently, the dbt Semantic Layer only supports Snowflake
+
+> **dbt Cloud only** - the dbt Semantic Layer requires a dbt cloud account
+
+## Enable the dbt Semantic Layer in dbt Cloud
+
+First, you must enable the dbt Semantic Layer in your dbt Cloud environment. Review the [Set up the dbt Semantic Layer](https://docs.getdbt.com/docs/use-dbt-semantic-layer/setup-dbt-semantic-layer) documentation to see the requirements and setup instructions. The main instruction you'll need is *8. Copy the full proxy server URL (like https://eagle-hqya7.proxy.cloud.getdbt.com)*, which you will enter in FlexIt.
+
+## Use the dbt Semantic Layer in FlexIt
+
+After you've enabled the semantic layer in dbt Cloud, follow these steps in FlexIt:
+
+1. Copy the *Proxy Server URL* from dbt Cloud, as outlined in the section above
+
+2. Paste the *Proxy Server URL* into the **Access Url** field of the FlexIt data source Snowflake connection
+![](/img/dbt/semantic_datasource.png)
+
+3. Use dbt metrics and syntax to query in FlexIt
+![](/img/dbt/semantic_query_closeup.png)
+
+> See the [dbt Integration](dbt) docs for other dbt FlexIt integrations
