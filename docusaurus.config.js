@@ -11,7 +11,7 @@ module.exports = {
   url: 'https://flexit.github.io',
   baseUrl: '/',
   favicon: '/img/Flex-X-small.png',
-  organizationName: 'ataft', // Usually your GitHub org/user name.
+  organizationName: 'flexanalytics', // Usually your GitHub org/user name.
   projectName: 'flexit-docs', // Usually your repo name.
   themeConfig: {
     zoomSelector: '.markdown :not(em) > img',
@@ -87,7 +87,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/ataft/flexit-docs/edit/master/',
+          editUrl: 'https://github.com/flexanalytics/flexit-docs/edit/master/',
           //showLastUpdateAuthor: true,
           //showLastUpdateTime: true,
         },
