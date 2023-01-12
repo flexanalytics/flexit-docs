@@ -9,6 +9,13 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2023.01.001 - Row-level Security, Okta API Integration
+* Row-level Security
+* Filter formula editor
+* Okta API Integration - manage Okta users from FlexIt
+* Support for dbt "derived" metrics
+* Other minor fixes and enhancements
+
 ## 2022.10.001 - dbt Semantic Layer
 * Added support for the dbt Semantic Layer
 * Show freshness warnings on reports and metadata
