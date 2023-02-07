@@ -9,6 +9,12 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2023.02.001 - Field Parameter, Windows Calculations 
+* Field Parameter - feature to show a drop-down list of fields for users to pick from
+* Window Calculations - calculations for summary table data
+* Added conditional styling to more vizzes
+* Enhanced style control on grid/table settings
+
 ## 2023.01.001 - Row-level Security, Okta API Integration
 * Row-level Security
 * Filter formula editor
