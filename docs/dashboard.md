@@ -88,3 +88,11 @@ Next to the Open in New Window icon, the filter icon allows you to quickly see w
 
 Lastly, you can interact with the visualization just like any other report by hovering, clicking, and so on.
 
+## Schedule Delivery
+
+You can schedule email delivery of dashboards from the FlexIt Portal by following these steps:
+1. Find the report or dashboard in the FlexIt Portal folders
+2. Click the ellipsis on the right of the report, or right-click the report
+3. Select **Schedule**
+4. Enter the schedule (daily/weekly/monthly), who to deliver it to, and what file formats to deliver
+5. Click **Save** and the schedule is set

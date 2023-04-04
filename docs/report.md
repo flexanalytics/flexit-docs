@@ -284,6 +284,15 @@ The toolbar *Share* button allows reports to be shared as a link, .pdf, or .png 
 
 ![](/img/dashboard/share.png)
 
+## Schedule Delivery
+
+You can schedule email delivery of reports from the FlexIt Portal by following these steps:
+1. Find the report or dashboard in the FlexIt Portal folders
+2. Click the ellipsis on the right of the report, or right-click the report
+3. Select **Schedule**
+4. Enter the schedule (daily/weekly/monthly), who to deliver it to, and what file formats to deliver
+5. Click **Save** and the schedule is set
+
 ## SQL Report
 
 Depending on your role, you may be able to create an analysis based on custom SQL. When you create a new report, instead of selecting a Data Model, select *New SQL Analysis* and it takes you to this screen:
