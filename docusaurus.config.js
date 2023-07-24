@@ -37,6 +37,7 @@ module.exports = {
           href: 'https://flexitanalytics.com',
           label: 'FlexIt Website',
           position: 'right',
+          'aria-label': 'Open FlexIt Analytics website in new window',
         },
       ],
     },
@@ -73,11 +74,13 @@ module.exports = {
         },
         */
       ],
+      /*
       logo: {
         alt: 'FlexIt Logo',
         src: '/img/Flex-X-small.png',
         href: 'https://flexitanalytics.com/',
       },
+      */
       copyright: `Copyright © ${new Date().getFullYear()} Flex Analytics, Inc.`,
     },
   },

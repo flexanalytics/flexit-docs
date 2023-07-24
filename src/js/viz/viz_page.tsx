@@ -25,7 +25,7 @@ const Iframe = ({src}) => (
 const Examples = ({arr}) => (
   (!arr.length&&'None') || arr.map(example => {
     return (<>
-      <h3>{example.title}</h3>
+      {example.title?(<b>{example.title}</b>):''}
       <Iframe src={`${baseUrl}/#analysis/${example.id}/embed`}/>
       <i className="fa fa-external-link"></i> <a target="_blank" href={`${baseUrl}/#analysis/${example.id}`}>Open in New Window</a>
     </>)
@@ -62,7 +62,7 @@ function VizPage({type}): JSX.Element | null {
 
   return (
     <>
-      <h1>{vizConfig.label} <em><img src={`/img/viz/${type}.png`} className={styles.vizImage}/></em></h1>
+      <h1>{vizConfig.label} <em><img src={`/img/viz/${type}.png`} alt={`${type} visualization`} className={styles.vizImage}/></em></h1>
       <h2>Description</h2>
       <div dangerouslySetInnerHTML={{ __html: vizConfig.desc }} />
       <br/>

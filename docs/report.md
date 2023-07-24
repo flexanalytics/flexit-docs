@@ -9,7 +9,7 @@ sidebar_label: Reporting User Guide
 
 ## New Analysis
 
-To create a new report, click on the *![](/img/portal/new.png)* button in the portal and select *New Analysis*. You'll see a list of [Data Models](datamodeling.md) that you have permission to (contact your admin if your data model is not shown). Some users may see the [*Upload Excel/CSV*](#upload-excelcsv) button or the [*New SQL Analysis*](#sql-report) button, which allows you to write custom SQL to pull report data.
+To create a new report, click on the *![New content](/img/portal/new.png)* button in the portal and select *New Analysis*. You'll see a list of [Data Models](datamodeling.md) that you have permission to (contact your admin if your data model is not shown). Some users may see the [*Upload Excel/CSV*](#upload-excelcsv) button or the [*New SQL Analysis*](#sql-report) button, which allows you to write custom SQL to pull report data.
 
 > **Note**: the *Consumer* role does not have access to create new reports, and thus will not see the *New Analysis* or *New SQL Analysis* buttons. Check your role from [My Account](portal.md#user).
 
@@ -20,7 +20,7 @@ One you've selected a data model, you'll be taken to the Report design page.
 
 When starting a new report, you'll add fields from the right pane and add filters from the top pane. New reports start in "ad-hoc" mode, meaning that live data is retrieved as you add new fields and filters. You can exit "ad-hoc" mode by clicking the [*Builder Page*](#builder-page) option from the menu in the top-right of the report.
 
-![](/img/report/report_page.png)
+![Report Design](/img/report/report_page.png)
 
 ### Add Fields
 
@@ -28,13 +28,13 @@ From the *Fields* menu on the right, you can add fields by dragging, double-clic
 
 You can drag fields into `Data Fields` in the *Visualizations* panel, shown below:
 
-![](/img/report/field_drag.gif)
+![Add Fields](/img/report/field_drag.gif)
 
 > **Filters** - if you're working with large amounts of data, or want to narrow your results, add report [filters](#filters) before adding fields
 
 ### Filters
 
-Add filters to narrow your search and focus your data exploration. They also improve performance on large data sets. The *![](/img/report/add_filter.png)* button is a quick way to search all your fields and apply a filter to a selected field, regardless of whether or not the field is displayed on in the report grid and/or visualization. Filters can be applied to fields with data types of text/string, numeric, or date/time. Depending on the data type, the filter will have different options. All filter types allow you to check *Include null* if you would like to keep null database values in the result.
+Add filters to narrow your search and focus your data exploration. They also improve performance on large data sets. The *![Add filter](/img/report/add_filter.png)* button is a quick way to search all your fields and apply a filter to a selected field, regardless of whether or not the field is displayed on in the report grid and/or visualization. Filters can be applied to fields with data types of text/string, numeric, or date/time. Depending on the data type, the filter will have different options. All filter types allow you to check *Include null* if you would like to keep null database values in the result.
 
 #### Filter data types
 
@@ -42,13 +42,13 @@ Add filters to narrow your search and focus your data exploration. They also imp
 
 The text/string filter will allow you to include/exclude selected items or filter items that start with, end with, or contain certain text. You can also filter a chosen number of items in the top or bottom of a specific measure (e.g. *Top 10 Country by Gold Medals*).
 
-![](/img/report/filter_text.png)
+![Text/string](/img/report/filter_text.png)
 
 **Numeric**
 
 The numeric filter will allow you to include/exclude values in a certain range (leaving to/from blank sets the range to min/max).
 
-![](/img/report/filter_numeric.png)
+![numeric filter](/img/report/filter_numeric.png)
 
 > **Filter Detail Values** - by default, numeric filters are applied to the summary values. Check *Apply filter to detail values?* in order to filter by individual rows.
 
@@ -56,7 +56,7 @@ The numeric filter will allow you to include/exclude values in a certain range (
 
 The date filter allows you to include/exclude a range of dates, or filter a specified number of days/weeks/months/years from the current date.
 
-![](/img/report/filter_date.png)
+![Date/time](/img/report/filter_date.png)
 
 
 #### Filter Configuration
@@ -65,7 +65,7 @@ You can access more advanced filtering features from the [Builder Page](#builder
 
 To configure individual filters, hover over a filter and click the *Configuration* button (labeled *1* below). For report-level filter configuration, click the *Configuration* button in the top-right of the filter panel (labeled *2* below).
 
-![](/img/report/filter_config.png)
+![Filter Configuration](/img/report/filter_config.png)
 
 Individual filter configuration allows you to modify the following attributes:
 * Label - the text that displays next to the filter
@@ -89,17 +89,17 @@ Report-level filter configuration allows you to modify the following attributes:
 * Show Empty Filters - always show filters on report page, even if the filter has no selections
 * Expression - allows for building of complex filter expression
 
-![](/img/report/filter_report.png)
+![Report Filter](/img/report/filter_report.png)
 
 #### Filter Group
 
 From the [Builder Page](#builder-page), when you click on the *Add Filter* button, you'll see an option for *Add Filter Group...*, as shown here:
 
-![](/img/report/filter_addgroup.png)
+![Filter Add Group](/img/report/filter_addgroup.png)
 
 This feature allows you to create a prompt where each item is a filter. For example, instead of having a user select a date range, you could create a filter group with three individual filters for *Past month*, *Past 6 months*, and *Past 12 months*. This makes it quicker/easier for the user, but also makes it so they can't accidentally select the wrong dates. Here's what the resulting filter will look like to the user:
 
-![](/img/report/filter_group.png)
+![Filter Group](/img/report/filter_group.png)
 
 
 ### Grid
@@ -112,13 +112,13 @@ Grouping allows you to organize data in sets that can be aggregated and expanded
 
 To group, click or right-click on the column/field or column header and select *Group*, as shown below. You can un-group a column by clicking or right-clicking and selecting *Remove Group*.
 
-![](/img/report/group.gif)
+![Data group](/img/report/group.gif)
 
 #### Pivot
 
 Pivoting a field displays the values at the top, from left to right as columns. To pivot, click or right-click on the column/field or column header and select *Pivot*, as shown below. You can remove the pivot by clicking or right-clicking and selecting *Remove Pivot*.
 
-![](/img/report/pivot.gif)
+![Data pivot](/img/report/pivot.gif)
 
 #### Sort
 
@@ -135,33 +135,33 @@ If columns are grouped, then aggregated columns will show summaries at each grou
 
 The example below shows how to do an *Advanced Aggregation* and set different aggregation types at grouping levels. It counts distinct Athlete Names and gives a sum for totals (you can rename the column by setting the label in [Field Configuration](#field-configuration)):
 
-![](/img/report/advanced_aggregation.gif)
+![Advanced Aggregation](/img/report/advanced_aggregation.gif)
 
 #### Calculations
 
 Create a new calculation by right-clicking a column and selecting *Calculate*.
 
 1. Math - allow you to do math functions (add, subtract, multiply, divide, etc.). You can perform math functions on any column in the data model, report, or also a number that you manually enter. Click the *Add Item* button to add new field items, or the *Add Operation* button to add math functions, then drag them around to create the expression.
-![](/img/report/calculation.gif)
+![Calculations](/img/report/calculation.gif)
 
 2. Text - allow you to apply character-based functions, such as substring(), left(), right(), and replace().
 
 3. If..then..else (Case Statement) - allow you to use complex logic to define calculated results, as shown below.
-![](/img/report/calc_ifelse.png)
+![Calculations Case logic](/img/report/calc_ifelse.png)
 
 #### Drills
 
 When you click on a number/measure on the grid, it will automatically show you any existing drills and also allow you to add a new drill. To add a new drill, click *New Drill* and search for the report you'd like to drill to, as shown below.
 
-![](/img/report/drill_measure.gif)
+![Drill measure](/img/report/drill_measure.gif)
 
 You can also drill down or across on any text/dimension field. The example below shows a drill on *Country* down to *Athlete Name*. This action adds a filter for *Country = 'United States'* and replaces the *Country* column with *Athlete Name*, as shown here:
 
-![](/img/report/drill_dimension.gif)
+![Drill dimension](/img/report/drill_dimension.gif)
 
 You can also drill to external websites and pass columns from the report to the URL parameters. To pass a column from the report, put it in the URL inside of {} curley braces. You can also set a condition to only allow the drill when certain criteria are met. For example, you could create a drill on *Athlete Name* that opens a Google Search, as shown below.
 
-![](/img/report/drill_url.png)
+![Drill URL](/img/report/drill_url.png)
 
 > **Edit Column Drills** - Drills for a column can always be edited from [Field Configuration](#field-configuration).
 
@@ -174,18 +174,18 @@ Conditional formatting allows you to display cell contents different ways depend
 * In-cell Visualization - if an in-cell visualization (e.g. Row Chart sparkline) is selected, you can change the style of the visualization
 * Icon - select from nearly 500 icons to display in the cell, then give it some style
 
-![](/img/report/condition_rule.png)
+![Condition rule](/img/report/condition_rule.png)
 
 Each row of data on the report will be tested to see if any of the rules apply. If a rule applies, then that cell or row is formatted based on the rule, as shown below.
 
-![](/img/report/condition_result.png)
+![Condition result](/img/report/condition_result.png)
 
 
 #### Field Configuration
 
 All options for a column can be found and modified by right-clicking a column and selecting *More Settings...*.
 
-![](/img/report/field_config.png)
+![Field Configuration](/img/report/field_config.png)
 
 * **ID** - the unique identifier for the field (not editable)
 * **Label** - the text title for the field
@@ -213,7 +213,7 @@ You can export to Excel and CSV from the [Grid Configuration](#grid-configuratio
 
 #### Grid Configuration
 
-To access grid settings, click the *![](/img/report/grid_config_button.png)* button at the top-right of the grid.
+To access grid settings, click the *![Grid Configuration Button](/img/report/grid_config_button.png)* button at the top-right of the grid.
 
 * **Export to Excel** - download the data into .XLSX format
 * **Export to CSV** - download the data into comma separated .CSV format
@@ -221,19 +221,19 @@ To access grid settings, click the *![](/img/report/grid_config_button.png)* but
 * **Fit Columns** - set column widths to fit the length of text in each column
 * **More Settings** - access more grid configuration properties, as shown below
 
-![](/img/report/grid_configuration.png)
+![Grid Configuration](/img/report/grid_configuration.png)
 
 ### Charts (Visualization)
 
 Once you're done exploring your data and are ready to explain your data, choose one of the many vizzes in the *Visualization Panel*. Each viz has it's own *Data Fields* and configuration options that can be changed below. See the [Visualization Guide](viz/guide) for in-depth details about the different vizzes.
 
-![](/img/report/viz_types.gif)
+![Visualization Types](/img/report/viz_types.gif)
 
 ### Report Options
 
 #### Report Menu
 
-*![](/img/report/report_menu_open.png)*
+*![Report Menu](/img/report/report_menu_open.png)*
 
 The report menu is located in the top-right of the report and is used for the following:
 * Save/Save As - save your report, or make a copy with Save As
@@ -248,7 +248,7 @@ The report menu is located in the top-right of the report and is used for the fo
     * Add to Favorites - add report to your personal favorites
     * More Settings - change report configuration properties, shown below
 
-![](/img/report/report_config.png)
+![Report config](/img/report/report_config.png)
 
 > **Report Backup/Migration** - copy/paste from the report Specification to save as a backup or open report from specs
 
@@ -256,7 +256,7 @@ The report menu is located in the top-right of the report and is used for the fo
 
 Natural language query allows you to use text to generate a report by asking a question, similar to a Google search. For example, `show me Top 10 Gold Medals by Country on a Column Chart` will get you a `Column Chart` with the `Gold Medals` metric and the top 10 `Country` dimension. On a new report, just enter text in the search input in the middle of the page. On an existing report, click the `Ask` button in the top-right.
 
-![](/img/report/nlp.png)
+![Natural Language Query](/img/report/nlp.png)
 
 ## Builder Page
 
@@ -264,7 +264,7 @@ The *Builder Page* allows you to create your report without live (ad-hoc) data. 
 
 > To always open to the builder page, go to report settings and uncheck *Run Automatically*
 
-![](/img/report/builder_page.png)
+![Builder Page](/img/report/builder_page.png)
 
 ### Prompts
 
@@ -276,13 +276,13 @@ For more detailed information, check the [Filters](#filters) section above.
 
 The builder page can be a much quicker way to create reports if you know how to use it. Quickly add fields, order them, and set grouping, pivoting, and more from here. Use the *Metadata search* to quickly search and add your fields, shown here:
 
-![](/img/report/field_select.gif)
+![Field Selection](/img/report/field_select.gif)
 
 ## Share (PDF, Image, Link) or Embed
 
 The toolbar *Share* button allows reports to be shared as a link, .pdf, or .png image. They can also be embedded in other sites using the Embed link.
 
-![](/img/dashboard/share.png)
+![Share and Embed](/img/dashboard/share.png)
 
 ## Schedule Delivery
 
@@ -297,7 +297,7 @@ You can schedule email delivery of reports from the FlexIt Portal by following t
 
 Depending on your role, you may be able to create an analysis based on custom SQL. When you create a new report, instead of selecting a Data Model, select *New SQL Analysis* and it takes you to this screen:
 
-![](/img/report/sql_report.png)
+![SQL Report](/img/report/sql_report.png)
 
 Build and test your SQL, then click *Create Report* in the top right. If you need to edit your SQL in the future, you can do so from the [Report Menu](#report-menu).
 
@@ -307,7 +307,7 @@ Build and test your SQL, then click *Create Report* in the top right. If you nee
 
 Depending on your role, you may be able to create an analysis from an Excel, CSV, or Tab delimited spreadsheet. When you create a new report, instead of selecting a Data Model, select *Upload Excel/CSV* at the top
 
-![](/img/report/upload_excelcsv.png)
+![Upload Excel/CSV](/img/report/upload_excelcsv.png)
 
 Set the options for parsing the spreadsheet:
 * Use first row as headers - this will make the column names based on the first row in the spreadsheet, and the data starts on row 2

@@ -23,19 +23,19 @@ Here is how to set up a SAML application in Okta:
 
 4.  In the dialog that opens, select the “SAML 2.0” option and then click *Next*
 
-    ![](/img/saml/okta_flexit_new.png)
+    ![SAML 2.0](/img/saml/okta_flexit_new.png)
 
 5.  In Step 1 “General Settings”, enter “FlexIt Analytics” in the “App name” field
 
-    ![](/img/saml/okta_flexit_generalsettings.png)
+    ![General settings](/img/saml/okta_flexit_generalsettings.png)
 
 6.  Upload the FlexIt app logo, then click the *Next* button.
 
-    ![](/img/saml/X.png)
+    ![FlexIt logo](/img/saml/X.png)
 
 7.  In Step 2 “Configure SAML,” section A “SAML Settings”, paste the URL below into the “Single sign on URL” and “Audience URI (SP Entity ID)” fields. The FlexIt URL will be in the form of protocol://servername:port/auth/callback, for example: https://carbon1:3030/auth/callback
 
-    ![](/img/saml/okta_flexit_samlsettingsgeneral.png)
+    ![Configure SAML](/img/saml/okta_flexit_samlsettingsgeneral.png)
 
 8.  In the “Attribute Statements” section, add three attribute statements. In the “Group Attribute Statements”, add one statement:
     1.  Attribute Statements
@@ -46,27 +46,27 @@ Here is how to set up a SAML application in Okta:
         *   “Groups” set to “Starts with” text of “FlexIt”
     3.  Click Next to continue
 
-    ![](/img/saml/okta_flexit_generalattributes.png)
+    ![Attribute Statements](/img/saml/okta_flexit_generalattributes.png)
 
 9.  In Step 3 “Feedback”, select “I’m an Okta customer adding an internal app”, and “This is an internal app that we have created,” then click Finish.
 
-    ![](/img/saml/okta_flexit_finish.png)
+    ![Finish](/img/saml/okta_flexit_finish.png)
 
 10.  The “Sign On” section of your newly created “FlexIt Analytics” application appears. Click on “View Setup Instructions”
 
-    ![](/img/saml/okta_flexit_ipmetadata.png)
+    ![View Setup Instructions](/img/saml/okta_flexit_ipmetadata.png)
 
 11.  Keep this page open in a separate tab or browser window. You will return to this page later in this guide and copy the 3 settings into the FlexIt Configuration
 
-    ![](/img/saml/okta_flexit_samlconfig.png)
+    ![FlexIt SAML Configuration](/img/saml/okta_flexit_samlconfig.png)
 
 12.  Log in to FlexIt as an Administrator, click on “Configuration” under Administration, then click “Authentication”
 
-    ![](/img/saml/flexit_config_auth.png)
+    ![Authentication](/img/saml/flexit_config_auth.png)
 
 13.  Select the “SAML 2.0” type from the drop-down and map the items from step 10 above into the FlexIt configuration
 
-    ![](/img/saml/flexit_config_authmap.png)
+    ![Authentication mapping](/img/saml/flexit_config_authmap.png)
 
 14.  In the FlexIt configuration, the “User Attribute Statements” and “Group Attribute Statements” should match the names used in step 7 above. Note the following options:
 

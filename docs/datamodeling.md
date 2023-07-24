@@ -20,7 +20,7 @@ Prior to creating a metadata model, you’ll need to create a data source that t
 
 ## 2) Create a Data Model
 
-![](/img/datamodel/datamodel_admin.png)
+![Create a Data Model](/img/datamodel/datamodel_admin.png)
 
 ### New Data Model
 
@@ -34,13 +34,13 @@ Use the [dbt](https://getdbt.com) data transformation tool to provide the metada
 
 Next to the *New Data Model* button, click the *Metadata Viewer* button to browse all your organizations' data models.
 
-![](/img/datamodel/viewer.png)
+![Metadata Viewer](/img/datamodel/viewer.png)
 
 ### Data Model Editor
 
 When creating a new model or editing an existing model, you’ll notice that there are 3 distinct sections of the Data Model editor shown and described in detail below:
 
-![](/img/datamodel/editor.png)
+![Data Model Editor](/img/datamodel/editor.png)
 
 1.  Source Data Server – drag entities or attributes from here into the Data Model area on the right
 2.  Data Model – this is your metadata model. You’ll drag items from the Source Data Server into here, give items nice labels and descriptions, create joins/relationships, calculations, SQL entities, and more.
@@ -60,7 +60,7 @@ Drag-and-drop items from the Source Data Server pane into the Data Model pane.
 
 Once you’ve brought items into the Data Model pane, the *Visual Editor* button allows you to create relationships between entities. In the top-right, use the “Smart Join” button to automatically detect relationships between entities and the “Auto-organize” button to neatly organize all the entities and relationships. Right-click on entities or relationships to make changes or create new ones. Here’s a screenshot of what it looks like when you use the Smart Join:
 
-![](/img/datamodel/er_diagram.png)
+![Entity Relationships](/img/datamodel/er_diagram.png)
 
 #### Editing item properties
 
@@ -72,7 +72,7 @@ In the main data model design page (i.e. not the Visual Editor), you can click o
 
 **Attribute** – If you click on an attribute/column, you can edit properties or look at database Source Info. Here are details on the properties you can edit:
 
-![](/img/datamodel/attribute.png)
+![Attribute](/img/datamodel/attribute.png)
 
 *   Label – name that will appear for users to see
 *   Description – information that will appear when a user hovers over the info icon of a field
@@ -92,16 +92,16 @@ Right-click on any entity or attribute in the Data Model pane to create a calcul
 
 Use math calculations for basic operations such as addition, subtraction, multiplication, and division. You can click “Add Item” to use as many fields or constants as you would like in the calulation. Click “Add Operation” to add as many operations as you need. The screenshot below shows a basic math calculation:
 
-![](/img/datamodel/math.png)
+![Math Calculation](/img/datamodel/math.png)
 
 **If Then Else (Case Logic)**
 
 Equivalent to a case statement in SQL, the If..Then..Else calculation allows you to create complex field calculations based on specified logic. You can create new fields that group attributes (e.g. If items are “dog, cat, fish” then “Animal” Else If items are “tree, bush” then “Plant”), or new metrics (e.g. “Prior Year Golds” as If year=year-1 Then [Gold Medals] Else 0). Click the “Add Item” button to add more ELSE IF THEN lines to the statement.
 
-![](/img/datamodel/calculate.png)
+![Case Logic](/img/datamodel/calculate.png)
 
 ## 3) Secure the Data Model
 
 After you Save the data model, it is only accessible by the “Admin” role by default. In order to allow other groups, roles, or users to access this metadata model for reporting and dashboarding, you will need to give them permission by setting the “Security”, as shown below:
 
-![](/img/datamodel/security.png)
+![Security](/img/datamodel/security.png)

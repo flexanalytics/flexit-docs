@@ -17,7 +17,7 @@ When you are given access to FlexIt, you should receive details regarding log in
 ## Welcome Page (Home)
 When you first log in, you'll be taken to the FlexIt home page. Your role(s) will determine what you see since different roles have access to different content (reports, dashboards, folders).
 
-![](/img/start_home.png)
+![Welcome Page (Home)](/img/start_home.png)
 
 ### Accessing Content
 The menu on the left will be for creating and running reports and dashboards.
@@ -60,7 +60,7 @@ For this exercise, we'll use the *Samples* model. If you don't have access to th
 
 OK, let's get started:
 
-1.  Click on the *![](/img/portal/new.png)* button in the portal and select *New Analysis*.
+1.  Click on the *![New content](/img/portal/new.png)* button in the portal and select *New Analysis*.
 2.  Select the **Samples** data model
 3.  From **Fields** in the right panel, add *Country*, *Host Year*, and *Gold Medals* by double-clicking, drag-and-drop, or search
 4.  Try different visualizations in the **Visualizations** panel on the right
@@ -68,7 +68,7 @@ OK, let's get started:
 
 > Check out the [Reporting User Guide](report.md) to learn everything about creating analyses
 
-![](/img/start_createreport.gif)
+![Create Report](/img/start_createreport.gif)
 
 ## My First Dashboard
 
@@ -76,7 +76,7 @@ For this exercise, we'll use the *Samples* reports. If you don't have access to 
 
 OK, let's get started:
 
-1.  Click on the *![](/img/portal/new.png)* button in the portal and select *New Dashboard*.
+1.  Click on the *![New content](/img/portal/new.png)* button in the portal and select *New Dashboard*.
 2.  Select the 3rd template with 2 top panels and 1 bottom panel
 3.  Click the plus button in the top-left panel to add a visualization. Find and add the *Area Chart (100% Stacked)* report.
 4.  Repeat the step above, adding *Scatter Plot (with regression)* to the top-right panel and *Sankey Chart* to the bottom panel
@@ -84,7 +84,7 @@ OK, let's get started:
 
 > Check out the [Dashboarding User Guide](dashboard.md) to learn everything about creating dashboards
 
-![](/img/start_createdashboard.gif)
+![Create Dashboard](/img/start_createdashboard.gif)
 
 ## That's All, Folks!
 

@@ -5,7 +5,7 @@ hide_title: true
 sidebar_label: dbt Integration
 ---
 
-![](/img/dbt/flexit_dbt.png)
+![dbt Integration with FlexIt](/img/dbt/flexit_dbt.png)
 
 # dbt Integration with FlexIt
 
@@ -70,7 +70,7 @@ If using **dbt CLI**, you can connect to a Docs server or manually upload `manif
 
 From the FlexIt Administration panel, select **Data Models** on the left and then click *Create from dbt* on the top-right, then select the type of connection to dbt. Read more about data models in the [Data Modeling guide](datamodeling.md).
 
-![](/img/dbt/create_from_dbt.png)
+![Create from dbt](/img/dbt/create_from_dbt.png)
 
 ### dbt Cloud
 
@@ -80,7 +80,7 @@ With a Cloud API service token configured, simply select **Account**, **Project*
 
 * **Only show documented** - enable this to only show models and model columns that are documented in `YAML` files.
 
-![](/img/dbt/meta_cloud.png)
+![Cloud Metadata](/img/dbt/meta_cloud.png)
 
 ### Docs Server
 
@@ -90,7 +90,7 @@ Enter the base URL for the docs server and FlexIt will automatically source mani
 
 * **Only show documented** - enable this to only show models and model columns that are documented in `YAML` files.
 
-![](/img/dbt/meta_server.png)
+![Docs Server](/img/dbt/meta_server.png)
 
 ### Upload Manifest
 
@@ -98,7 +98,7 @@ Manually upload the `manifest.json` and `catalog.json` files from your dbt proje
 
 * **Only show documented** - enable this to only show models and model columns that are documented in `YAML` files.
 
-![](/img/dbt/meta_upload.png)
+![Upload Manifest](/img/dbt/meta_upload.png)
 
 ## Metadata
 
@@ -106,7 +106,7 @@ Once you've connected to a dbt project, you'll be in the FlexIt editor with all 
 
 > The screenshot below of the metadata editor has orange arrows pointing to dbt-specific features.
 
-![](/img/dbt/meta_editor.png)
+![Metadata](/img/dbt/meta_editor.png)
 
 ## Reports and Dashboards
 
@@ -116,7 +116,7 @@ Once you've saved your Metadata, you can create new reports and dashboards, or l
 
 To create a new analysis from your dbt metadata, click on **New** in the top-left and select **New Analysis**. Select the data model that you created in [Metadata](#metadata) above, and then you'll see a blank report ready to drag-and-drop fields from the right.
 
-![](/img/dbt/new_analysis.png)
+![New](/img/dbt/new_analysis.png)
 
 ### Samples
 
@@ -125,10 +125,10 @@ If you used the [Example dbt Project](#example-dbt-project) from above, then you
 1. Navigate to "Administration > Configuration > Backup and Restore"
 
 2. Right-click and "Restore" the *samples_sales.zip* item
-    ![](/img/dbt/restore_sales.png)
+    ![Restore Sales](/img/dbt/restore_sales.png)
 
 3. Check the "Samples (Sales)" content to restore, deploy content to "Shared Content", select the data model that you created in [Metadata](#metadata) above, and click *Restore*
-    ![](/img/dbt/restore_content.png)
+    ![Restore Content](/img/dbt/restore_content.png)
 
 4. Navigate to the "Shared Content > Samples (Sales)" folder and take a look at the reports and dashboards
 
@@ -140,7 +140,7 @@ Now that you've tried everything out with the sample project and reports, let's 
 
 FlexIt leverages the lineage feature of dbt to show both upstream model dependencies, as well as downstream dashboards and reports. In addition to lineage paths, it shows model, source, and seed refresh times and tooltip descriptions. For downstream exposures, it notifies users if the documented exposures are out of sync with the actual exposures.
 
-![](/img/dbt/lineage.png)
+![Lineage](/img/dbt/lineage.png)
 
 ### Exposures
 
@@ -153,13 +153,13 @@ FlexIt tracks report and dashboard exposures in real-time to show you status
 3. **Info** - exposure is in an external tool, not FlexIt
 4. **Needs Doc** - FlexIt report is not documented as an exposure in dbt
 
-![](/img/dbt/exposure_status.png)
+![Exposure Status](/img/dbt/exposure_status.png)
 
 #### Column-level exposures
 
 FlexIt also shows column-level exposures for FlexIt reports and dashboards. The screenshot below shows reports with their dependent columns, as well as if there are any issues such as broken links (e.g. a model column does not exist).
 
-![](/img/dbt/exposure_column.png)
+![Exposure Column](/img/dbt/exposure_column.png)
 
 
 ### Joins (Entity Relationships)
@@ -190,7 +190,7 @@ models:
 
 Relationships defined in the model `YAML` will appear in FlexIt as shown below
 
-![](/img/dbt/joins.png)
+![Joins](/img/dbt/joins.png)
 
 ### Metrics
 
@@ -236,7 +236,7 @@ models:
 
 In reports or dashboards, users can be aware of data freshness for models and sources throughout the full lineage. The screenshot below shows a source with a status of *pass* and timestamp, as well as the model run status of *success* and timestamp. If source freshness fails, or models in a run do not succeed, users will be notified of the status.
 
-![](/img/dbt/freshness.png)
+![Freshness](/img/dbt/freshness.png)
 
 ### Data dictionary (Docs)
 
@@ -268,13 +268,13 @@ models:
 
 The model `description` that references the docs block markdown will enable the following tooltip in FlexIt:
 
-![](/img/dbt/docs.png)
+![dbt Docs](/img/dbt/docs.png)
 
 ### Statistics
 
 Information such as `Number of rows` or `Size` of a table/model can be very informative and build trust in the data. If the underlying data source supports these statistics, then FlexIt makes them available by right-clicking on any model in an analysis.
 
-![](/img/dbt/stats.png)
+![Table statistics](/img/dbt/stats.png)
 
 ### Custom `meta`
 
@@ -359,7 +359,7 @@ metrics:
 
 Defining synonyms in your model `schema.yml` allows them to be search and used for Natural Language Query, as shown below:
 
-![](/img/dbt/nlq.png)
+![Natural Language Query](/img/dbt/nlq.png)
 
 #### Business (Friendly) Name
 
@@ -437,7 +437,7 @@ models:
 
 When grain is not `off`, users will see the following grain options in the FlexIt metadata:
 
-![](/img/dbt/grain.png)
+![Date grain](/img/dbt/grain.png)
 
 > Grain only applies to *date* columns
 

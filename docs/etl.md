@@ -13,12 +13,12 @@ The data transformation feature can be used to Extract, Transform, and Load (ETL
 ## Getting Started
 From the *Administration > Data Transform* list, click on an existing transformation or *New Data Transform* at the top. This will bring you into the design process for a data transformation. Use the tools and design panel to create your transformation process.
 
-![](/img/etl_list.png)
+![Data Transformation (ETL)](/img/etl_list.png)
 
 ## Tools
 There are three (Container, SQL Task, Data Flow) simple tools you can use to design your transformation. Drag-and-drop any of the following tools from the *Tools* panel into the *Transformation Design* panel. The number order of the tasks will be the order that they are processed.
 
-![](/img/etl_designpage.png)
+![Tools](/img/etl_designpage.png)
 
 Right-click on any of the tools to access a menu of options:
 * Run - run only the selected item
@@ -37,7 +37,7 @@ Use SQL tasks to execute any SQL command. This is commonly used to set database 
 ### Data Flow
 Data flow tasks are used to extract data from a source and load it into a destination. They appear with a name/label and three buttons for editing the source, mapping, and destination.
 
-*![](/img/etl_dataflow.png)*
+*![Data Flow](/img/etl_dataflow.png)*
 
 #### Name
 To change the name/description to something unique, simply click the "Data Flow" text and enter a name.
@@ -49,10 +49,10 @@ Click the *Run* button to test and verify your SQL and/or data results.
 
 > **Important** - You must "Run" the source if you want to do column mapping
 
-![](/img/etl_sqlsource.png)
+![SQL Source](/img/etl_sqlsource.png)
 
 #### Column Mapping
-![](/img/etl_mapping.png)
+![Column Mapping](/img/etl_mapping.png)
 
 Click on the arrow to map the source columns to destination columns.
 > **Important** - if you do not map the columns, the natural order of the source and destination will be used.
@@ -68,7 +68,7 @@ Here are the main options for mapping:
 #### Destination
 Configuring the destination allows you to set the table that you would like to load source data into. 
 
-![](/img/etl_destdiff.png)
+![Destination table](/img/etl_destdiff.png)
 
 * **Datasource** - the destination data source connection
 * **Entity** - the destination table to load data into
@@ -90,7 +90,7 @@ Built-in functions give you the ability to specify dates, years, months, etc. in
 
 Right-click on any SQL or Data Flow task to add parameters. Parameter values will be based on the source query. For example, if you add parameters to a task with "select HOST_YEAR, HOST_CITY from GAMES" as the query, then you can create parameter names for the HOST_YEAR and HOST_CITY columns, as such:
 
-![](/img/etl_parameters.png)
+![Parameters](/img/etl_parameters.png)
 
 Once you've created parameters, you can use them in the destination *DELETE* where clause or any downstream SQL Source by enclosing the parameter name inside double brackets with an @ character. If the SQL source that sets the parameter returns multiple values, the parameter value will be a comma separated list of these values. Using the example above, you can use the pHostYear parameter like this:
 
@@ -104,7 +104,7 @@ where YEAR in ([[@pHostYear]])
 
 Perform actions on SQL or Data Flow tasks based on run results.
 
-![](/img/etl_actions.png)
+![Actions](/img/etl_actions.png)
 
 * Enabled - when on, actions will be executed if "On Event" criteria are met
 * On Event - criteria for when action will be executed
@@ -113,14 +113,14 @@ Perform actions on SQL or Data Flow tasks based on run results.
 * Execute Task - if criteria met, execute the selected task next. Actions can execute tasks that are disabled.
 
 ## Configure (Settings)
-While designing an ETL process, you can click on *![](/img/etl_configbtn.png)* in the top-right to open the configuration properties. There are three main areas:
+While designing an ETL process, you can click on *![Configure](/img/etl_configbtn.png)* in the top-right to open the configuration properties. There are three main areas:
 
 1. Success Handling - configuration for what to do when the job runs successfully. *Email Admins on Success* will send an email to all FlexIt users in the *Admin* role. *Email on Success* allows you to enter comma separated email addresses that might differ from the admins. An SMTP email server must be configured ([show me](administration.md#smtp-email)).
 2. Error Handling - similar to *Success Handling*, but also has an option for *Stop on Fail*. This stops the job immediately if any task fails. If this is not checked, individual task failures will still result in a successful job run.
 3. Specification - this is the text specification for the current job. This can be used to import/export jobs, which is useful for backups or migrating a job from one environment to another. The specification is in JSON format.
 
 
-![](/img/etl_config.png)
+![ETL Configuration](/img/etl_config.png)
 
 
 
@@ -131,11 +131,11 @@ There are a few ways to run ETL jobs and tasks.
 ### Interactive
 Interactive mode allows you to run the entire job or individual tasks with real-time updates on status, rows loaded, etc. You can run individual Data Flow tasks by right-clicking on them in the design pane and selecting *Run*. The entire job can be run by clicking on the *Run* button in the top-right. Both of these will immediately run the tasks and show results in your browser, as shown here:
 
-![](/img/etl_concurrent.png)
+![Interactive](/img/etl_concurrent.png)
 
 ### Background
 Background mode allows you to run the job in the background, either immediately or scheduled for later. To run the background job, go to the list of jobs and click on the ellipsis:
-![](/img/etl_runnow.png)
+![Background](/img/etl_runnow.png)
 
 1.  *Run Now* starts the job immediately and runs it in the background
 2.  *Schedule* allows you to set a date/time in the future to run the job ([show me](#schedule))
@@ -158,13 +158,13 @@ C:\Program Files\FlexIt Analytics\bin> flexit runJob -showMessages -jobId 123
 ## History
 History shows the status and detail of jobs. To show a history for all jobs, click the *Job History* button at the top of the jobs list page. To show the history for an individual job, there are two methods:
 
-1.  In design mode, click on the ![](/img/etl_historybtn.png) button. 
+1.  In design mode, click on the ![History](/img/etl_historybtn.png) button. 
 2.  From the jobs list, click on the ellipsis and select *History*
 
 ## Schedule
 Jobs can be scheduled to run at a specific time in the future with a recurring pattern. To schedule a job, click the ellipsis to the right of the job and select *Schedule*.
 
-![](/img/flex_schedule.png)
+![Schedule](/img/flex_schedule.png)
 
 Enter properties to fit your scheduling needs:
 * **Disabled** - click this in order to disable the job. The schedule will not be run when disabled, but it will still be available for you to enable later.
@@ -196,11 +196,11 @@ You can use Oracle BI (OBIEE) as a source to extract data from. Source data can 
 
 Logical SQL must adhere to the Oracle BI syntax. You can get the Logical SQL for a report from the *Advanced* tab, shown here:
 
-![](/img/oracle_logicalsqlreport.png)
+![Logical SQL Syntax](/img/oracle_logicalsqlreport.png)
 
 You can test run the Logical SQL from Oracle BI administration. Click on *Administration* in the top-right, click *Issue SQL* under *Maintenance and Troubleshooting*, enter your SQL and click *Issue SQL*.
 
-![](/img/oracle_logicalsqladmin.png)
+![Logical SQL Administration](/img/oracle_logicalsqladmin.png)
 
 #### Logical SQL Looper
 
@@ -222,9 +222,9 @@ You can select an existing report to extract source data. If the selected report
 
 > **Looper** - if there is a limit to the number of rows a report can return, you can use the "Loop" feature. Clicking the loop checkbox sends multiple smaller requests for the data. The example below will send four separate requests to get the data for all four Segment Codes.
 
-![](/img/etl_reportsource.png)
+![Report Source](/img/etl_reportsource.png)
 
-![](/img/etl_biprompts.png)
+![BI Prompts](/img/etl_biprompts.png)
 
 ### Connecting to Oracle BI
 
@@ -237,7 +237,7 @@ Connect to Oracle BI by creating a new [Data Source](administration.md#data-sour
 *   **Use Custom Login** - if two-factor (2FA) or multi-factor authentication (MFA) are used, you may need to use a custom login script. This setting allows you to use the Node JS script *[flexit_home]/config/custom/CustomModule.js* to properly authenticate and allow access to web services and/or the Oracle GO Url. This process uses the [Selenium Web Driver](https://selenium.dev/), a widely-used and secure tool. 
 *   **Allow GO Url** - in some cases, the Oracle BI *GO Url* can be faster and more reliable than the Oracle web services. Enable this setting to allow FlexIt to choose which method to use, with the goal of increasing performance and reliability.
 
-![](/img/oracle_datasource.png)
+![Oracle Data Source](/img/oracle_datasource.png)
 
 ## Extract Data from PeopleSoft Query
 You can use PeopleSoft Query as a source to extract data. Set up a connection to PeopleSoft Query, then choose the query as you would any other ETL data source for either SQL or Data Flow tasks.
@@ -252,13 +252,13 @@ Connect to PeopleSoft Query by creating a new [Data Source](administration.md#da
 *   **Session Timeout (minutes)** - leave the connection open for the specified time, in minutes.
 *   **Retry on Fail** - if a connection fails, retry *n* times.
 
-![](/img/psquery_datasource.png)
+![PeopleSoft Query Data Source](/img/psquery_datasource.png)
 
 > Note - this process uses the [Selenium Web Driver](https://selenium.dev/), a widely-used and secure tool. You'll need to provide a custom script on the FlexIt server under *[flexit_home]/config/custom/PSQuery.js* to properly authenticate and allow access to PeopleSoft environment.
 
 ### Query Source
 
-![](/img/etl_psquery.png)
+![Query Source](/img/etl_psquery.png)
 
 Once you've created the connection, PeopleSoft Query data can be extracted using SQL or Data Flow tasks. Select the PeopleSoft Query data source and enter the Query Name.
 

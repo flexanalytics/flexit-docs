@@ -9,13 +9,13 @@ sidebar_label: FlexIt Portal (Home)
 
 The portal is a single page that contains everything you'll need to access in FlexIt. The top *Header* and left *Sidebar* will always be displayed. The main *Content* pane will show reports, dashboards, lists of recent/favorite items, and all other items that you'll work on in FlexIt.
 
-![](/img/portal/home.png)
+![Portal Home](/img/portal/home.png)
 
 
 ## Header
 
 From left to right, the FlexIt header has the following sections.
-![](/img/portal/header.png)
+![Portal Header](/img/portal/header.png)
 
 **Welcome (FLEXIT logo)**
 
@@ -43,7 +43,7 @@ Depending on your role(s), you may see different items on the sidebar menu. Chec
 
 Specifically, **New Analysis** and **New Dashboard** are not available to the *Consumer* role. The **Administration** menu is only available to the *Admin* role.
 
-![](/img/portal/sidebar.png)
+![Portal Sidebar](/img/portal/sidebar.png)
 
 From top to bottom, the FlexIt sidebar has the following sections.
 
@@ -59,7 +59,7 @@ Search all reports and dashboards that you have access to
 
 Create a new report/analysis, dashboard, or data portal. The *Consumer* role will not see these buttons.
 
-![](/img/portal/new_open.png)
+![New content](/img/portal/new_open.png)
 
 > Read the [Reporting User Guide](report.md) for detailed information on how to build reports
 
@@ -97,4 +97,4 @@ Only users in the *Admin* group have access to this menu
 
 Reports, dashboards, recent, favs, data models, and everything else will be displayed in the *Content Pane*, shown here:
 
-![](/img/portal/content.png)
+![Content types](/img/portal/content.png)

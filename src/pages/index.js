@@ -68,12 +68,12 @@ function FeatureImg({props}) {
 
 function Feature({props}) {
   return (
-    <div className={classnames('col col--6 flx-gray', styles.feature)}>
+    <div className={classnames('col col--6', styles.feature)}>
       <div className={styles.featureBlock}>
         <div className={classnames('text--center', styles.featureText)}>
           {props.imageUrl?<FeatureImg props={props}/>:props.component}
         </div>
-        <h3><a href={useBaseUrl(props.docLink)}>{props.title}</a></h3>
+        <a className={styles.featureTitle} href={useBaseUrl(props.docLink)}>{props.title}</a>
         <p>{props.description}</p>
       </div>
     </div>
@@ -90,7 +90,7 @@ function Home() {
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className="hero__subtitle" role="heading">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
               className={classnames(
