@@ -9,6 +9,16 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2023.10.001 - Datasets, dbt Cloud, SAML
+* Datasets for lightning speed analytics
+* dbt integration improvements
+* SAML integration improvements
+
+## 2023.08.001 - Snowflake and Row-level Security
+* Snowflake connector improvements
+* Row-level security improvements
+* Minor bug fixes
+
 ## 2023.05.001 - Data Catalog and Natural Language Improvements
 * New: Data Catalog to explore metadata
 * New: Natural Language Query filters
