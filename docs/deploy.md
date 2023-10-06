@@ -116,3 +116,77 @@ In the directory that FlexIt was installed, run the “uninstall” executable.
 If you are upgrading to a newer version and already have FlexIt installed, you can simply install the new version over the existing version. Any files under the *FlexIt Home* directory that are overwritten will be placed into a backup folder.
 
 > **Important** - Back up the content store database or export the content to save all your content before upgrading
+
+#### Upgrade AWS Marketplace EC2 Instance
+
+> Download the latest Linux installer from [https://flexitanalytics.com/download/](https://flexitanalytics.com/download/)
+
+> In the example below, `54.159.37.23` is the example EC2 public IPv4 address
+
+**Follow these steps**
+
+1. Copy the installer from local to the EC2 instance
+
+```bash
+sudo scp -i /tmp/flexit-keypair-main.pem /tmp/flexit-linux-x64-installer.run ubuntu@54.159.37.23:/tmp
+```
+
+2. (versions prior to 2023.10.001) Copy the `service_manager` script to the `/opt/flexit/bin/` folder. The script and command are below.
+
+```bash
+sudo scp -i /tmp/flexit-keypair-main.pem /tmp/service_manager ubuntu@54.159.37.23:/opt/flexit/bin
+```
+
+```bash title="service_manager"
+#!/bin/bash
+
+# chkconfig:        235 30 90
+# description: your description
+
+start () {
+    sudo --preserve-env ./start_flexit
+}
+
+stop () {
+    sudo --preserve-env ./stop_flexit
+}
+
+case "$1" in
+start)
+        start
+        ;;
+stop)
+        stop
+        ;;
+restart)
+        stop
+        sleep 1
+        start
+        ;;
+*)
+        echo "Usage: $0 { start | stop | restart }"
+        exit 1
+        ;;
+esac
+
+exit 0
+```
+
+3. Log into the EC2 instance
+
+```bash
+ssh -i /tmp/flexit-keypair-main.pem ubuntu@54.159.37.23
+```
+
+4. Run the installer
+
+```bash
+cd /tmp
+sudo ./flexit-linux-x64-installer.run
+```
+
+5. Click through and select 1) for Upgrade when prompted (do not pay attention to the url message at the end)
+
+6. Reboot EC2 instance (do not stop instance or public IPv4 will change)
+
+7. Open FlexIt URL and check version in top right Help > About
