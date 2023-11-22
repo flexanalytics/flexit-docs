@@ -9,6 +9,13 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2023.11.001 - dbt Column Lineage
+* dbt Column Lineage
+* dbt Cloud improvements
+* Grid feature: frozen columns
+* SAML Enhancements
+* Dataset improvements
+
 ## 2023.10.001 - Datasets, dbt Cloud, SAML
 * Datasets for lightning speed analytics
 * dbt integration improvements

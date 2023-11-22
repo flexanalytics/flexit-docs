@@ -131,62 +131,23 @@ If you are upgrading to a newer version and already have FlexIt installed, you c
 sudo scp -i /tmp/flexit-keypair-main.pem /tmp/flexit-linux-x64-installer.run ubuntu@54.159.37.23:/tmp
 ```
 
-2. (versions prior to 2023.10.001) Copy the `service_manager` script to the `/opt/flexit/bin/` folder. The script and command are below.
-
-```bash
-sudo scp -i /tmp/flexit-keypair-main.pem /tmp/service_manager ubuntu@54.159.37.23:/opt/flexit/bin
-```
-
-```bash title="service_manager"
-#!/bin/bash
-
-# chkconfig:        235 30 90
-# description: your description
-
-start () {
-    sudo --preserve-env ./start_flexit
-}
-
-stop () {
-    sudo --preserve-env ./stop_flexit
-}
-
-case "$1" in
-start)
-        start
-        ;;
-stop)
-        stop
-        ;;
-restart)
-        stop
-        sleep 1
-        start
-        ;;
-*)
-        echo "Usage: $0 { start | stop | restart }"
-        exit 1
-        ;;
-esac
-
-exit 0
-```
-
-3. Log into the EC2 instance
+2. Log into the EC2 instance
 
 ```bash
 ssh -i /tmp/flexit-keypair-main.pem ubuntu@54.159.37.23
 ```
 
-4. Run the installer
+3. Run the installer
 
 ```bash
 cd /tmp
 sudo ./flexit-linux-x64-installer.run
 ```
 
-5. Click through and select 1) for Upgrade when prompted (do not pay attention to the url message at the end)
+4. Click through and select 1) for Upgrade when prompted (do not pay attention to the url message at the end)
 
-6. Reboot EC2 instance (do not stop instance or public IPv4 will change)
+5. Reboot EC2 instance
 
-7. Open FlexIt URL and check version in top right Help > About
+> **Warning** If you stop the instance, the public IPv4 will change and you will need to `cd /var/lib/cloud/scripts/per-instance` and then `sudo ./update_nginx_listener.sh` to update the NGINX server_name.
+
+6. Open FlexIt URL and check version in top right Help > About
