@@ -9,6 +9,29 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2024.06.001 - dbt Semantic Layer
+* Integrate with dbt Semantic Layer
+* dbt multi-package support
+* Minor UI enhancements
+
+## 2024.05.001 - Data models and ingestion
+* Data Module as code
+* Incremental data ingestion
+* Drill-down enhancements
+* Other minor fixes
+
+## 2024.03.001 - dbt Integration Enhancements
+* dbt Natural Language filters
+* Open dbt Cloud Explorer to column or model
+* New dbt Metric config in 'meta'
+* Metadata group labels (folder)
+
+## 2024.01.001 - Data Transormation Improvements
+* Data transformation auto-DDL creation
+* Data transformation config retry attempts on fail
+* Grid spreadsheet new combine rows feature
+* Tail log files
+
 ## 2023.11.001 - dbt Column Lineage
 * dbt Column Lineage
 * dbt Cloud improvements
