@@ -104,7 +104,7 @@ To apply security on the *Samples (Olympic Data)* folder, click the red *Overrid
 
 ## Configuration
 
-The FlexIt configuration settings can be managed under the “Administration > Configuration” menu, as shown here:  
+The FlexIt configuration settings can be managed under the “Administration > Configuration” menu, as shown here:
 
 ![FlexIt configuration settings](/img/admin/configuration.png)
 
@@ -207,7 +207,13 @@ FlexIt comes packaged with three sample packages that comes with reports & dashb
 
 ### HTTPS
 
-To enable https on the server, you must place both the Private Key and Certificate file on the server under the “[flexit_home]/config/certs” folder. The Private Key must be in a PEM file named “privatekey.pem”. The Certificate can be in a file named “certificate.pem” or “certificate.cert”. You may also need to change the port to 443, see the Server Settings administration section. Restart the server for changes to take affect.
+To enable https on the server, you must place both the Private Key and Certificate file on the server under the “[flexit_home]/config/certs” folder.
+* Private Key: the key must be in a PEM file named “privatekey.pem”
+* Certificate: the certificate can be in a file named “certificate.pem” or “certificate.cert”
+
+[Restart the server](deploy.md#startstop-flexit-server) for changes to take affect.
+
+> Note: You may also need to change the port to 443, see the [Server Settings](#server-settings) administration section.
 
 ### PDF Download
 

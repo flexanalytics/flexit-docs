@@ -61,7 +61,7 @@ Installing FlexIt is quick and easy.
 5.  If you want to use a different database than the included Postgres DB, or change other config options, then go to “Customized Setup” below. Otherwise you can click “Next” through the rest of the screens.
 6.  At the last step, you’ll see a URL link to open FlexIt. You can click that link or paste it into your preferred browser.
     > **Note:** The default URL is http://localhost:3030
-    
+
 ### Customized Setup
 
 If you want to customize your FlexIt installation and configuration, here are your options as you progress through the setup process
@@ -89,11 +89,22 @@ You can modify the FlexIt configuration from within the web application as an Ad
 
 #### Start/Stop FlexIt Server
 
-It is best to use the FlexIt service, which starts and stops both the FlexIt server and the default PostgreSQL server (if installed). You can also start or stop the FlexIt service manually using scripts in the “[FlexIt Install Directory]/bin” directory.
+It is best to use the FlexIt service, which starts and stops both the FlexIt server and the default PostgreSQL server (if installed).
 
-Start FlexIt by running the `start_flexit` script
+##### Windows
+Open Windows Service manager and look for the "FlexIt Analytics" service
 
-Stop FlexIt by running the `stop_flexit` script
+##### Linux
+Use `systemctl`, which manages systemd services, as shown below:
+```bash
+sudo systemctl stop flexit
+sudo systemctl start flexit
+```
+
+##### Any OS
+You can also start or stop the FlexIt service manually using scripts in the “[FlexIt Install Directory]/bin” directory:
+* Start FlexIt: run the `start_flexit` script
+* Stop FlexIt: run the `stop_flexit` script
 
 #### Modify Windows Service
 
