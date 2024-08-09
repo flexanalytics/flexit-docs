@@ -9,6 +9,13 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2024.08.001 Data Certification
+* Certification of data models, columns and metrics
+* dbt Model improvements
+* Data lineage improvements
+* SAML2 Single-Sign-On enhancements
+* Visualization config improvements
+
 ## 2024.06.001 - dbt Semantic Layer
 * Integrate with dbt Semantic Layer
 * dbt multi-package support
@@ -55,7 +62,7 @@ This is a full list of new features, bug fixes, and other items for all versions
 * New: Natural Language Query field groups
 * Bug fixes and minor enhancements
 
-## 2023.04.001 - Data Masking and Rich Text Tooltips 
+## 2023.04.001 - Data Masking and Rich Text Tooltips
 * New: Data masking
 * New: create Rich Text tooltips
 * New: font/text style on all viz components
@@ -63,7 +70,7 @@ This is a full list of new features, bug fixes, and other items for all versions
 * Conditional Logic improvements
 * Bug fixes and minor enhancements
 
-## 2023.02.001 - Field Parameter, Windows Calculations 
+## 2023.02.001 - Field Parameter, Windows Calculations
 * Field Parameter - feature to show a drop-down list of fields for users to pick from
 * Window Calculations - calculations for summary table data
 * Added conditional styling to more vizzes
@@ -90,7 +97,7 @@ This is a full list of new features, bug fixes, and other items for all versions
 * SQL Editor improvements (run snippets, better suggestions)
 
 ## 2022.07.001 - Performance and Natural Language Enhancements
-* Improvements to performance of metadata and reports 
+* Improvements to performance of metadata and reports
 * Natural Language Query improvements
 * Time grain and other minor fixes
 
