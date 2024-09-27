@@ -9,6 +9,12 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2024.10.001 dbt Improvements and More
+* dbt Integration improvements
+* Dataset column swap feature
+* Datamodule role improvements
+* Minor bug fixes
+
 ## 2024.08.001 Data Certification
 * Certification of data models, columns and metrics
 * dbt Model improvements
