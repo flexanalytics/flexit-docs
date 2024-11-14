@@ -1,9 +1,35 @@
 ---
 id: saml
-title: Set up SAML single sign-on in Okta
+title: Set up SAML single sign-on
 hide_title: true
-sidebar_label: SAML in Okta
+sidebar_label: SAML Configuration
 ---
+
+# SAML with metadata.xml
+
+With your SAML provider (Microsoft Entra ID, Shibboleth, Okta, OneLogin, Duo), create an app for the FlexIt Analytics application. Then, upload the XML metadata (code shown below) with the following entries changed:
+* **entityID** - you can use any identifier here, but it typically looks like `entityID="https://yourdomain.com/data/flexit/sp"`, where *yourdomain.com* is your organizations domain hostname.
+* **Location** - this setting is the FlexIt server installation "Callback URL". In the `Location="https://flexit_server_url/auth/callback"` setting, replace *flexit_server_url* with the hostname URI of the installed FlexIt Analytics server instance.
+
+```xml
+<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+                     xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui"
+                     entityID="https://yourdomain.com/data/flexit/sp">
+    <md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <md:Extensions>
+            <mdui:UIInfo>
+                <mdui:DisplayName xml:lang="en">FlexIt Analytics</mdui:DisplayName>
+                <mdui:Logo height="100" width="100">https://cloud.flexitanalytics.com/img/flexicon.png</mdui:Logo>
+            </mdui:UIInfo>
+        </md:Extensions>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+        <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                                        Location="https://flexit_server_url/auth/callback"
+                                        index="0" />
+    </md:SPSSODescriptor>
+</md:EntityDescriptor>
+```
 
 # SAML in Okta
 
@@ -75,7 +101,7 @@ Here is how to set up a SAML application in Okta:
     *none* - (default) do not use groups from the SAML provider. Only use FlexIt groups.
 
     *seed* - FlexIt will use the mapped user group from the SAML provider *ONLY* on the first login. After the first time logging into FlexIt, any changes to the SAML provider groups will not persist to FlexIt.
-    
+
     *sync* - FlexIt will always use the Okta groups. If the groups change in the SAML provider, then the groups in FlexIt will also be updated with the new group mapping.
 
     > *seed* and *sync* rely on the **Group Mapping** entries that map a FlexIt group name to the SAML provider group name

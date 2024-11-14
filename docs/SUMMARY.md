@@ -10,4 +10,4 @@
     * [Administration](administration.md)
     * [Data Models](datamodeling.md)
     * [Data Transformation (ETL)](etl.md)
-    * [SAML in Okta](saml.md)
+    * [SAML](saml.md)

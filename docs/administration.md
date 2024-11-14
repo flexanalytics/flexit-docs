@@ -135,7 +135,7 @@ By default, authentication is handled by storing secured credentials in the Flex
 
 See also:
 
-*   [Set up SAML based Single Sign-On in Okta](saml.md)
+*   [Set up SAML based Single Sign-On](saml.md)
 
 
 For the “SAML Configuration” section, the identity provider (Okta, OneLogin, etc.) will provide you with the following when you set up a new application in their tool:

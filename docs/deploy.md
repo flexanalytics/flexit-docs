@@ -159,6 +159,6 @@ sudo ./flexit-linux-x64-installer.run
 
 5. Reboot EC2 instance
 
-> **Warning** If you stop the instance, the public IPv4 will change and you will need to `cd /var/lib/cloud/scripts/per-instance` and then `sudo ./update_nginx_listener.sh` to update the NGINX server_name.
+> **Warning** If you do NOT have Elastic IP configured on the EC2 instance and stop the instance, the public IPv4 will change. If this happens, you will need to `cd /var/lib/cloud/scripts/per-instance` and then `sudo ./update_nginx_listener.sh` to update the NGINX server_name. To avoid this, you can either "Reboot" from the AWS console or call `sudo reboot` on the instance.
 
 6. Open FlexIt URL and check version in top right Help > About
