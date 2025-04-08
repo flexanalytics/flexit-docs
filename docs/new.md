@@ -9,6 +9,17 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2025.02.002 Row Transformer
+* Row transformer for data transformation
+* SAML login improvements
+* SQL Editor improvements
+
+## 2025.02.001 dbt Build, Universal Semantic Layer and Data Transformation
+* Orchestrate and build dbt Cloud and dbt-core jobs from FlexIt
+* Semantic Layer integration for Power BI, Tableau, AWS QuickSight and more
+* Major enhancements to ELT and data transformation engine
+* New API data source for data extraction and loading
+
 ## 2024.10.001 dbt Improvements and More
 * dbt Integration improvements
 * Dataset column swap feature
