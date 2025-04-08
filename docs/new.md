@@ -9,6 +9,16 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2025.04.002 OpenAI Integration
+* OpenAI integration for text-to-SQL
+* DuckDB data source
+* Object level security on entities and columns
+* "Who has access?" security feature
+* Semantic layer improvements
+* Tags in data lineage
+* SAML authentication improvements
+* dbt Cloud integration upgrades
+
 ## 2025.02.002 Row Transformer
 * Row transformer for data transformation
 * SAML login improvements
