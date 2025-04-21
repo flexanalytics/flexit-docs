@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../pages/styles.module.css';
-import vizzes from '../../../../flexit/client/js/config/vizzes';
+import vizzes from './vizzes';
 import VizList from './viz_list';
 
 const baseUrl = 'https://cloud.flexitanalytics.com'; //'http://carbon1:3030';
