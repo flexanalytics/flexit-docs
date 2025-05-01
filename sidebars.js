@@ -37,9 +37,19 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Administration',
+      label: 'Deployment',
       items: [
         "deploy",
+        "docker",
+        "docker-windows",
+        "cloud",
+        "on-premise",
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Administration',
+      items: [
         "administration",
         "saml",
       ]
