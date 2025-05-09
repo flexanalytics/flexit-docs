@@ -126,26 +126,26 @@ To pull the latest changes from an upstream repo and restart the application:
 
 This section provides commands to clean up Docker artifacts, including containers and images.
 
-### stop all containers
+### stop all containers (PowerShell)
 
 ```bash
-docker stop $(docker ps -aq)
+docker stop (docker ps -aq)
 ```
 
 This command will stop all running containers in your local Docker environment. Be cautious, as this will stop all containers, including those not related to this project.
 
-### delete all containers
+### delete all containers (PowerShell)
 
 ```bash
-docker rm $(docker ps -aq)
+docker rm (docker ps -aq)
 ```
 
 This command will remove all containers from your local Docker environment. Be cautious, as this will delete all containers, including those not related to this project.
 
-### delete all images
+### delete all images (PowerShell)
 
 ```bash
-docker rmi $(docker images -q)
+docker rmi (docker images -q)
 ```
 
 This command will remove all images from your local Docker environment. Be cautious, as this will delete all images, including those not related to this project.
