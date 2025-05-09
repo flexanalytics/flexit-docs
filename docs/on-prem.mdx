@@ -74,8 +74,106 @@ If you want to customize your FlexIt installation and configuration, here are yo
 
 ### Additional Optional Software
 
-*  [**dbt**](https://www.getdbt.com) is a powerful data transformation tool, and it can be integrated in FlexIt to orchestrate data warehouse transformations. In order to run dbt projects locally, you need to install dbt (and Python if not already installed). A full set of instructions on how to install both can be found on the [dbt website](https://docs.getdbt.com/docs/core/installation-overview), and Python can be downloaded from [here](https://www.python.org/downloads/release/python-31210/). More information on how FlexIt works with dbt can be found [here](dbt.mdx).
-*  [**sling**](https://slingdata.io/) is a lightweight data ingestion tool that can be used to pull data from a variety of sources into your data warehouse. It can be installed from [here](https://github.com/slingdata-io/sling-cli/releases/tag/v1.2.13). It is not required for FlexIt, and FlexIt ships with an [ingestion tool out of the box](etl.md#data-flow), but it is a great tool to use in conjunction with FlexIt for fast and easy data ingestion. 
+#### dbt
+*  [**dbt**](https://www.getdbt.com) is a powerful data transformation tool, and it can be integrated in FlexIt to orchestrate data warehouse transformations.
+
+In order to install dbt, you need to have Python installed on your machine. You can check if you have Python installed by running the following command in your terminal:
+```bash
+python --version
+```
+If you do not have Python installed, you can download it from the [Python website](https://www.python.org/downloads/release/python-31210/).
+Once you have Python installed, you can install dbt using pip, the Python package manager. Run the following command in your terminal:
+```bash
+pip install dbt
+```
+You can check if dbt is installed by running the following command in your terminal:
+```bash
+dbt --version
+```
+If you see the version number of dbt, it means that dbt is installed successfully.
+
+You will also need to install the dbt adapter for your data warehouse. For example, if you are using PostgreSQL, you can install the dbt-postgres adapter by running the following command:
+```bash
+pip install dbt-postgres
+```
+You can find the list of all available dbt adapters [here](https://docs.getdbt.com/docs/available-adapters). Examples below:
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="postgres"
+  values={[
+    { label: 'PostgreSQL', value: 'postgres' },
+    { label: 'Snowflake', value: 'snowflake' },
+    { label: 'BigQuery', value: 'bigquery' },
+    { label: 'Redshift', value: 'redshift' },
+    { label: 'SQL Server', value: 'sqlserver' },
+  ]}>
+  <TabItem value="postgres">
+    <pre><code>pip install dbt-postgres</code></pre>
+  </TabItem>
+  <TabItem value="snowflake">
+    <pre><code>pip install dbt-snowflake</code></pre>
+  </TabItem>
+  <TabItem value="bigquery">
+    <pre><code>pip install dbt-bigquery</code></pre>
+  </TabItem>
+  <TabItem value="redshift">
+    <pre><code>pip install dbt-redshift</code></pre>
+  </TabItem>
+  <TabItem value="sqlserver">
+  <blockquote>
+    <strong>Note:</strong> FlexIt maintains a fork of the <code>dbt-sqlserver</code> adapter to support the latest version of dbt.
+  </blockquote>
+  <pre><code>pip install git+https://github.com/flexanalytics/dbt-sqlserver.git@1.9.4</code></pre>
+</TabItem>
+</Tabs>
+
+#### sling
+*  [**sling**](https://slingdata.io/) is a lightweight data ingestion tool that can be used to pull data from a variety of sources into your data warehouse.
+
+Installation instructions for your operating system:
+
+<Tabs
+  defaultValue="linux"
+  values={[
+    { label: 'Linux', value: 'linux' },
+    { label: 'macOS', value: 'macos' },
+    { label: 'Windows', value: 'windows' },
+  ]}>
+
+  <TabItem value="linux">
+    <p><strong>Download and install the latest binary:</strong></p>
+    <pre><code>
+curl -LO 'https://github.com/slingdata-io/sling-cli/releases/latest/download/sling_linux_amd64.tar.gz' \
+  && tar xf sling_linux_amd64.tar.gz \
+  && rm -f sling_linux_amd64.tar.gz \
+  && chmod +x sling
+    </code></pre>
+    <p>Then run:</p>
+    <pre><code>./sling -h</code></pre>
+  </TabItem>
+
+  <TabItem value="macos">
+    <p><strong>Install using Homebrew:</strong></p>
+    <pre><code>brew install slingdata-io/sling/sling</code></pre>
+    <p>Then run:</p>
+    <pre><code>sling -h</code></pre>
+  </TabItem>
+
+  <TabItem value="windows">
+    <p><strong>Install using Scoop:</strong></p>
+    <pre><code>scoop bucket add sling https://github.com/slingdata-io/scoop-sling.git</code></pre>
+    <pre><code>scoop install sling</code></pre>
+    <p>Then run:</p>
+    <pre><code>sling -h</code></pre>
+  </TabItem>
+
+</Tabs>
+
+
+Further installation instructions can be found on their website [here](https://docs.slingdata.io/sling-cli/getting-started). It is not required for FlexIt, and FlexIt ships with an [ingestion tool out of the box](etl.md#data-flow), but it is a great tool to use in conjunction with FlexIt for fast and easy data ingestion. 
 
 ### Managing FlexIt (Post Installation)
 
