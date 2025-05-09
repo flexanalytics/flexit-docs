@@ -119,7 +119,7 @@ To start the application:
 To pull the latest changes from an upstream repo and restart the application:
 
 ```bash
-.\scripts\restart_server.bat
+.\scripts\restart_server.ps1
 ```
 
 ## Cleaning up artifacts to free up space
