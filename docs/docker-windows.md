@@ -13,7 +13,7 @@ sidebar_label: Docker (Windows Containers)
 
 ## System Requirements
 
-Ensure you are able to run PowerShell as Administrator.
+Ensure you are able to run PowerShell as Administrator, as Docker needs elevated privileges to run Windows containers.
 Windows containers only run on Windows 10 or Windows Server 2022 and later.
 
 > **Note** FlexIt via Docker does not support SQL Server database connections using Windows Domain authentication. If you need to connect to SQL Server, you must use SQL authentication.
@@ -21,6 +21,7 @@ Windows containers only run on Windows 10 or Windows Server 2022 and later.
 
 ## Prerequisites
 [Git](https://git-scm.com/downloads) or [GitHub Desktop](https://desktop.github.com/) in order to clone the repository and install FlexIt.
+Docker and Docker Compose will be automatically installed via the install script if not already on your system.
 
 ## Deployment Options
 
