@@ -72,6 +72,11 @@ If you want to customize your FlexIt installation and configuration, here are yo
 
 3.  **Finish** – click “Next” on the rest of the screens and finish the installation
 
+### Additional Optional Software
+
+*  [**dbt**](https://www.getdbt.com) is a powerful data transformation tool, and it can be integrated in FlexIt to orchestrate data warehouse transformations. In order to run dbt projects locally, you need to install dbt (and Python if not already installed). A full set of instructions on how to install both can be found on the [dbt website](https://docs.getdbt.com/docs/core/installation-overview), and Python can be downloaded from [here](https://www.python.org/downloads/release/python-31210/). More information on how FlexIt works with dbt can be found [here](dbt.mdx).
+*  [**sling**](https://slingdata.io/) is a lightweight data ingestion tool that can be used to pull data from a variety of sources into your data warehouse. It can be installed from [here](https://github.com/slingdata-io/sling-cli/releases/tag/v1.2.13). It is not required for FlexIt, and FlexIt ships with an [ingestion tool out of the box](etl.md#data-flow), but it is a great tool to use in conjunction with FlexIt for fast and easy data ingestion. 
+
 ### Managing FlexIt (Post Installation)
 
 #### Modify Configuration
