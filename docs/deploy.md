@@ -9,4 +9,4 @@ sidebar_label: Deployment Options
 FlexIt can be deployed in a variety of ways. The most common deployment options are:
 - [Docker](docker.md)
 - [Cloud](cloud.md)
-- [On-Premise](on-prem.md)
+- [On-Premise](on-prem.mdx)

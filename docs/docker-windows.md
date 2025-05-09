@@ -17,7 +17,7 @@ Ensure you are able to run PowerShell as Administrator, as Docker needs elevated
 Windows containers only run on Windows 10 or Windows Server 2022 and later.
 
 > **Note** FlexIt via Docker does not support SQL Server database connections using Windows Domain authentication. If you need to connect to SQL Server, you must use SQL authentication.
-> If you need to connect to SQL Server using Windows authentication, please follow the [on-premise installation instructions](on-prem.md).
+> If you need to connect to SQL Server using Windows authentication, please follow the [on-premise installation instructions](on-prem.mdx).
 
 ## Prerequisites
 [Git](https://git-scm.com/downloads) or [GitHub Desktop](https://desktop.github.com/) in order to clone the repository and install FlexIt.

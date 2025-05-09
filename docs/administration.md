@@ -212,7 +212,7 @@ To enable https on the server, you must place both the Private Key and Certifica
 * Certificate: the certificate can be in a file named “certificate.pem” or “certificate.cert”
 
 Restart the server for changes to take affect.
-- [On-Premise](on-prem.md#startstop-flexit-server)
+- [On-Premise](on-prem.mdx#startstop-flexit-server)
 - [Docker (Linux)](docker.md#restarting-the-application)
 - [Docker (Windows)](docker-windows.md#srestarting-the-application) 
 
