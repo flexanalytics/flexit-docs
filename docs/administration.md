@@ -211,6 +211,28 @@ To enable https on the server, you must place both the Private Key and Certifica
 * Private Key: the key must be in a PEM file named “privatekey.pem”
 * Certificate: the certificate can be in a file named “certificate.pem” or “certificate.cert”
 
+The private key and certificate must be in PEM format. If you have something like a p7b file, you can convert it to PEM using [OpenSSL](https://www.openssl.org/) with the following command:
+```
+openssl pkcs7 -print_certs -in certificate.p7b -out certificate-combined.pem
+```
+
+To create the certificate, copy everything between the first instace of the below lines into a new file named “certificate.pem” or “certificate.cert”.
+```
+-----BEGIN CERTIFICATE-----
+            ...
+-----END CERTIFICATE-----
+```
+
+
+To create the private key, copy everything between the below lines into a new file named “privatekey.pem”.
+```
+-----BEGIN PRIVATE KEY-----
+            ...
+-----END PRIVATE KEY-----
+```
+
+Once the files are in place, you can enable https by going to the [Server Settings](#server-settings) page and checking the “Enable HTTPS” checkbox. You can also set the port to 443 (default) or any other port.
+
 Restart the server for changes to take affect.
 - [On-Premise](on-prem.mdx#startstop-flexit-server)
 - [Docker (Linux)](docker.md#restarting-the-application)
