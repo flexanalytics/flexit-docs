@@ -82,6 +82,22 @@ In order to install dbt, you need to have Python installed on your machine. You 
 python --version
 ```
 If you do not have Python installed, you can download it from the [Python website](https://www.python.org/downloads/release/python-31210/).
+
+If you don't have Python installed, on debian-based (Linux) systems you can run
+
+```bash
+sudo apt-get update
+sudo apt-get install python3 python3-pip
+```
+Otherwise, on Windows, you can download an installer from the [Python website](https://www.python.org/downloads/release/python-31210/).
+
+We suggest customizing the installation, using admin privileges, adding python.exe to path, installing for all users, and choosing a location that's easily accessible.
+
+![custom python](/img/deploy/python_custom.png)
+![custom python](/img/deploy/python_advanced.png)
+
+
+
 Once you have Python installed, you can install dbt using pip, the Python package manager. Run the following command in your terminal:
 ```bash
 pip install dbt
