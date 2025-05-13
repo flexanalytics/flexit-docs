@@ -101,6 +101,7 @@ We suggest customizing the installation, using admin privileges, adding python.e
 Once you have Python installed, you can install dbt using pip, the Python package manager. Run the following command in your terminal:
 ```bash
 pip install dbt
+pip install dbt-core
 ```
 You can check if dbt is installed by running the following command in your terminal:
 ```bash
@@ -113,6 +114,8 @@ You will also need to install the dbt adapter for your data warehouse. For examp
 pip install dbt-postgres
 ```
 You can find the list of all available dbt adapters [here](https://docs.getdbt.com/docs/available-adapters). Examples below:
+
+Adapters for the major databases are below, with a full list of adapters [here](https://docs.getdbt.com/docs/available-adapters).
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -141,8 +144,21 @@ import TabItem from '@theme/TabItem';
   <TabItem value="sqlserver">
   <blockquote>
     <strong>Note:</strong> FlexIt maintains a fork of the <code>dbt-sqlserver</code> adapter to support the latest version of dbt.
+    Installing the sql server adapter via github requires git to be installed, you can download it <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">here</a>
   </blockquote>
   <pre><code>pip install git+https://github.com/flexanalytics/dbt-sqlserver.git@1.9.4</code></pre>
+  <strong>An additional sql server driver is also required to connect to a sql server dbt source.</strong>
+  <p>
+  <strong>
+    You should see "ODBC Driver 18 for SQL Server" under the drivers tab of ODBC Data Sources (64 bit).
+    <br />
+    If it is not installed, it can be found 
+    <a href="https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server" target="_blank" rel="noopener noreferrer"> here</a>.
+  </strong>
+</p>
+
+<img src={require('@site/static/img/deploy/odbc_data_sources.png').default} alt="ODBC Drivers tab showing SQL Server driver" style={{ maxWidth: '600px', marginTop: '1em' }} />
+<img src={require('@site/static/img/deploy/odbc_drivers.png').default} alt="ODBC Drivers tab showing SQL Server driver" style={{ maxWidth: '600px', marginTop: '1em' }} />
 </TabItem>
 </Tabs>
 
