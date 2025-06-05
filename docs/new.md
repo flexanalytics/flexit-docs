@@ -9,6 +9,17 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2025.06.001 Semantic Layer and dbt Improvements
+* dbt Local folder project build
+* Updates to semantic converter
+* Tableau semantic layer Windows Authentication connection
+* Feature to migrate reports between data models
+* Big Query fixes for SQL and dbt build
+* Fix for SMTP mailer
+* Improvements for dbt logging
+* New SFTP/SSH data source
+* Data transform destination as SFTP/SSH data source
+
 ## 2025.04.002 OpenAI Integration
 * OpenAI integration for text-to-SQL
 * DuckDB data source
