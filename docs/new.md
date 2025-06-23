@@ -9,6 +9,12 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2025.06.002 AI Service Integration
+* Integration with new AI service for text-to-sql and other AI functionality using Open AI or Anthropic
+* Setting for dbt "target" in local dbt job
+* Data dictionary tooltip improvements
+* Pass filters to reports/dashboards in URL
+
 ## 2025.06.001 Semantic Layer and dbt Improvements
 * dbt Local folder project build
 * Updates to semantic converter
