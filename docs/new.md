@@ -9,6 +9,12 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2025.08.001 Snowflake and API Improvements
+* Add query tags to Snowflake queries
+* Enable broader usage of FlexIt API connectors
+* New "quoted identifiers" setting for database connectors
+* Oracle thick client option
+
 ## 2025.07.002 Semantic Layer Improvements
 * Enable dbt semantic layer metric calculations
 * Improve dbt logs
