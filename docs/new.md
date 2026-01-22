@@ -9,6 +9,39 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2026.01.001 Snowflake Cortex Semantic Model
+* New Snowflake Cortex semantic model
+* Meltano Logging improvements
+* Grid UI improvements (header wrap, height)
+* Model migration improvements
+
+## 2025.12.001 Column-level Lineage
+* Column-level Lineage
+* dbt option to skip dependencies install
+* dbt Snowflake use private key
+* CSV export formatting
+
+## 2025.11.001 dbt Enhancements and AI chat
+* Multiple dbt commands
+* AI Chat
+* Data migration improvements
+* New Semantic Layer generator and fixes
+* Improvements to data model caching
+
+## 2025.10.001 Content Migration Improvements
+* Content migration improvements
+* Data Catalog Export Fix
+* New "object" data types for JSON arrays and objects
+* Excel Export Fixes
+
+## 2025.09.003 Data Ingestion Enhancements
+* Semantic Layer enhancements
+* View schedules improvements
+* Ingestion engine enhancements
+* SAML Auth fixes
+* Data model migration improvements
+* Bug fixes
+
 ## 2025.08.001 Snowflake and API Improvements
 * Add query tags to Snowflake queries
 * Enable broader usage of FlexIt API connectors
