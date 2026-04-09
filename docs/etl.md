@@ -20,7 +20,7 @@ There are five simple tools you can use to design your transformation:
 1. Container - holds any of the tasks below and executes them concurrently (in parallel). Items not in a container will be run sequentially
 2. SQL Task - execute a SQL statment
 3. Data Flow - move data from a source (table, query, etc) to destination (table, SFTP, SSH)
-4. Copy Tables - bulk copy tables with streaming capabilities and more
+4. Data Ingestion - bulk ingestion of tables and other objects from databases or API's with streaming capabilities and more
 5. dbt Job - run a dbt Cloud or dbt-core job
 
 To use these tool widgets, drag-and-drop any of the widgets from the *Tools* panel into the *Transformation Design* panel. The number order of the tasks will be the order that they are processed.
@@ -36,7 +36,7 @@ Right-click on any of the tools to access a menu of options:
 * Parameters - set variable parameters based on source results and use them in downstream extracts. [See more](#parameters) about Parameters below.
 
 ### Container
-Containers can hold *SQL Tasks*, *Data Flows*, *Copy Tables*, or *dbt Jobs*, which will appear inside the blue dotted border of the container. Everything inside a container will execute in parallel (i.e. synchronous).
+Containers can hold *SQL Tasks*, *Data Flows*, *Data Ingestion*, or *dbt Jobs*, which will appear inside the blue dotted border of the container. Everything inside a container will execute in parallel (i.e. synchronous).
 
 ### SQL Task
 Use SQL tasks to execute any SQL command. This is commonly used to set database settings or build custom insert/update/delete (CRUD) statements. You can use [parameters](#parameters) and [functions](#functions) in SQL Tasks.
@@ -83,8 +83,12 @@ Configuring the destination allows you to set the table that you would like to l
 * **Rows Per Batch** - number of rows to insert at a time.
 * **Quick Mode** - If the source and destination database are the same, then an additional "Quick Mode" option is available. This executes the `insert into [DEST] select cols from [SOURCE]` statement rather than chunking data, which is typically much faster.
 
-### Copy Tables
-Set up advanced ingestion to bulk copy tables with streaming capabilities and more in a YAML definition.
+### Data Ingestion
+Set up advanced ingestion to bulk copy tables and other objects from databases and API's with streaming capabilities and more. Integrations with Meltano, dlt (Data Load Tool), SlingData, and more give you advanced capabilities with configuration in a YAML definition.
+
+See the [Data Ingestion](data-ingestion.md) docs for more details.
+
+![Data Ingestion Config](/img/etl_ingest_config.png)
 
 ### dbt Job
 Run dbt Cloud or dbt-core jobs.
