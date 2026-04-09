@@ -9,6 +9,12 @@ sidebar_label: Release History
 
 This is a full list of new features, bug fixes, and other items for all versions of FlexIt Analytics. The version number is based on the year, month and number of release, such as 2018.09.001 (i.e. [Year].[Month].[Release] being the first release of September 2018).
 
+## 2026.03.001 Data Ingestion
+* New dlt integration
+* Installer registry fixes for Windows
+* Security enhancements
+* Minor fixes and other enhancements
+
 ## 2026.01.001 Snowflake Cortex Semantic Model
 * New Snowflake Cortex semantic model
 * Meltano Logging improvements
