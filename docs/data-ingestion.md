@@ -61,7 +61,7 @@ options:
     workers: 1
   normalize:
     workers: 2
-    naming: sql_cs_v1         # Quoted identifiers for case preservation
+    naming: sql_cs_v1         # See naming conventions below
   load:
     workers: 2
 
@@ -219,12 +219,26 @@ options:
 
 **Naming conventions (`normalize.naming`):**
 
-| Convention | Case | Use When |
-|-----------|------|----------|
-| `snake_case` | Insensitive (lowercase) | Default — most destinations |
-| `sql_ci_v1` | Insensitive (lowercase) | SQL-safe alternative to `snake_case` |
-| `sql_cs_v1` | Sensitive (quoted) | Preserve Salesforce camelCase field names |
-| `direct` | Sensitive | Pass-through with no transformation |
+Built-in dlt conventions:
+
+| Convention | Quoted | Normalization | Use When |
+|-----------|--------|---------------|----------|
+| `snake_case` | No | Lowercase snake_case | Default — most destinations |
+| `sql_ci_v1` | No | Lowercase, SQL-safe | Alternative to `snake_case`; strips special chars like `$` |
+| `sql_cs_v1` | Yes | As-is | Preserve Salesforce camelCase field names |
+| `direct` | Yes | Pass-through | Preserve special characters (e.g., `$`) — but quotes identifiers |
+
+FlexFlow custom conventions:
+
+| Convention | Quoted | Normalization | Snowflake Result |
+|-----------|--------|---------------|-----------------|
+| `flexflow_naming.unquoted` | No | As-is | UPPERCASE (DB default fold), special chars preserved |
+| `flexflow_naming.uppercase` | Yes | Uppercase | `"UPPERCASE"` (exact, case-sensitive) |
+| `flexflow_naming.lowercase` | Yes | Lowercase | `"lowercase"` (exact, case-sensitive) |
+
+`flexflow_naming.unquoted` is recommended for Oracle → Snowflake pipelines: identifiers arrive unquoted so Snowflake folds them to uppercase by default, and special characters like `$` in table names are preserved as-is.
+
+> **Note:** Switching naming conventions on a pipeline that has already loaded data requires clearing the local pipeline state directory first.
 
 **Recommended workers by container memory:**
 
