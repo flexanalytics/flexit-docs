@@ -108,6 +108,42 @@ defaults:
 
 When `primary_key` or `incremental_column` is set, `write_disposition` automatically defaults to `merge`.
 
+### `dataset`
+
+Use `{SOURCE_SCHEMA}` in the dataset name to automatically route each source schema to its own destination schema:
+
+```yaml
+dataset: "raw_{SOURCE_SCHEMA}"  # Creates raw_HR, raw_FINANCE, etc.
+
+tables:
+  HR:
+    - employees
+    - departments
+  FINANCE:
+    - transactions
+```
+
+The pipeline runs one sub-pipeline per schema group, substituting the actual schema name into the dataset. Requires tables in [grouped format](#grouped-by-schema).
+
+### `validate_rowcounts`
+
+After loading, compare source row counts to destination row counts to catch silent data loss.
+
+```yaml
+validate_rowcounts: true         # Log a warning if counts differ
+validate_rowcounts: 5.0          # Warn only if difference exceeds 5%
+validate_rowcounts: "strict"     # Raise an exception on any mismatch
+```
+
+Can also be set per-table to target specific tables:
+
+```yaml
+tables:
+  - users
+  - name: critical_table
+    validate_rowcounts: "strict"
+```
+
 ### `tuning`
 
 Source-specific extraction settings.
@@ -118,13 +154,16 @@ Source-specific extraction settings.
 |-----|-------------|---------|----------------|
 | `parallelize` | Extract tables in parallel | `true` | Set `false` if hitting connection limits |
 | `arraysize` | Rows per Oracle fetch batch | `100000` | Lower if OOM, higher if network is slow |
+| `lob_arraysize` | Rows per fetch batch for tables with LOB columns (CLOB/BLOB) | `1000` | Increase carefully — LOB columns require extra round-trips per value |
+| `encoding_errors` | How to handle unencodable characters in string columns | `"replace"` | `"ignore"` silently drops bad chars; `"strict"` raises an exception |
 
 #### Salesforce Tuning
 
 | Key | Description | Default | When to Change |
 |-----|-------------|---------|----------------|
-| `bulk` | Use Bulk API 2.0 for ALL tables | `false` | Set `true` for large datasets |
-| `bulk_threshold` | Auto-use Bulk API when table > N rows | `None` | Set to `1000000` for mixed workloads |
+| `bulk` | API strategy: `false` (REST always), `true` (Bulk always), `"full_only"` (Bulk for full loads, REST for incrementals) | `false` | Use `"full_only"` for large tables with small daily changes |
+| `bulk_threshold` | Auto-use Bulk API when total table rows > N. Counts all rows, not just the incremental subset. | `None` | Set to `1000000`; prefer `bulk: "full_only"` for incremental workloads |
+| `bulk_yield_size` | Rows per yield batch during Bulk extraction | `100000` | Lower to `10000` for very wide tables (100+ fields) or low-memory servers |
 | `chunk_days` | Split bulk queries by date range | `None` | Set to `30`–`365` for very large tables (10M+) |
 | `parallelize` | Extract tables in parallel | `true` | Set `false` to reduce memory |
 | `max_text_length` | VARCHAR max for formula fields | `None` | Set to `4000` for Informatica compatibility |
@@ -195,6 +234,20 @@ options:
 | 8GB | 1 | 2 | 2 |
 | 16GB+ | 2 | 4 | 4 |
 
+### `pipelines_dir`
+
+Override the default dlt pipeline state directory (`~/.dlt/pipelines/`). Useful for container deployments or non-standard filesystem layouts.
+
+```yaml
+pipelines_dir: /data/dlt-state
+```
+
+Also configurable via environment variable (takes precedence over the config value):
+
+```bash
+export DLT_PIPELINES_DIR=/data/dlt-state
+```
+
 ---
 
 ## Tables Configuration
@@ -220,6 +273,26 @@ tables:
   SCHEMA_B:
     - transactions
 ```
+
+### Wildcards
+
+Use `*` (matches any sequence) and `?` (matches a single character) in schema or table names:
+
+```yaml
+# Flat list — dot notation: SCHEMA.TABLE_PATTERN
+tables:
+  - "SATURN.*"          # All tables in SATURN
+  - "HR.EMP*"           # Tables starting with EMP in HR
+  - "*.audit_log"       # audit_log table in any schema
+
+# Grouped format
+tables:
+  SATURN:
+    - "STV*"            # All tables starting with STV
+    - "*_log"           # All tables ending with _log
+```
+
+Expansion is logged at startup: `SATURN.STV* -> 12 table(s)`. Any per-table settings on a wildcard entry (`write_disposition`, `bulk`, `chunk_days`, etc.) are copied to every expanded table. Non-matching patterns are skipped with a warning.
 
 ### Per-Table Config
 
