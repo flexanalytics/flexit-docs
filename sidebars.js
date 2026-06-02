@@ -33,6 +33,7 @@ module.exports = {
       items: [
         "datamodeling",
         "etl",
+        "orchestration",
         "data-ingestion",
       ]
     },
