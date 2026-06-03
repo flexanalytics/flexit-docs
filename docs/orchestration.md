@@ -19,9 +19,17 @@ Typical pipeline shapes:
 
 ## Getting Started
 
-From the *Administration > Pipelines* list, click **New Pipeline** or open an existing one. Drag step types from the left panel onto the design surface in the order you want them to execute. Each step references an existing Data Transform, dbt job, or Analysis — pipelines orchestrate work; they don't redefine it.
+Open **Orchestration** from the left sidebar. The page is organized into tabs:
 
-Click **Run** in the top right to execute the pipeline immediately, or use the schedule modal to run it on a cron pattern. The Run Status modal opens automatically on manual runs and is reachable later from the pipeline's run history.
+* **Jobs** — list of Data Transforms (the building blocks pipelines run)
+* **Pipelines** — list of pipelines
+* **Run History** — every pipeline + job run across the system, filterable
+* **DAG** — visual dependency view of jobs and pipelines
+* **Overview** — calendar of scheduled and recent runs
+
+Switch to the **Pipelines** tab and click **+ New** to create one, or click an existing pipeline to edit. Each step in a pipeline references an existing Data Transform, dbt job, or Analysis — pipelines orchestrate work; they don't redefine it.
+
+To trigger a run, click the **Run** action on a pipeline. The Run Status modal opens automatically and updates live. Closing the modal doesn't stop the run; you can reopen it from the **Run History** tab.
 
 ## Steps
 
@@ -110,7 +118,7 @@ An **Insert Parameter** dropdown above the SQL editor lists declared parameters 
 
 ## Run Status and Drill-Through
 
-Every pipeline run writes a `PipelineRun` row and one `PipelineStepRun` row per step. The Run Status modal opens automatically after Run-Now and is reachable from the pipeline's history list.
+Every pipeline run writes a `PipelineRun` row and one `PipelineStepRun` row per step. The Run Status modal opens automatically when you trigger a manual run and is reachable later from the **Run History** tab.
 
 For each step, the modal shows:
 
@@ -143,15 +151,15 @@ Pipelines also expose **overlap protection** (admin-only). These options prevent
 
 Strongest-action-wins: if your Self Policy says *Run Anyway* but Blocked By matches a currently-running job, the run waits. Default for `deploy`-type schedules is *Wait*; everything else defaults to *Run Anyway* so existing schedules don't change behavior unless you opt in.
 
-## Run-Now and Manual Triggers
+## Manual Triggers
 
-Click the **Run** button on the pipeline list (or inside the design view) to execute immediately. The Run Status modal opens and updates live. Closing the modal does not stop the pipeline — the runner continues server-side, and you can reopen the modal from the run history list.
+Click the **Run** action on a pipeline in the **Pipelines** tab (or from inside the design view) to execute immediately. The Run Status modal opens and updates live. Closing the modal does not stop the pipeline — the runner continues server-side, and you can reopen the modal from the **Run History** tab.
 
 Pipelines can also be triggered from the `flexit` CLI (see [Background and external job triggers](etl.md#external-job-scheduler) — same mechanism, just point `runJob` at the pipeline id).
 
 ## History and Logs
 
-The pipeline's history view shows every run (manual + scheduled) with status, start time, duration, and the user or schedule that triggered it. Drill into a run to see the Run Status modal as it appeared at completion.
+The **Run History** tab shows every run (manual + scheduled) for jobs and pipelines across the system, with status, start time, duration, and the user or schedule that triggered it. Drill into a row to see the Run Status modal as it appeared at completion. Filter and sort to focus on a specific pipeline or time range.
 
 Step-level logs for Data Transform and dbt steps continue to live in the underlying ETL history (`EtlHistory` row). The Log button on each step deep-links to that history row, so any task-level retry counts, row counts, or error messages remain accessible exactly as they would be from the Data Transform's own history view.
 
