@@ -184,6 +184,32 @@ Step-level logs for Data Transform and dbt steps continue to live in the underly
 * **Conditional cleanup** — add a final step with **When: Failure** that runs a cleanup transform or sends an alert. Set its **On Failure: Continue** so a cleanup-failure doesn't mask the original failure.
 * **Soft-disable a step** during development — toggle **Disabled** on a slow data load step while iterating on a downstream analysis. The pipeline still runs to completion and propagates the disabled step's last-known parameter values from the previous successful run if they're stored elsewhere.
 
+## Views
+
+The **DAG** and **Overview** tabs are alternative lenses over the same job and pipeline data — read-only, focused on topology and timing rather than authoring.
+
+### DAG
+
+The DAG tab visualizes every job and pipeline as a node with edges connecting dependencies — pipeline step ownership and `Blocked By` schedule relationships. Search at the top filters nodes by name; click a node to focus on it and its neighbors. Use this when:
+
+* Auditing the full dependency graph before adding a new pipeline or schedule.
+* Tracing why a scheduled run waited (which upstream job did it block on?).
+* Answering "who depends on what?" with a single-screen view rather than scanning the Jobs and Pipelines lists individually.
+
+![orchestration_dag](/img/orchestration/orchestration_dag.png)
+
+### Overview
+
+The Overview tab is a split view: a rolling timeline at the top of scheduled and upcoming runs over the next several hours, and a DAG panel at the bottom focused on whatever's selected in the timeline. Selecting a scheduled block highlights its dependencies below. In **Edit** mode (the pencil button in the toolbar), you can drag scheduled blocks to reschedule them in place. Use this when:
+
+* Planning around a maintenance window — "what's running at 2am tonight?"
+* Sanity-checking that a manual reschedule won't create overlap with another job.
+* Reviewing the next few hours of activity at a glance.
+
+Both views are derived from the same data the other tabs show; they don't introduce new state, just different ways of looking at it.
+
+![orchestration_overview](/img/orchestration/orchestration_overview.png)
+
 ## Permissions
 
 Pipelines are admin-only by default. Consumers (read-only users) can view a pipeline's run results via the [View button on a contentitem step](#run-status-and-drill-through) when the pipeline run produced an analysis they have access to, but cannot create, edit, schedule, or trigger pipelines.
