@@ -31,6 +31,8 @@ Switch to the **Pipelines** tab and click **+ New** to create one, or click an e
 
 To trigger a run, click the **Run** action on a pipeline. The Run Status modal opens automatically and updates live. Closing the modal doesn't stop the run; you can reopen it from the **Run History** tab.
 
+![jobs](/img/orchestration/orchestration_jobs.png)
+
 ## Steps
 
 A pipeline is an ordered list of steps. Each step has:
@@ -62,6 +64,8 @@ Right-click any step (or open its properties drawer) to set:
 
 A pipeline whose final state is mixed — some steps succeeded, some failed or were skipped — is recorded as **Partial**. A pipeline where every attempted step succeeded is **Success**. A pipeline where every attempted step failed (or the first step failed with `Stop`) is **Fail**.
 
+![pipelines](/img/orchestration/pipeline_steps.png)
+
 ## Parameters
 
 Parameters are the connective tissue of a pipeline. A parameter is a named value that can be substituted into SQL via the `[[@name]]` placeholder syntax, passed as a dbt variable, or read by a downstream step as input.
@@ -75,10 +79,12 @@ Open a Data Transform and click the **Parameters** button. Each parameter has a 
 | **User** | Value supplied at run time, typically from the schedule modal at schedule-create time. |
 | **dbt-source** | Auto-filled from the last upstream dbt step's `command_invocation_id` or equivalent identifier. Common for analyses that filter by "results from this run." |
 | **Ref** | Value copied from another declared parameter by name. Useful for aliasing or renaming. |
-| **Template** | Computed from other parameter values using filters (`lower`, `upper`, `underscores`, `dashes`, `trim`). Example: `{{ region_code | lower }}`. |
+| **Template** | Computed from other parameter values using filters (`lower`, `upper`, `underscores`, `dashes`, `trim`). Example: <code>&#123;&#123; region_code &#124; lower &#125;&#125;</code>. |
 | **Bool** | A boolean value (true/false). Renders as a two-option select in the Set Parameters modal. |
 
 The supported parameter types are `string`, `number`, `bool`, `date`, `select` (with a fixed option list), `ref`, and `template`. Type-aware coercion preserves the value's type through the pipeline — a `number` parameter survives as `2257` (not `"2257"`) when it lands in a dbt `--vars` block, and a `bool` parameter survives as `true` (not `"true"`).
+
+![filled_params](/img/orchestration/filled_params.png)
 
 ### Parameter Propagation
 
@@ -116,6 +122,9 @@ When editing a Data Transform's SQL task, the editor highlights every `[[@name]]
 
 An **Insert Parameter** dropdown above the SQL editor lists declared parameters and inserts the placeholder at the cursor (or replaces selected text). A *New placeholder…* item drops a `[[@new_param]]` template with the inner name preselected for renaming. The dropdown only appears in the transform task editor where a Parameters editor exists to declare against — Analyses and other contexts get the neutral blue highlight only.
 
+![sql_transform_params](/img/orchestration/sql_params.png)
+![query_params](/img/orchestration/query_params.png)
+
 ## Run Status and Drill-Through
 
 Every pipeline run writes a `PipelineRun` row and one `PipelineStepRun` row per step. The Run Status modal opens automatically when you trigger a manual run and is reachable later from the **Run History** tab.
@@ -130,6 +139,9 @@ For each step, the modal shows:
 The View button is the canonical way to drill into "what did this pipeline produce?" Open the run, click the eye on the Analysis step, and you see the analysis filtered to that run's outputs — `[[@command_invocation_id]]`, `[[@region_id]]`, and every other propagated value substitutes from the recorded `runtimeParams` on that step run, not the analysis's defaults.
 
 If a step shows **pending**, it means the runner never reached it — usually because an earlier step failed with `On Failure: Stop`. Pending steps have no `PipelineStepRun` row.
+
+![run_history](/img/orchestration/run_history.png)
+![run_results](/img/orchestration/run_results.png)
 
 ## Scheduling
 
@@ -150,6 +162,8 @@ Pipelines also expose **overlap protection** (admin-only). These options prevent
 * **Blocked By** — wait for a specific list of named Data Transforms or Pipelines to finish before starting
 
 Strongest-action-wins: if your Self Policy says *Run Anyway* but Blocked By matches a currently-running job, the run waits. Default for `deploy`-type schedules is *Wait*; everything else defaults to *Run Anyway* so existing schedules don't change behavior unless you opt in.
+
+![schedule_pipeline](/img/orchestration/schedule_pipeline.png)
 
 ## Manual Triggers
 
