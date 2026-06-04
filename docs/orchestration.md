@@ -7,6 +7,8 @@ sidebar_label: Orchestration
 
 # Orchestration (Pipelines)
 
+> **Available in 2026.06.001 and later.** Older installs only have Data Transforms and their schedules — pipelines, the Orchestration sidebar entry, the Run History / DAG / Overview tabs, and pipeline-aware parameter propagation all require this release or newer. See the [release notes](new.md) for the full set of orchestration features added in 2026.06.001.
+
 ## Overview
 
 Orchestration lets you chain together Data Transforms, dbt jobs, and Analyses into a single ordered pipeline. Where a Data Transform's [Container](etl.md#container) runs tasks in parallel, a pipeline runs **steps in sequence**, passes parameter values between them, gates downstream work on upstream success or failure, and writes a single run history that ties everything together.
