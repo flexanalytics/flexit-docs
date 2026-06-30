@@ -321,6 +321,18 @@ tables:
     chunk_days: 30                       # Date chunking for 10M+ rows
 ```
 
+### Renaming Tables in the Destination
+
+Use `table_name` to write to a different table name in the destination:
+
+```yaml
+tables:
+  - name: Account          # Salesforce object name (source)
+    table_name: account_base  # Table name written to Snowflake (destination)
+```
+
+`name` controls which object is queried from the source. `table_name` controls where it lands in the destination. All other per-table settings (`primary_key`, `incremental_column`, etc.) work as normal.
+
 ### Column Hints
 
 Override column types, precision, or constraints using dlt's native `columns` syntax:
@@ -515,6 +527,125 @@ CREATE TABLE "Account" (
     "_dlt_id" VARCHAR
 );
 ```
+
+---
+
+## Filesystem Source (SFTP / S3 / Local)
+
+Pull files (CSV, JSONL, Parquet) from any fsspec-compatible location and load them into a warehouse. Built on dlt's filesystem source — Flex Ingest adds wildcard expansion at the table level, format auto-detection, and config-driven incremental modes.
+
+### Quick Start
+
+```yaml
+pipeline_name: my_pipeline
+source: filesystem
+destination: snowflake
+dataset: my_dataset
+
+tables:
+  - "exports/*.csv"           # one table per matching file
+  - name: orders
+    file_glob: "orders/*.csv"   # many files merge into one 'orders' table
+    primary_key: order_id
+    incremental_column: last_modified
+    incremental_files: true
+```
+
+SFTP requires `paramiko`: `pip install paramiko` (or `pip install "dlt[sftp]"`). S3 needs `s3fs`, GCS `gcsfs`, Azure `adlfs`.
+
+#### SFTP — `extra_kex_algorithms`
+
+Some vendor SFTP servers only speak key-exchange algorithms paramiko 3+ removed from defaults (e.g. `diffie-hellman-group1-sha1`). Opt in per-pipeline via the top-level `sftp:` YAML section — nothing is auto-enabled:
+
+```yaml
+source: filesystem
+
+sftp:
+  extra_kex_algorithms:
+    - diffie-hellman-group1-sha1
+    - diffie-hellman-group-exchange-sha1
+```
+
+### Tables Configuration
+
+Two patterns, picked per-entry:
+
+**1:1 wildcard expansion** — each matching file becomes its own destination table named after the file stem.
+
+```yaml
+tables:
+  - "*.csv"             # all CSVs in bucket root
+  - "exports/*.csv"     # all CSVs in exports/ subdir
+  - "orders.csv"        # single file
+```
+
+**Many-files-into-one-table** — set both `name` and `file_glob`. Use this when files are time-partitioned but feed one logical table.
+
+```yaml
+tables:
+  - name: orders
+    file_glob: "orders/orders_*.csv"
+    primary_key: order_id
+    incremental_column: last_modified
+```
+
+`file_glob` is a literal pattern — `*` and `?` are the only wildcards. If a feed's filenames are date-stamped, either use a plain wildcard (`*`) with `incremental_files` below to pick up new files automatically, or resolve the date to a literal string yourself before writing the config.
+
+### Supported Formats
+
+Auto-detected by extension:
+
+| Extension | Reader |
+|-----------|--------|
+| `.csv`, `.tsv`, `.txt` | `read_csv` |
+| `.jsonl`, `.ndjson`, `.json` | `read_jsonl` |
+| `.parquet` | `read_parquet` |
+| `.xlsx`, `.xls` | `read_xlsx` (requires `openpyxl`) |
+
+Override with `format:` per-table for files without a recognized extension, or to force a specific reader:
+
+```yaml
+tables:
+  - name: shipments
+    file_glob: "shipments/*.dat"
+    format: csv
+```
+
+### Incremental Modes
+
+Two independent flags — combine them for the best of both:
+
+| Setting | Effect | Default disposition |
+|---------|--------|---------------------|
+| `incremental_column: <col>` | Row-level incremental on a column inside the data | `merge` (with `primary_key`) |
+| `incremental_files: true` | File-level: only re-read files with `modification_date > cursor` | `append` |
+| both | Skip unchanged files AND dedup rows in changed files | `merge` |
+
+**File-level incremental** is essentially free correctness — once a file is loaded, it won't be re-read until its modification date advances. Pair it with `primary_key` + `incremental_column` to handle re-uploaded files.
+
+**Append-only file drops** (e.g. `events_2024_01.jsonl`, `events_2024_02.jsonl`):
+
+```yaml
+tables:
+  - name: events
+    file_glob: "events_*.jsonl"
+    incremental_files: true
+    # write_disposition defaults to 'append' — each new file's rows accumulate
+```
+
+**Daily-snapshot pattern** (e.g. one report file per day, table should reflect only the latest file): pair `incremental_files: true` with `write_disposition: replace` instead of `append` — each run that finds a new file truncates and reloads with just that file's rows.
+
+```yaml
+tables:
+  - name: daily_report
+    file_glob: "daily_report-*.csv"
+    incremental_files: true
+    write_disposition: replace
+```
+
+### Notes
+
+- `validate_rowcounts` is not supported for filesystem — counting rows requires reading the file.
 
 ---
 
