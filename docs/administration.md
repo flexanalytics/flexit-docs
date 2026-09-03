@@ -236,7 +236,7 @@ Once the files are in place, you can enable https by going to the [Server Settin
 Restart the server for changes to take affect.
 - [On-Premise](on-prem.mdx#startstop-flexit-server)
 - [Docker (Linux)](docker.md#restarting-the-application)
-- [Docker (Windows)](docker-windows.md#srestarting-the-application) 
+- [Docker (Windows)](docker-windows.md#restarting-the-application) 
 
 > Note: You may also need to change the port to 443, see the [Server Settings](#server-settings) administration section.
 

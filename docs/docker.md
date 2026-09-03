@@ -226,10 +226,10 @@ run bash from within the container (linux):
 sudo docker exec -it flexit-analytics /bin/bash
 ```
 
-<!-- run cmd from within the container (windows):
+{/* run cmd from within the container (windows):
 ```bash
 sudo docker exec -it flexit-analytics cmd
-``` -->
+``` */}
 
 To view the volumes:
 

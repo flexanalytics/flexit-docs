@@ -54,7 +54,7 @@
 .featureBlock {
   padding: 20px 40px;
   margin: 0 40px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
   min-height: 350px;
 }
 
@@ -109,7 +109,7 @@
 }
 
 .vizItem:hover {
-  background-color: #cce9f7;
+  background-color: var(--flx-viz-hover-bg);
 }
 
 .vizItem img {
