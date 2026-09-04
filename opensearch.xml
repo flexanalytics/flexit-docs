@@ -4,8 +4,8 @@
   <ShortName>Welcome to FlexIt Learning</ShortName>
   <Description>Search Welcome to FlexIt Learning</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://flexit.github.io/img/Flex-X-small.png</Image>
-  <Url type="text/html" method="get" template="https://flexit.github.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://flexit.github.io/opensearch.xml" />
-  <moz:SearchForm>https://flexit.github.io</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://learn.flexitanalytics.com/img/Flex-X-small.png</Image>
+  <Url type="text/html" method="get" template="https://learn.flexitanalytics.com/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://learn.flexitanalytics.com/opensearch.xml" />
+  <moz:SearchForm>https://learn.flexitanalytics.com/</moz:SearchForm>
 </OpenSearchDescription>

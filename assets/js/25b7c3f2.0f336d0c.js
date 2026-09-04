@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkflexit_docs||=[]).push([[9847],{693(t,s,e){e.r(s);e(6540);var r=e(612),c=e(4848);const d=function(){return(0,c.jsx)(r.rd,{to:"/docs/getting-started"})};e.d(s,["default",0,d])}}]);
