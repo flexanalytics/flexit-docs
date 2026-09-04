@@ -1,111 +1,85 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+// @ts-check
 
-module.exports = {
+/** @type {import('@docusaurus/types').Config} */
+const config = {
   title: 'Welcome to FlexIt Learning',
   tagline: 'FlexIt Analytics is business intelligence, built for people',
-  url: 'https://flexit.github.io',
+  url: 'https://learn.flexitanalytics.com',
   baseUrl: '/',
-  favicon: '/img/Flex-X-small.png',
-  organizationName: 'flexanalytics', // Usually your GitHub org/user name.
-  projectName: 'flexit-docs', // Usually your repo name.
-  themeConfig: {
-    zoomSelector: '.markdown :not(em) > img',
-    algolia: {
-      apiKey: '04948da940dc579697cd957e0acf432b',
-      indexName: 'flexitanalytics',
-      algoliaOptions: {}, // Optional, if provided by Algolia
-    },
-    gtag: {
-      trackingID: 'UA-127440102-1',
-    },
-    navbar: {
-      title: 'FlexIt Documentation',
-      logo: {
-        alt: 'FlexIt',
-        src: '/img/Flex-X-small.png',
-      },
-      items: [
-        {to: 'docs/getting-started', label: 'Docs', position: 'right'},
-        //{to: 'docs/deploy', label: 'Deploy', position: 'right'},
-        //{to: 'docs/administration', label: 'Administration', position: 'right'},
-        {
-          href: 'https://flexitanalytics.com',
-          label: 'FlexIt Website',
-          position: 'right',
-          'aria-label': 'Open FlexIt Analytics website in new window',
-        },
-      ],
-    },
-    footer: {
-      style: 'dark',
-      links: [
-        /*
-        {
-          title: 'Deploy',
-          items: [
-            {
-              label: 'Deploy',
-              to: 'docs/deploy',
-            },
-          ],
-        },
-        {
-          title: 'Administration',
-          items: [
-            {
-              label: 'Administration',
-              to: 'docs/administration',
-            },
-          ],
-        },
-        {
-          title: 'FlexIt Website',
-          items: [
-            {
-              label: 'FlexIt Website',
-              href: 'https://flexitanalytics.com',
-            },
-          ],
-        },
-        */
-      ],
-      /*
-      logo: {
-        alt: 'FlexIt Logo',
-        src: '/img/Flex-X-small.png',
-        href: 'https://flexitanalytics.com/',
-      },
-      */
-      copyright: `Copyright © ${new Date().getFullYear()} Flex Analytics, Inc.`,
+  favicon: 'img/Flex-X-small.png',
+  organizationName: 'flexanalytics',
+  projectName: 'flexit-docs',
+
+  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
     },
   },
+
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
+
   presets: [
     [
-      '@docusaurus/preset-classic',
-      {
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/flexanalytics/flexit-docs/edit/master/',
-          //showLastUpdateAuthor: true,
-          //showLastUpdateTime: true,
         },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      },
+        gtag: {
+          trackingID: 'UA-127440102-1',
+          anonymizeIP: true,
+        },
+      }),
     ],
   ],
-  stylesheets: [
-    //'node_modules/@fortawesome/fontawesome-pro/css/all.css',
-  ],
-  scripts: [
-  ],
-  plugins: [
-    'plugin-image-zoom'
-  ],
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      zoomSelector: '.markdown :not(em) > img',
+      algolia: {
+        appId: 'BH4D9OD16A',
+        apiKey: '04948da940dc579697cd957e0acf432b',
+        indexName: 'flexitanalytics',
+        // Index was crawled by legacy DocSearch and has no docusaurus_tag facet
+        contextualSearch: false,
+      },
+      navbar: {
+        title: 'FlexIt Documentation',
+        logo: {
+          alt: 'FlexIt',
+          src: 'img/Flex-X-small.png',
+        },
+        items: [
+          {to: '/docs/getting-started', label: 'Docs', position: 'right'},
+          {
+            href: 'https://flexitanalytics.com',
+            label: 'FlexIt Website',
+            position: 'right',
+            'aria-label': 'Open FlexIt Analytics website in new window',
+          },
+        ],
+      },
+      footer: {
+        style: 'dark',
+        links: [],
+        copyright: `Copyright © ${new Date().getFullYear()} Flex Analytics, Inc.`,
+      },
+    }),
+
+  plugins: ['plugin-image-zoom'],
 };
+
+module.exports = config;

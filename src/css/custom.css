@@ -16,14 +16,14 @@
 }
 
 .markdown>h2 {
-  border-top: 1px solid #efefef;
+  border-top: 1px solid var(--ifm-toc-border-color);
   padding-top: 15px;
 }
 
 .markdown p img {
   /* max-width: 80%; */
   /* border: 1px solid gray; */
-  border: 1px solid #eaecef;
+  border: 1px solid var(--ifm-toc-border-color);
   border-radius: 4px;
   box-shadow: 0 6px 13px rgb(0 0 0 / 9%);
 }
@@ -38,7 +38,7 @@
 
 blockquote {
   border-left-color: var(--ifm-color-primary);
-  background-color: #f7f7f7;
+  background-color: var(--ifm-background-surface-color);
 }
 
 .menu .menu__link {
@@ -46,7 +46,7 @@ blockquote {
 }
 
 .menu .menu__list .menu__list {
-  border-left: 1px solid #eee;
+  border-left: 1px solid var(--ifm-toc-border-color);
 }
 
 .menu .menu__list-item .menu__list .menu__list-item {
@@ -93,17 +93,14 @@ blockquote {
 
   --ifm-heading-color: #676568;
 
+  --flx-viz-hover-bg: #cce9f7;
+
 }
 
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
-
-.react-toggle {
-  display: none !important;
+html[data-theme='dark'] {
+  --ifm-navbar-link-color: var(--ifm-color-gray-100);
+  --ifm-heading-color: inherit;
+  --flx-viz-hover-bg: rgba(0, 148, 217, 0.25);
 }
 
 .DocSearch-Button-Key {

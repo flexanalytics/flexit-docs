@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -16,7 +16,7 @@ import VizList from '../js/viz/viz_list';
 
 const features = [
   {
-    title: <>Visualization Guide</>,
+    title: 'Visualization Guide',
     component: <VizList/>,
     docLink: 'docs/viz/guide',
     description: (
@@ -26,7 +26,7 @@ const features = [
     ),
   },
   {
-    title: <>Deploy FlexIt</>,
+    title: 'Deploy FlexIt',
     imageUrl: 'img/home_install.png',
     docLink: 'docs/deploy',
     description: (
@@ -36,7 +36,7 @@ const features = [
     ),
   },
   {
-    title: <>Getting Started</>,
+    title: 'Getting Started',
     imageUrl: 'img/home_start.png',
     docLink: 'docs/getting-started',
     description: (
@@ -46,7 +46,7 @@ const features = [
     ),
   },
   {
-    title: <>Reporting Guide</>,
+    title: 'Reporting Guide',
     imageUrl: 'img/home_analysis.png',
     docLink: 'docs/report',
     description: (
@@ -68,9 +68,9 @@ function FeatureImg({props}) {
 
 function Feature({props}) {
   return (
-    <div className={classnames('col col--6', styles.feature)}>
+    <div className={clsx('col col--6', styles.feature)}>
       <div className={styles.featureBlock}>
-        <div className={classnames('text--center', styles.featureText)}>
+        <div className={clsx('text--center', styles.featureText)}>
           {props.imageUrl?<FeatureImg props={props}/>:props.component}
         </div>
         <a className={styles.featureTitle} href={useBaseUrl(props.docLink)}>{props.title}</a>
@@ -87,13 +87,13 @@ function Home() {
     <Layout
       title={`${siteConfig.title}`}
       description="User guides and documentation for FlexIt Analytics">
-      <header className={classnames('hero hero--primary', styles.heroBanner)}>
+      <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle" role="heading">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
-              className={classnames(
+              className={clsx(
                 'button button--outline button--lg',
                 styles.heroBtn,
               )}

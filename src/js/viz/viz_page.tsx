@@ -3,12 +3,12 @@ import styles from '../../pages/styles.module.css';
 import vizzes from './vizzes';
 import VizList from './viz_list';
 
-const baseUrl = 'https://cloud.flexitanalytics.com'; //'http://carbon1:3030';
+const baseUrl = 'https://cloud.flexitanalytics.com';
 
-const Highlight = ({children, type}) => (
+const Highlight = ({children, type}: {children: React.ReactNode; type: string}) => (
   <span
     style={{
-      backgroundColor: (type==='dimension'?'#0094d9':'orange'),
+      backgroundColor: (type === 'dimension' ? '#0094d9' : 'orange'),
       borderRadius: '6px',
       color: '#fff',
       padding: '2px 4px',
@@ -18,42 +18,46 @@ const Highlight = ({children, type}) => (
   </span>
 );
 
-const Iframe = ({src}) => (
-  <iframe src={src} className={styles.vizFrame}></iframe>
+const Iframe = ({src, title}: {src: string; title: string}) => (
+  <iframe src={src} title={title} className={styles.vizFrame}></iframe>
 );
 
-const Examples = ({arr}) => (
-  (!arr.length&&'None') || arr.map(example => {
-    return (<>
-      {example.title?(<b>{example.title}</b>):''}
-      <Iframe src={`${baseUrl}/#analysis/${example.id}/embed`}/>
-      <i className="fa fa-external-link"></i> <a target="_blank" href={`${baseUrl}/#analysis/${example.id}`}>Open in New Window</a>
-    </>)
-  })
+const Examples = ({arr}: {arr: any[]}) => (
+  <>
+    {(!arr.length && 'None') || arr.map((example, idx) => (
+      <React.Fragment key={example.id ?? idx}>
+        {example.title ? (<b>{example.title}</b>) : ''}
+        <Iframe src={`${baseUrl}/#analysis/${example.id}/embed`} title={example.title || 'Example visualization'}/>
+        <i className="fa fa-external-link"></i> <a target="_blank" rel="noopener noreferrer" href={`${baseUrl}/#analysis/${example.id}`}>Open in New Window</a>
+      </React.Fragment>
+    ))}
+  </>
 );
 
-function VizPage({type}): JSX.Element | null {
+type Req = {min: number; max?: number};
 
-  const getReqTest = (obj, type) => {
-    const isSame = (obj.min===obj.max);
+export default function VizPage({type}: {type: string}): React.ReactNode {
+
+  const getReqTest = (obj: Req, kind: string) => {
+    const isSame = (obj.min === obj.max);
     return <>
       <em>{(isSame && `${obj.min} `) || (!obj.max && `${obj.min} or more `) || `${obj.min} to ${obj.max} `}</em>
-      <Highlight type={type}>{type}{isSame&&obj.min===1?'':'s'}</Highlight>
+      <Highlight type={kind}>{kind}{isSame && obj.min === 1 ? '' : 's'}</Highlight>
       </>;
   }
 
-  const vizConfig = vizzes[type];
+  const vizConfig = (vizzes as Record<string, any>)[type];
 
-  const obj = {
-    dimension: {min:0},
-    measure: {min:0},
+  const obj: Record<string, Req> = {
+    dimension: {min: 0},
+    measure: {min: 0},
   }
 
-  vizConfig.dataFields.forEach(df => {
+  vizConfig.dataFields.forEach((df: any) => {
     const x = obj[df.attrtype];
-    if(x && df.id!=='play') {
+    if (x && df.id !== 'play') {
       x.min += (df.min || 0);
-      if(df.max) {
+      if (df.max) {
         x.max = x.max || 0;
         x.max += df.max;
       }
@@ -64,10 +68,9 @@ function VizPage({type}): JSX.Element | null {
     <>
       <h1>{vizConfig.label} <em><img src={`/img/viz/${type}.png`} alt={`${type} visualization`} className={styles.vizImage}/></em></h1>
       <h2>Description</h2>
-      <div dangerouslySetInnerHTML={{ __html: vizConfig.desc }} />
+      <div dangerouslySetInnerHTML={{__html: vizConfig.desc}} />
       <br/>
       <br/>
-      {
       <blockquote>
         <p>
           <strong>Minimum Requirements</strong>
@@ -77,7 +80,6 @@ function VizPage({type}): JSX.Element | null {
           {getReqTest(obj.measure, 'measure')}
         </p>
       </blockquote>
-      }
       <h2>Interactive Examples</h2>
       <Examples arr={vizConfig.examples}/>
       <h2>Similar Charts</h2>
@@ -87,5 +89,3 @@ function VizPage({type}): JSX.Element | null {
   );
 
 }
-
-export default VizPage;

@@ -159,7 +159,7 @@ You can also drill down or across on any text/dimension field. The example below
 
 ![Drill dimension](/img/report/drill_dimension.gif)
 
-You can also drill to external websites and pass columns from the report to the URL parameters. To pass a column from the report, put it in the URL inside of {} curley braces. You can also set a condition to only allow the drill when certain criteria are met. For example, you could create a drill on *Athlete Name* that opens a Google Search, as shown below.
+You can also drill to external websites and pass columns from the report to the URL parameters. To pass a column from the report, put it in the URL inside of `{}` curley braces. You can also set a condition to only allow the drill when certain criteria are met. For example, you could create a drill on *Athlete Name* that opens a Google Search, as shown below.
 
 ![Drill URL](/img/report/drill_url.png)
 
@@ -319,8 +319,8 @@ Select a file in the top-left, then a sheet if you're using Excel. The data will
 **Load Data**
 
 When loading data into a database, you will take three steps:
-1. Select Destination Table ([see more](etl.md/#destination))
-2. Map Columns ([see more](etl.md/#column-mapping))
+1. Select Destination Table ([see more](etl.md#destination))
+2. Map Columns ([see more](etl.md#column-mapping))
 3. Run Data Load
 
 **Create Report**
@@ -331,4 +331,6 @@ Instantly analyze your data. Please note that you cannot save this report unless
 
 You can filter a report using query string parameters in the URL. The required URL format uses the `specs` parameter and JSON format to allow for simple and advanced filter structures. You can pass any type of filter that can be built in FlexIt. To see the format used, build a report with the desired filter, then go to [Report Options](#report-options) and select More Settings. From there, expand the Report Specifications and look for the `filters` JSON object, which will be the exact structure you can use. Here is an example that also shows how to change report `name` and `uiaction` (run or prompt):
 
+```
 https://cloud.flexitanalytics.com/?specs={"name":"helloworld","uiaction":"run","filters":[{"id":"COUNTRY.COUNTRY_CODE","selections":[{"use":"USA"}]}]}#analysis/olympic-data-detail/embed
+```

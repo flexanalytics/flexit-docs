@@ -210,10 +210,10 @@ run bash from within the container (linux):
 docker exec -it flexit-analytics /bin/bash
 ```
 
-<!-- run cmd from within the container (windows):
+{/* run cmd from within the container (windows):
 ```bash
 docker exec -it flexit-analytics cmd
-``` -->
+``` */}
 
 To view the volumes:
 
