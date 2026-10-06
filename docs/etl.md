@@ -38,6 +38,8 @@ Right-click on any of the tools to access a menu of options:
 ### Container
 Containers can hold *SQL Tasks*, *Data Flows*, *Data Ingestion*, or *dbt Jobs*, which will appear inside the blue dotted border of the container. Everything inside a container will execute in parallel (i.e. synchronous).
 
+When you delete a container that holds tasks, you are asked whether to delete its tasks with it (*Delete All*) or keep them as top-level tasks (*Keep Tasks*).
+
 ### SQL Task
 Use SQL tasks to execute any SQL command. This is commonly used to set database settings or build custom insert/update/delete (CRUD) statements. You can use [parameters](#parameters) and [functions](#functions) in SQL Tasks.
 
